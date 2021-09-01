@@ -1,2 +1,4 @@
 # Versionering
 
+ETag etc
+

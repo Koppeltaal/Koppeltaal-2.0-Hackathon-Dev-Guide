@@ -5,18 +5,19 @@
 
 ## Domeinbeheer
 
+* [Domein toetreden](domeinbeheer/domein-toetreden.md)
 * [Rollen beheren](domeinbeheer/rollen-beheren/README.md)
   * [Rol aanmaken](domeinbeheer/rollen-beheren/rol-aanmaken.md)
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
-* [Domein toetreden](domeinbeheer/domein-toetreden.md)
 
 ## Technische HOWTO
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/jwks-opzetten.md)
   * [SMART Backend Service](technische-howto/connectie-maken-met-koppeltaal/smart-backend-service.md)
-* [Versionering](technische-howto/versionering.md)
+* [Resources Managen](technische-howto/resources-managen/README.md)
+  * [Versionering](technische-howto/resources-managen/versionering.md)
 
 ## POC applicaties
 
