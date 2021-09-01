@@ -17,12 +17,14 @@
   * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/jwks-opzetten.md)
   * [SMART Backend Service](technische-howto/connectie-maken-met-koppeltaal/smart-backend-service.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
+  * [CRUD Operaties](technische-howto/resources-managen/crud-operaties.md)
   * [Versionering](technische-howto/resources-managen/versionering.md)
 
 ## POC applicaties
 
 * [Overzicht POC Applicaties](poc-applicaties/overzicht-poc-applicaties.md)
 * [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/)
+* [Koppeltaal Server](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata)
 * [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
 * [EPD](https://poc-epd.koppeltaal.headease.nl/)
 * [Portaal](https://poc-portal.koppeltaal.headease.nl/)
