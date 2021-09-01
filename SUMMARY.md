@@ -14,13 +14,14 @@
 ## Technische HOWTO
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
-  * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/jwt-ondertekenen.md)
   * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/key-pair-maken.md)
+  * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/jwt-ondertekenen.md)
   * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/jwks-opzetten.md)
   * [SMART Backend Service](technische-howto/connectie-maken-met-koppeltaal/smart-backend-service.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties.md)
   * [Versionering](technische-howto/resources-managen/versionering.md)
+* [Launchen](technische-howto/launchen.md)
 
 ## POC applicaties
 
