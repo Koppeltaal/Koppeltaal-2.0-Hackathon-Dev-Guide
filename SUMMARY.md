@@ -30,7 +30,6 @@
 
 ## Handige Links
 
-* [Untitled](handige-links/untitled.md)
 * [Simplifier Profielen](https://simplifier.net/koppeltaal2.0)
 * [FHIR Docs](http://hl7.org/fhir/R4/)
 
