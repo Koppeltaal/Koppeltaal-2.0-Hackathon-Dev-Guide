@@ -1,7 +1,10 @@
 # Table of contents
 
 * [Developer Guide](README.md)
-* [Requirements](requirements.md)
+
+## POC \(Walking Skeleton\)
+
+* [Proof Of Concept](poc-walking-skeleton/proof-of-concept.md)
 
 ## Domeinbeheer
 
@@ -35,6 +38,7 @@
 
 ## Hackathon Use Cases
 
+* [Requirements](hackathon-use-cases/requirements.md)
 * [CRUD Task](hackathon-use-cases/crud-task.md)
 
 ## Handige Links

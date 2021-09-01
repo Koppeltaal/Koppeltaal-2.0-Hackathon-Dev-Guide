@@ -6,7 +6,7 @@ description: >-
 
 # Developer Guide
 
-## Belangrijke verschillen t.o.v. Koppeltaal 1.x?
+## Belangrijke verschillen t.o.v. Koppeltaal 1.x
 
 | Concept | **KT 1.x** | KT 2.0 |
 | :--- | :--- | :--- |
