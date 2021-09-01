@@ -6,13 +6,15 @@ description: >-
 
 # Developer Guide
 
-## Wat zijn de verschillen t.o.v. Koppeltaal 1.x?
+## Belangrijke verschillen t.o.v. Koppeltaal 1.x?
 
 | Concept | **KT 1.x** | KT 2.0 |
 | :--- | :--- | :--- |
 | **FHIR Exchange** | Messaging | RESTful API |
-| **Content Validatie** | Aparte service | Ingebouwd |
+| **Content Validatie** | Aparte service | Ingebouwd - [https://simplifier.net/koppeltaal2.0](https://simplifier.net/koppeltaal2.0) profielen |
 | **Autorisaties** | Geen - applicatie ziet alles | Op resource & CRUD-niveau |
 
+### FHIR Exchange
 
+Door het gebruik van de RESTful API exchange is er een enkele bron van waarheid. Koppeltaal 1.x fungeerde als een message broker, waardoor  elke  deelnemen de verantwoordelijkheid  om  
 
