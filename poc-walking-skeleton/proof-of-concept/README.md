@@ -6,7 +6,7 @@ description: Ook bekend als de Walking Skeleton
 
 Koppeltaal 2.0 is Agile tot stand gekomen. De bedachte architectuur wordt beproefd middels POC-applicaties. De applicaties die gebruikt worden binnen de POC zijn **niet** de applicaties die uiteindelijk gebruikt worden wanneer Koppeltaal 2.0 live gaat.
 
-De POC bestaat uit uit verschillende type applicaties:
+De POC bestaat uit verschillende type applicaties:
 
 | Applicatietype | Beschrijving |
 | :--- | :--- |

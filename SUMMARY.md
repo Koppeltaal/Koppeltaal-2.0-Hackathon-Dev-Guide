@@ -4,7 +4,13 @@
 
 ## POC \(Walking Skeleton\)
 
-* [Proof Of Concept](poc-walking-skeleton/proof-of-concept.md)
+* [Proof Of Concept](poc-walking-skeleton/proof-of-concept/README.md)
+  * [Koppeltaal Server](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata)
+  * [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/)
+  * [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
+  * [EPD](https://poc-epd.koppeltaal.headease.nl/)
+  * [Portaal](https://poc-portal.koppeltaal.headease.nl/)
+  * [SMART Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
 
 ## Domeinbeheer
 
@@ -25,16 +31,6 @@
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties.md)
   * [Versionering](technische-howto/resources-managen/versionering.md)
 * [Launchen](technische-howto/launchen.md)
-
-## POC applicaties
-
-* [Overzicht POC Applicaties](poc-applicaties/overzicht-poc-applicaties.md)
-* [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/)
-* [Koppeltaal Server](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata)
-* [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
-* [EPD](https://poc-epd.koppeltaal.headease.nl/)
-* [Portaal](https://poc-portal.koppeltaal.headease.nl/)
-* [SMART Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
 
 ## Hackathon Use Cases
 
