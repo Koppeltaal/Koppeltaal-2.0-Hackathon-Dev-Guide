@@ -6,6 +6,10 @@ description: Ook bekend als de Walking Skeleton
 
 Koppeltaal 2.0 is Agile tot stand gekomen. De bedachte architectuur wordt beproefd middels POC-applicaties. De applicaties die gebruikt worden binnen de POC zijn **niet** de applicaties die uiteindelijk gebruikt worden wanneer Koppeltaal 2.0 live gaat.
 
+{% hint style="info" %}
+Applicaties binnen de POC gebruiken nu vaak IRMA om de gebruiker te identificeren en over systemen te kunnen relateren. Dit is geen onderdeel van de standaard. Het kan dus goed zijn dat er bij Koppeltaal 2.0 geen gebruik wordt gemaakt van IRMA.
+{% endhint %}
+
 De POC bestaat uit verschillende type applicaties:
 
 | Applicatietype | Beschrijving |
