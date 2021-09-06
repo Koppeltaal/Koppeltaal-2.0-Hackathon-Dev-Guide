@@ -1,2 +1,2 @@
-# SMART Backend Service
+# Access Token Ophalen
 
