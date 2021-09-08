@@ -29,7 +29,7 @@ In de permissie wordt aangegeven welke CRUD-actie \(create, read, update, delete
 
 ### Scope 
 
-De scope geeft de scope  van `resource-owners` aan. De volgende waarden zijn mogelijk:
+De permissie geeft de `resource-owners` scope aan. De volgende waarden zijn mogelijk:
 
 | Scope | Beschrijving |
 | :--- | :--- |
