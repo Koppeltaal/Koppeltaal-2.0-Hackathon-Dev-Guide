@@ -9,7 +9,7 @@ description: >-
 
 ## 1. Authenticeren
 
-Wanneer een applicatie een [domein is toegetreden](../domein-toetreden.md), zal de applicatie een `client_id` toegekend hebben gekregen. Deze `client_id` zit verwerkt in het `access_token` dat wordt gebruikt om [connectie te maken met Koppeltaal](../../technische-howto/connectie-maken-met-koppeltaal/). Zo weet de Koppeltaal server welke applicatie een request uitvoert en ook wat haar rol is.
+Wanneer een applicatie een [domein is toegetreden](../domein-toetreden.md), zal de applicatie een `client_id` toegekend hebben gekregen. Deze `client_id` zit verwerkt in het `access_token` dat wordt gebruikt om [connectie te maken met Koppeltaal](../../technische-howto/connectie-maken-met-koppeltaal/). Zo weet de Koppeltaal server welke applicatie een request uitvoert en ook de bijbehorende rol.
 
 ## 2. Eigenaarschap van Resources
 
