@@ -33,7 +33,7 @@ De permissie geeft de `resource-owners` scope aan. De volgende waarden zijn moge
 
 | Scope | Beschrijving |
 | :--- | :--- |
-| Own | De permissie is enkel van toepassing op resources waarvan de `resource-owner` overeenkomt met de geauthenticeerde applicatie. |
-| All | De permissie is van toepassing op alle resources in het domein |
-| Granted | De permissie is van toepassing op resources waarvan de `resource-owner` overeenkomt met de geselecteerde applicatie\(s\). |
+| Own | De permissie is enkel van toepassing op resources \(geselecteerde resource type van de permissie\) waarvan de `resource-owner` overeenkomt met de geauthenticeerde applicatie. |
+| All | De permissie is van toepassing op alle resources \(geselecteerde resource type van de permissie\) in het domein |
+| Granted | De permissie is van toepassing op resources \(geselecteerde resource type van de permissie\) waarvan de `resource-owner` overeenkomt met de geselecteerde applicatie\(s\). |
 

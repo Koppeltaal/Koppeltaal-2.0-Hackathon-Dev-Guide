@@ -1,2 +1,8 @@
 # Search Narrowing
 
+Wanneer een applicatie resources mag lezen met een `Own` of `Granted` scope, betekent dit dat niet alle resources teruggeven mogen worden door de Koppeltaal server. Om dit zo simpel mogelijk te houden voor platformen die gebruik maken van Koppeltaal is gekozen voor "Search Narrowing". Dit houdt in dat het platform simpelweg een query uit kan voeren als `GET <KT_DOMAIN>/Patient` om "alle" `Patient` resources op te halen. De Koppeltaal server zorgt er voor dat enkel de `Patient` resources teruggegeven worden waartoe de applicatie geautoriseerd is. 
+
+{% embed url="https://drive.google.com/file/d/1bJFTUdJPhLLOxm-iSk33K8raf9Ebm3JN/view" caption="Search Narrowing" %}
+
+
+
