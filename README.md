@@ -1,7 +1,7 @@
 ---
 description: >-
-  Deze guide geeft een beknopt overzicht van de kernconcepten van Koppeltaal 2.0
-  en hoe te integreren.
+  Deze guide geeft een beknopt overzicht van de Koppeltaal 2.0 kernconcepten en
+  hoe te integreren.
 ---
 
 # Developer Guide

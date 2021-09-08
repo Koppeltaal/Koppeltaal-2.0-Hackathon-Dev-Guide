@@ -16,6 +16,7 @@
 
 * [Domein toetreden](domeinbeheer/domein-toetreden.md)
 * [Rollen beheren](domeinbeheer/rollen-beheren/README.md)
+  * [Autorisatiemodel](domeinbeheer/rollen-beheren/autorisatiemodel.md)
   * [Rol aanmaken](domeinbeheer/rollen-beheren/rol-aanmaken.md)
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
