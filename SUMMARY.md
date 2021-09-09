@@ -30,7 +30,7 @@
   * [Toegang tot Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/README.md)
     * [Requirements](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/requirements.md)
     * [Authorizeren](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/smart-backend-service.md)
-  * [Tokens Refreshen](technische-howto/connectie-maken-met-koppeltaal/tokens-refreshen.md)
+    * [Tokens Refreshen](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/tokens-refreshen.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties.md)
   * [Versionering](technische-howto/resources-managen/versionering.md)

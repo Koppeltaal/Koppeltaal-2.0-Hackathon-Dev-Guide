@@ -7,7 +7,7 @@
 {% endhint %}
 
 {% hint style="info" %}
-Het onderstaande proces dient gebruikt te worden na bijvoorbeeld een server herstart. Als eenmaal een `access_token` is uitgegeven, kan deze [runtime ververst worden](../tokens-refreshen.md) als de duur is verstreken.
+Het onderstaande proces dient gebruikt te worden na bijvoorbeeld een server herstart. Als eenmaal een `access_token` is uitgegeven, kan deze [runtime ververst worden](tokens-refreshen.md) als de duur is verstreken.
 {% endhint %}
 
 Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow een `access_token` opgevraagd wordt. Hiervoor wordt het volgende diagram gehanteerd:
@@ -24,7 +24,7 @@ Opvragen van de access\_token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Zie de Response tab voor een voorbeeld-response.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -77,5 +77,15 @@ Bad request
 {% endapi-method-spec %}
 {% endapi-method %}
 
+Zoals hierboven in de `Response` tab te zien is, wordt de `access_token` als onderdeel van de response  meegegeven. Deze  `access_token` moet meegegeven worden als [`Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) op elke request naar de Koppeltaal server. Het formaat van de header is als volgt:
 
+```text
+Authorization: <type> <credentials>
+```
+
+In de voorbeeld-response zou de header er als volgt uit moeten zien:
+
+```text
+Authorization: Bearer eyJraWQiOiJKR3pTYmgzVS1TQlVabllIQjJQaWhzN0FBc0Vubk8zelpqUS1RSjFTN0tzIiwiYWxnIjoiUlM1MTIiLCJ0eXAiOiJKV1QifQ
+```
 
