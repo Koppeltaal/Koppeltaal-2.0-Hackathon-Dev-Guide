@@ -25,8 +25,8 @@
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/key-pair-maken.md)
-  * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/jwks-opzetten.md)
   * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/jwt-ondertekenen.md)
+  * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/jwks-opzetten.md)
   * [Access Token Ophalen](technische-howto/connectie-maken-met-koppeltaal/smart-backend-service.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties.md)
@@ -42,4 +42,5 @@
 
 * [Simplifier Profielen](https://simplifier.net/koppeltaal2.0)
 * [FHIR Docs](https://simplifier.net/Koppeltaal2.0/~resources)
+* [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 
