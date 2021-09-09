@@ -1,0 +1,27 @@
+# Tokens Refreshen
+
+Succesvol uitgereikte  `access_tokens` hebben een levensduur. Een acces token ziet er bijvoorbeeld als volgt uit:
+
+```javascript
+{
+  "access_token": "eyJraWQiOiJKR3pTYmgzVS1TQlVabllIQjJQaWhzN0FBc0Vubk8zelpqUS1RSjFTN0tzIiwiYWxnIjoiUlM1MTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2F1dGhlbnRpY2F0aW9uLXNlcnZpY2Uua29wcGVsdGFhbC5oZWFkZWFzZS5ubC8iLCJhdWQiOiJmaGlyLXNlcnZlciIsIm5iZiI6MTYzMTE5MzQ5MCwiZXhwIjoxNjMxMTk3MDkwLCJub25jZSI6ImNkY2ZlYmIyLTU4MGEtNDE2YS05MGY4LTE1MzU3ZDk0NzMwNSIsInR5cGUiOiJhY2Nlc3MiLCJhenAiOiI1YWQ3Y2Y2YS05NTU2LTRkMjMtOTFjYS0yNTBkYWZhMWRmMDkifQ.n4w_WLae5We9Vqzq3AuJuGOdBnrMa6NrXVWErplkcw7ruOnEwXW5Py98GNeQB22O7aNsLhTueUBKJ_REq7zzV6PhTg0JZpnwAjo2y5k6o8OK5kKl2SoiIwPCzQz91dVFCC5VqGU7fl5EE_90_9iPZV6Yukha_Yu9f7zSn5kgkjFucw7qPSaPlhyK0fCpK70LNvXcU3is05CeWx4Hf5bA8iCD0-VVqkEzIVz-Pt2YkfG7xa3dWM3SNih3nPH6BnypQIUPAD1vm7vL1yi3csC93W25-q4eD3oXAzdWi_pWsStGg6Pda7jZTIPh63GnEm8MbI_oFBPbCSYMxSslt4Hxsw",
+  "expires_in": 3600,
+  "refresh_token": "fbbed832-0fb8-40ad-ae13-c5744103ca39",
+  "token_type": "Bearer"
+}
+```
+
+Het `access_token` is op zijn beurt weer een JWT token waarvan de body [vertaalt](https://jwt.io/?token=eyJraWQiOiJKR3pTYmgzVS1TQlVabllIQjJQaWhzN0FBc0Vubk8zelpqUS1RSjFTN0tzIiwiYWxnIjoiUlM1MTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2F1dGhlbnRpY2F0aW9uLXNlcnZpY2Uua29wcGVsdGFhbC5oZWFkZWFzZS5ubC8iLCJhdWQiOiJmaGlyLXNlcnZlciIsIm5iZiI6MTYzMTE5MzQ5MCwiZXhwIjoxNjMxMTk3MDkwLCJub25jZSI6ImNkY2ZlYmIyLTU4MGEtNDE2YS05MGY4LTE1MzU3ZDk0NzMwNSIsInR5cGUiOiJhY2Nlc3MiLCJhenAiOiI1YWQ3Y2Y2YS05NTU2LTRkMjMtOTFjYS0yNTBkYWZhMWRmMDkifQ.n4w_WLae5We9Vqzq3AuJuGOdBnrMa6NrXVWErplkcw7ruOnEwXW5Py98GNeQB22O7aNsLhTueUBKJ_REq7zzV6PhTg0JZpnwAjo2y5k6o8OK5kKl2SoiIwPCzQz91dVFCC5VqGU7fl5EE_90_9iPZV6Yukha_Yu9f7zSn5kgkjFucw7qPSaPlhyK0fCpK70LNvXcU3is05CeWx4Hf5bA8iCD0-VVqkEzIVz-Pt2YkfG7xa3dWM3SNih3nPH6BnypQIUPAD1vm7vL1yi3csC93W25-q4eD3oXAzdWi_pWsStGg6Pda7jZTIPh63GnEm8MbI_oFBPbCSYMxSslt4Hxsw) naar:
+
+```javascript
+{
+  "iss": "https://authentication-service.koppeltaal.headease.nl/",
+  "aud": "fhir-server",
+  "nbf": 1631193490,
+  "exp": 1631197090,
+  "nonce": "cdcfebb2-580a-416a-90f8-15357d947305",
+  "type": "access",
+  "azp": "5ad7cf6a-9556-4d23-91ca-250dafa1df09"
+}
+```
+
