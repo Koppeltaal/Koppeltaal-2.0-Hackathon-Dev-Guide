@@ -1,8 +1,8 @@
 ---
 description: >-
   Koppeltaal 2.0 kent een autorisatiemodel. Dit houdt in dat applicaties niet
-  alle gegevens binnen een domein in kunnen zien. Wat er precies ingezien mag
-  worden, wordt bepaald met het autorisatiemodel.
+  zomaar alle data in een domein kan zien. Wat er precies ingezien mag worden,
+  wordt bepaald met het autorisatiemodel.
 ---
 
 # Autorisatiemodel
