@@ -24,11 +24,11 @@
 ## Technische HOWTO
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
-  * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/key-pair-maken.md)
-  * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/jwt-ondertekenen.md)
-  * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/jwks-opzetten.md)
+  * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
+    * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/requirements/key-pair-maken.md)
+    * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md)
+    * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md)
   * [Toegang tot Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/README.md)
-    * [Requirements](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/requirements.md)
     * [Authorizeren](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/smart-backend-service.md)
     * [Tokens Refreshen](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/tokens-refreshen.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
