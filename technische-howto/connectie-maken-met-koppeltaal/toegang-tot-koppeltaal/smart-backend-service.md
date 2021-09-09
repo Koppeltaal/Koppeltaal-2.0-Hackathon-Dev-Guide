@@ -16,7 +16,7 @@ Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https:
 
 In dit diagram is te zien dat er eerst een JWT token wordt samengesteld en [ondertekend](../jwt-ondertekenen.md). Vervolgens wordt er een OAuth client credential flow uitgevoerd richting de auth server. 
 
-De inhoud van de JWT en de OAuth request worden [hier](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#protocol-details) gedetailleerd beschreven. Koppeltaal kent een uitzondering op de `scope` parameter. Deze moet meegestuurd worden maar is niet verplicht en wordt niet verwerkt.
+De inhoud van de JWT en de OAuth request worden [hier](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#protocol-details) gedetailleerd beschreven. Koppeltaal kent een uitzondering op de `scope` parameter. Deze mag meegestuurd worden maar is niet verplicht en wordt niet verwerkt.
 
 {% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" %}
 {% api-method-summary %}
@@ -43,7 +43,7 @@ Altijd vullen met `client_credentials`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="scope" type="string" required=true %}
-Inhoud mag leeg zijn. De  scope wordt door  de auth server bepaald door het autorisatiemodel
+Inhoud mag leeg zijn. De scope wordt door de auth server bepaald door het autorisatiemodel
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
