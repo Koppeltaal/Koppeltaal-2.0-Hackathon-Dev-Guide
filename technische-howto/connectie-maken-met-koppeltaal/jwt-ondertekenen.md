@@ -19,7 +19,7 @@ JWT staat voor JSON Web Token. Een praktische uitleg over hoe een JWT werkt is [
 >
 > `xxxxx.yyyyy.zzzzz`
 
-Het ondertekenen van de JWT vindt plaats in de derde deel van de JWT; de signature. Koppeltaal gebruikt asymmetrische key pairs om de JWTs te ondertekenen. Het signature-deel wordt geëncrypt middels de private-key van de asymmetrische key pair. Het public-key deel wordt gepubliceerd onder de [JWKS](jwks-opzetten.md). Zo wordt bewezen dat een JWT daadwerkelijk van een partij komt die in het bezit is van de private-key.
+Het ondertekenen van de JWT vindt plaats in de derde deel van de JWT: de signature. Koppeltaal gebruikt asymmetrische key pairs om de JWTs te ondertekenen. Het signature-deel wordt geëncrypt middels de private-key van de asymmetrische key pair. Het public-key deel wordt gepubliceerd onder de [JWKS](jwks-opzetten.md). Zo wordt bewezen dat een JWT daadwerkelijk van een partij komt die in het bezit is van de private-key.
 
 {% hint style="info" %}
 RSA is ingewikkelder te implementeren dan bijv. HMAC algoritmen. Het is echter ook een stuk veiliger. Zo is er geen gedeelde secret. Ook is het middels JWKS snel mogelijk om keys in te roteren.
