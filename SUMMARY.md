@@ -41,5 +41,5 @@
 ## Handige Links
 
 * [Simplifier Profielen](https://simplifier.net/koppeltaal2.0)
-* [FHIR Docs](http://hl7.org/fhir/R4/)
+* [FHIR Docs](https://simplifier.net/Koppeltaal2.0/~resources)
 
