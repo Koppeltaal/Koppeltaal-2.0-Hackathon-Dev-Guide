@@ -13,7 +13,7 @@ Succesvol uitgereikte  `access_tokens` hebben een levensduur. Zoals bij de pagin
 
 De response geeft netjes aan wat de `access_token` is en hoe lang \(in seconden\) deze geldig is. Nadat deze tijd verstreken is, zal de auth server de `access_token` niet meer accepteren. 
 
-De response bevat ook een `refresh_token`. Deze token kan gebruikt worden laagdrempelig een nieuwe `access_token` op te vragen.
+De response bevat ook een `refresh_token`. Deze token kan gebruikt worden om laagdrempelig een nieuwe `access_token` op te vragen.
 
 {% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" %}
 {% api-method-summary %}
