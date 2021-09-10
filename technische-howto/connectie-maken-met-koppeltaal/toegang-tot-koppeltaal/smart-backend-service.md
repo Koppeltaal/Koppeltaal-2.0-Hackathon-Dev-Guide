@@ -29,6 +29,12 @@ Zie de Response tab voor een voorbeeld-response.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=true %}
+`application/x-www-form-urlencoded`
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="client\_assertion" type="string" required=true %}
 Het ondertekende JWT token

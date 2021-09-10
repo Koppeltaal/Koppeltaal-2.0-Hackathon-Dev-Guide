@@ -1,6 +1,10 @@
 # CRUD Operaties
 
-Primair overzicht van handige RESTful calls. De  kan vervangen worden met Resources van de [FHIR Resource list](https://www.hl7.org/fhir/resourcelist.html).
+{% hint style="info" %}
+Een compleet overzicht van de RESTful API is [hier](https://www.hl7.org/fhir/http.html) te vinden.
+{% endhint %}
+
+Primair overzicht van handige RESTful calls. &lt;Resource&gt; kan vervangen worden met Resources van de [FHIR Resource list](https://www.hl7.org/fhir/resourcelist.html).
 
 {% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>" %}
 {% api-method-summary %}

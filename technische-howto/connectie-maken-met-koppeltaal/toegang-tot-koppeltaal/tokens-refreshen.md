@@ -26,6 +26,12 @@ Refresh token consumeren
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Content-Type" type="string" required=true %}
+`application/x-www-form-urlencoded`
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="scope" type="string" required=true %}
 Moet overeenkomen met de ingevulde scope bij het opvragen van de `access_token`
