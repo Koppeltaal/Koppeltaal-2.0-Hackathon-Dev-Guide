@@ -1,0 +1,48 @@
+# CRUD Operaties
+
+{% hint style="info" %}
+Een compleet overzicht van de RESTful API is [hier](https://www.hl7.org/fhir/http.html) te vinden.
+{% endhint %}
+
+Primair overzicht van handige RESTful calls. &lt;Resource&gt; kan vervangen worden met Resources van de [FHIR Resource list](https://www.hl7.org/fhir/resourcelist.html).
+
+{% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<id>" %}
+{% api-method-summary %}
+Specifieke Resource ophalen
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=true %}
+Resource.id to be  retrieved
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authentication token verkregen via de Auth Server
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+
