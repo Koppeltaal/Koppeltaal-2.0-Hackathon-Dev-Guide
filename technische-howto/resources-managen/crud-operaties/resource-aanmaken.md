@@ -8,7 +8,7 @@ Binnen Koppeltaal dient er gebruik gemaakt te worden van [logische referenties](
 
 De FHIR specificatie beschrijft [conditional creates](https://www.hl7.org/fhir/http.html#ccreate). Wanneer een `Resource` aangemaakt wordt, dient deze gebruikt te worden i.c.m. de logische referentie. Wanneer meerdere applicaties in een domein dezelfde type `Resources` aanmaken, is het belangrijk dat er duidelijke afspraken zijn over welke identifier system gebruikt wordt.
 
-{% api-method method="post" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<id>" %}
+{% api-method method="post" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>" %}
 {% api-method-summary %}
 
 {% endapi-method-summary %}
