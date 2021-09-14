@@ -110,6 +110,26 @@ Voldoet niet aan de FHIR profielen of Koppeltaal business regels
 {% endapi-method-spec %}
 {% endapi-method %}
 
+### Delen van een Resource Updaten
+
+Om middels een kleine payload een  resource  te updaten kan gebruik gemaakt worden van een  `PATCH` request. De payload van de `PATCH` moet een van de volgende zijn:
+
+1. Een [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902)  \(Content-Type application/json-patch+json\)
+2. Een [XML Patch](https://datatracker.ietf.org/doc/html/rfc5261)  \(Content-Type application/xml-patch+xml\)
+3. Een [FHIRPath Patch](https://www.hl7.org/fhir/fhirpatch.html) parameters Resource  \(Content-Type [FHIR Content Type](https://www.hl7.org/fhir/http.html#mime-type)\)
+
+Zo ziet de payload er uit van een JSON Patch om de status te updaten van een `Task`:
+
+```text
+[{
+    "op": "replace",
+    "path": "/status",
+    "value": "completed"
+}]
+```
+
+Voorbeelden van meer type patches kunnen [hier](https://www.hl7.org/fhir/test-cases.zip) gedownload worden.
+
 {% api-method method="patch" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" %}
 {% api-method-summary %}
 Deel van een Resource Updaten
