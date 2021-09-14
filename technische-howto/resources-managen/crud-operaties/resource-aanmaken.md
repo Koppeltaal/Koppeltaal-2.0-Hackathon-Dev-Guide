@@ -1,7 +1,7 @@
 # Resource Aanmaken
 
 {% hint style="info" %}
-Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#create) voor meet informatie.
+Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#create) voor meer informatie.
 {% endhint %}
 
 ### Advies

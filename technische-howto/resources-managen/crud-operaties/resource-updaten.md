@@ -5,7 +5,7 @@ TODO: If-Match discussie verwerken  - afdwingen of niet
 {% endhint %}
 
 {% hint style="info" %}
-Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#update) voor meet informatie.
+Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#update) voor meer informatie.
 {% endhint %}
 
 ### Concurrency

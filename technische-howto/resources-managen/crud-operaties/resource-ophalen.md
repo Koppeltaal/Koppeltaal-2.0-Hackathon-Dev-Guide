@@ -5,7 +5,7 @@ description: Haalt één specifieke Resource op
 # Resource Ophalen
 
 {% hint style="info" %}
-Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meet informatie.
+Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meer informatie.
 {% endhint %}
 
 {% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<id>" %}
