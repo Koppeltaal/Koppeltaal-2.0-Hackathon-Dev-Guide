@@ -1,5 +1,9 @@
 # Resource Aanmaken
 
+{% hint style="info" %}
+Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#create) voor meet informatie.
+{% endhint %}
+
 ### Advies
 
 Koppeltaal adviseert om gebruik te maken van [logische referenties](https://www.hl7.org/fhir/references.html#logical) op alle objecten. De voornaamste reden hiervoor is dat een bronsysteem consistent kan bijhouden of er al een Koppeltaal-variant van het object bestaat. Daarnaast kunnen logische referenties helpen wanneer er meerdere bronsystemen zijn die moeten weten of een `Resource` al bestaat.

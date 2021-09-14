@@ -1,8 +1,16 @@
+---
+description: Haalt één specifieke Resource op
+---
+
 # Resource Ophalen
+
+{% hint style="info" %}
+Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meet informatie.
+{% endhint %}
 
 {% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<id>" %}
 {% api-method-summary %}
-
+Specifieke  Resource Ophalen
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -37,6 +45,4 @@ Authentication token verkregen via de Auth Server
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

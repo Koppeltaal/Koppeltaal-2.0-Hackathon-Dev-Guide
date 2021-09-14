@@ -4,9 +4,13 @@ description: Haalt alle resources op voor één specifieke Resource-type
 
 # Alle Resources Ophalen
 
+{% hint style="info" %}
+Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meet informatie.
+{% endhint %}
+
 {% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>" %}
 {% api-method-summary %}
-
+Alle Resources Ophalen
 {% endapi-method-summary %}
 
 {% api-method-description %}
