@@ -148,7 +148,7 @@ De "logical id" van de `Resource`
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
-{% api-method-parameter name="If-Match" required=true %}
+{% api-method-parameter name="If-Match" required=true type="string" %}
 De versie waarop de update toegepast is, bijv: W/"23"
 {% endapi-method-parameter %}
 
@@ -159,7 +159,7 @@ De versie waarop de update toegepast is, bijv: W/"23"
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="" type="object" required=true %}
-Een JSON Patch object
+De Patch
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -167,7 +167,7 @@ Een JSON Patch object
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Patch is toegepast. De complete Resource wordt teruggegeven
 {% endapi-method-response-example-description %}
 
 ```

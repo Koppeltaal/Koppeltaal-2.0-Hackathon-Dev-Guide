@@ -32,13 +32,15 @@
     * [Authorizeren](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/smart-backend-service.md)
     * [Tokens Refreshen](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/tokens-refreshen.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
+  * [Versionering](technische-howto/resources-managen/versionering.md)
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties/README.md)
     * [Alle Resources Ophalen](technische-howto/resources-managen/crud-operaties/alle-resources-ophalen.md)
     * [Resource Ophalen](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
-  * [Versionering](technische-howto/resources-managen/versionering.md)
-* [Launchen](technische-howto/launchen.md)
+* [Launchen](technische-howto/launchen/README.md)
+  * [HTI](technische-howto/launchen/hti.md)
+  * [SMART HTI On FHIR](technische-howto/launchen/smart-hti-on-fhir.md)
 
 ## Hackathon Use Cases
 
