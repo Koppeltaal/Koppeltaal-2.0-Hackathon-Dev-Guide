@@ -44,12 +44,13 @@
 
 ## Hackathon Use Cases
 
-* [Requirements](hackathon-use-cases/requirements.md)
+* [Requirements](hackathon-use-cases/requirements/README.md)
+  * [IRMA Installeren & Configureren](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
 * [CRUD Task](hackathon-use-cases/crud-task.md)
 
 ## Handige Links
 
-* [Simplifier Profielen](https://simplifier.net/koppeltaal2.0)
+* [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/~resources?fhirVersion=R4)
 * [FHIR Docs](https://simplifier.net/Koppeltaal2.0/~resources)
 * [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 
