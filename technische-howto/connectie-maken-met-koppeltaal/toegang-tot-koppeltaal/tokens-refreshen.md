@@ -11,9 +11,9 @@ Succesvol uitgereikte  `access_tokens` hebben een levensduur. Zoals bij de pagin
 }
 ```
 
-De response geeft netjes aan wat de `access_token` is en hoe lang \(in seconden\) deze geldig is. Nadat deze tijd verstreken is, zal de auth server de `access_token` niet meer accepteren. 
+De response geeft netjes aan wat de `access_token` is en hoe lang \(in seconden\) deze geldig is. Nadat deze tijd verstreken is, zal de auth server de `access_token` niet meer accepteren.
 
-De response bevat ook een `refresh_token`. Deze token kan gebruikt worden om laagdrempelig een nieuwe `access_token` op te vragen.
+De response bevat ook een `refresh_token`. Deze token kan gebruikt worden om laagdrempelig een nieuwe `access_token` op te vragen. [ik heb het idee dat de `refresh_token` ook kan expiren. klopt dat? dan is het goed dat hier te melden, want in dat geval moet er "opnieuw" een `access_token` opgevraagd worden.]
 
 {% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" %}
 {% api-method-summary %}
@@ -65,7 +65,7 @@ Altijd vullen met `refresh_token`
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-De eerste melding: scope komt niet overeen met de scope uit de initiële access\_token aanvraag  
+De eerste melding: scope komt niet overeen met de scope uit de initiële access\_token aanvraag
 De tweede melding: Er is iets mis met refresh\_token waarde
 {% endapi-method-response-example-description %}
 
