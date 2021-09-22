@@ -15,7 +15,7 @@ De POC bestaat uit verschillende type applicaties:
 | Applicatietype | Beschrijving |
 | :--- | :--- |
 | Stelselcomponent | Applicaties die de kern van Koppeltaal 2.0 vormen. |
-| Leverancier | Een leverancier die echte content middels een POC-versie van hun platform gebruiken   i.c.m. de Koppeltaal Server  |
+| Leverancier | Een leverancier die echte content middels een POC-versie van hun platform gebruikt i.c.m. de Koppeltaal Server. |
 | Pseudo-applicatie | Applicaties die e-health applicaties imiteren. |
 | Extra dienst | Applicaties die  buiten de kern  van Koppeltaal 2.0 vallen maar handig zijn voor de ontwikkeling. |
 
