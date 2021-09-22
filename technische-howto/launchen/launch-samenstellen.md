@@ -1,12 +1,8 @@
 ---
-description: De launch samenstellen werkt hetzelfde voor HTI en SMART HTI On FHIR
+description: De launch samenstellen werkt hetzelfde voor HTI als SHOF
 ---
 
 # Launch samenstellen
-
-{% hint style="info" %}
-HTI wordt [hier](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#implementation-guide) uitvoerig beschreven. Hieronder wordt een praktisch overzicht getoond van de stappen. 
-{% endhint %}
 
 Om de launch uit te voeren moeten de volgende stappen uitgevoerd worden:
 

@@ -39,11 +39,11 @@
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
 * [Launchen](technische-howto/launchen/README.md)
-  * [HTI](technische-howto/launchen/hti.md)
-  * [SMART HTI On FHIR](technische-howto/launchen/smart-hti-on-fhir.md)
+  * [HTI Flow](technische-howto/launchen/hti.md)
+  * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen.md)
   * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
-  * [SMART HTI On FHIR Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
+  * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
 
 ## Hackathon Use Cases
 

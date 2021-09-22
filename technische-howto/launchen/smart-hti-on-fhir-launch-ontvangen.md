@@ -1,2 +1,2 @@
-# SMART HTI On FHIR Launch Ontvangen
+# SHOF Launch Ontvangen
 
