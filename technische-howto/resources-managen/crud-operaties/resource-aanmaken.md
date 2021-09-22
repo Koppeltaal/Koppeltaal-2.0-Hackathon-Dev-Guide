@@ -6,7 +6,9 @@ Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#create) voor meer 
 
 ### Advies
 
-Koppeltaal adviseert om gebruik te maken van [logische referenties](https://www.hl7.org/fhir/references.html#logical) op alle objecten. De voornaamste reden hiervoor is dat een bronsysteem consistent kan bijhouden of er al een Koppeltaal-variant van het object bestaat. Daarnaast kunnen logische referenties helpen wanneer er meerdere bronsystemen zijn die moeten weten of een `Resource` al bestaat.
+Koppeltaal adviseert om gebruik te maken van [logische referenties](https://www.hl7.org/fhir/references.html#logical) op alle objecten*). De voornaamste reden hiervoor is dat een bronsysteem consistent kan bijhouden of er al een Koppeltaal-variant van het object bestaat. Daarnaast kunnen logische referenties helpen wanneer er meerdere bronsystemen zijn die moeten weten of een `Resource` al bestaat.
+
+*) het is eigenlijk nog wat pril, maar idd goed om aan te halen. Tegelijkertijd moeten we niet vergeten er relative-paths references gebruikt worden. Maw, het is nog niet 100% duidelijk welke patronen we aanraden te gebruiken.
 
 ### Conditional Create
 
@@ -14,7 +16,7 @@ Koppeltaal adviseert om gebruik te maken van [logische referenties](https://www.
 De conditional create zit nog in de "trial use" fase. De status van deze functionaliteit moet dus nog gereviewed worden.
 {% endhint %}
 
-De FHIR specificatie beschrijft [conditional creates](https://www.hl7.org/fhir/http.html#ccreate). Wanneer een `Resource` aangemaakt wordt, kan er een `upsert` uitgevoerd worden a.d.h.v. de logische referentie. Wanneer meerdere applicaties in een domein dezelfde type `Resources` aanmaken, is het belangrijk dat er duidelijke afspraken zijn over welke identifier system gebruikt wordt. De conditional create helpt voorkomen dat er dubbele resources bij Koppeltaal aangemaakt worden. 
+De FHIR specificatie beschrijft [conditional creates](https://www.hl7.org/fhir/http.html#ccreate). Wanneer een `Resource` aangemaakt wordt, kan er een `upsert` uitgevoerd worden a.d.h.v. de logische referentie. Wanneer meerdere applicaties in een domein dezelfde type `Resources` aanmaken, is het belangrijk dat er duidelijke afspraken zijn over welke identifier system gebruikt wordt. De conditional create helpt voorkomen dat er dubbele resources bij Koppeltaal aangemaakt worden.
 
 {% api-method method="post" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>" %}
 {% api-method-summary %}
