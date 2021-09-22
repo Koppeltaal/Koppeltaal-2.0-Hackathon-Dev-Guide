@@ -62,5 +62,5 @@
 
 ## Downloads
 
-* [Downloads](downloads/downloads.md)
+* [VZVZ Koppeltaal Documentatie](downloads/downloads.md)
 
