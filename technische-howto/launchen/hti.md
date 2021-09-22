@@ -29,10 +29,12 @@ Het `HTI:core` profiel beschrijft de volgende velden voor de  `Task`:
 | :--- | :--- | :--- |
 | resourceType | ja | Dit veld moet altijd gevuld zijn met de waarde "Task". |
 | id | ja | De logische identifier van de taak. Meer details staan beschreven in de [Task id](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#the-task-id) sectie. |
-| instantiatesCanonical | nee | Een [canonical](http://hl7.org/fhir/R4/references.html#canonical) URL die refereert naar de FHIR definition. Meer details hierover zijn te vinden in de [activity definition](https://www.hl7.org/fhir/activitydefinition.html) documentatie. |
+| instantiatesCanonical* | nee | Een [canonical](http://hl7.org/fhir/R4/references.html#canonical) URL die refereert naar de FHIR definition. Meer details hierover zijn te vinden in de [activity definition](https://www.hl7.org/fhir/activitydefinition.html) documentatie. |
 | for | ja | Een [person reference](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#person-reference) naar de gebruiker die de taak moet uitvoeren. |
 | intent | ja | Dit veld moet altijd gevuld zijn met een waarde van de [FHIR value set RequestIntent](https://www.hl7.org/fhir/R4/valueset-request-intent.html), indien niet van toepassing, gebruik "plan". |
 | status | ja | Status van de taak. Dit veld moet gevuld zijn met een waarde van de [FHIR value set TaskStatus](https://www.hl7.org/fhir/R4/valueset-task-status.html). |
+
+*) Op dit moment is de Task resource in de HTI launch token van de POC Portal nog een R3 Task, dus met een definitionReference veld. Hoe gaan we daar mee om?
 
 Een `HTI:core Task` kan er als volgt uitzien:
 
@@ -90,7 +92,7 @@ Middels een `<form>` en de `form-post-redirect` flow kan de launch uitgevoerd wo
 
 {% api-method method="post" host="{{ActivityDefinition.endpoint}}" path="" %}
 {% api-method-summary %}
-HTI Launch 
+HTI Launch
 {% endapi-method-summary %}
 
 {% api-method-description %}

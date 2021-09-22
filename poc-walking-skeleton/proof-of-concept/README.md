@@ -27,7 +27,7 @@ De POC bestaat uit de volgende applicaties:
 | Auth Server | Stelselcomponent | Hier kan een applicatie - na goedkeuring bij het Domeinbeheer - een access token opvragen middels de [Backend Services Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow. |
 | EPD | Placeholder | Deze applicatie is gemaakt om een EPD te imiteren. Uiteindelijk is dit uitgegroeid tot een applicatie waarbij de veelvoorkomende Koppeltaal Resources gemanaged kunnen worden. |
 | Portaal | Placeholder | Deze applicatie fungeert als patientportaal, behandelarenportaal en related person portaal. Wanneer men hier inlogt, zoekt het  portaal een gebruiker a.d.h.v. het ingelogde e-mailadres in de Koppeltaal Server. Afhankelijk van welke resource gevonden  wordt \(`Patient`, `Practitioner` of `RelatedPerson`\) wordt de rol bepaald.  |
+| Module | Placeholder* | [er was toch ook een POC ehealth module?] |
 | SMART Test Suite | Extra Dienst | Geen officieel component, maar erg handig tijdens de ontwikkeling. Deze test suite helpt bij de implementatie van de  [Backend Services Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token). |
 
-
-
+*) Parallel aan de ontwikkeling van Koppeltaal 2.0 is er aan POC Koppeltaal 2.0 implementatie van het Minddistrict platform gewerkt. Binnen deze POC functioneert deze als een 'echte" eHealth Module waartegen concepten en implementatie getoetst worden en ervaringen worden opgedaan.
