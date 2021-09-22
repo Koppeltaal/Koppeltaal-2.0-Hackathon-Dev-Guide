@@ -21,7 +21,7 @@
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
 
-## Technische HOWTO
+## Technische HOW-TO <a id="technische-howto"></a>
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
@@ -39,7 +39,9 @@
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
 * [Launchen](technische-howto/launchen/README.md)
-  * [HTI](technische-howto/launchen/hti.md)
+  * [HTI](technische-howto/launchen/hti/README.md)
+    * [Launch samenstellen](technische-howto/launchen/hti/launch-samenstellen.md)
+    * [Launch Ontvangen](technische-howto/launchen/hti/launch-ontvangen.md)
   * [SMART HTI On FHIR](technische-howto/launchen/smart-hti-on-fhir.md)
 
 ## Hackathon Use Cases
@@ -47,7 +49,8 @@
 * [Requirements](hackathon-use-cases/requirements/README.md)
   * [IRMA Installeren & Configureren](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
 * [Use-Cases](hackathon-use-cases/crud-task/README.md)
-  * [Use-Case 1: Opvoeren Taak](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak.md)
+  * [Use-Case 1: Opvoeren Taak](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/README.md)
+    * [Zelf Een ActivityDefinition Maken](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
   * [Use-Case 2: HTI Launch](hackathon-use-cases/crud-task/use-case-2-hti-launch.md)
   * [Use-case 3: SMART HTI On FHIR Launch](hackathon-use-cases/crud-task/use-case-3-smart-hti-on-fhir-launch.md)
 
