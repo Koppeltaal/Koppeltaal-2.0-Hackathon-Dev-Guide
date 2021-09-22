@@ -1,4 +1,4 @@
-# Authorizeren
+# Autoriseren
 
 ## Request Flow
 

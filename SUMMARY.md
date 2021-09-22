@@ -29,7 +29,7 @@
     * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md)
     * [JWKS Opzetten](technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md)
   * [Toegang tot Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/README.md)
-    * [Authorizeren](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/smart-backend-service.md)
+    * [Autoriseren](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/smart-backend-service.md)
     * [Tokens Refreshen](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/tokens-refreshen.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
   * [Versionering](technische-howto/resources-managen/versionering.md)
@@ -39,10 +39,11 @@
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
 * [Launchen](technische-howto/launchen/README.md)
-  * [HTI](technische-howto/launchen/hti/README.md)
-    * [Launch samenstellen](technische-howto/launchen/hti/launch-samenstellen.md)
-    * [Launch Ontvangen](technische-howto/launchen/hti/launch-ontvangen.md)
+  * [HTI](technische-howto/launchen/hti.md)
   * [SMART HTI On FHIR](technische-howto/launchen/smart-hti-on-fhir.md)
+  * [Launch samenstellen](technische-howto/launchen/launch-samenstellen.md)
+  * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
+  * [SMART HTI On FHIR Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
 
 ## Hackathon Use Cases
 

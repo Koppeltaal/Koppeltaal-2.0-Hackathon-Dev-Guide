@@ -11,7 +11,7 @@ Koppeltaal adviseert om gebruik te maken van [logische referenties](https://www.
 ### Conditional Create
 
 {% hint style="warning" %}
-De conditional create zit nog in de "trial use" fase. De status van deze functionaliteit moet dus nog gereviewed worden.
+De conditional create zit nog in de "trial use" fase. De status van deze functionaliteit moet dus nog gereviewed worden. Binnen Koppeltaal is momenteel nog niet besloten welke create-variant de voorkeur betreft.
 {% endhint %}
 
 De FHIR specificatie beschrijft [conditional creates](https://www.hl7.org/fhir/http.html#ccreate). Wanneer een `Resource` aangemaakt wordt, kan er een `upsert` uitgevoerd worden a.d.h.v. de logische referentie. Wanneer meerdere applicaties in een domein dezelfde type `Resources` aanmaken, is het belangrijk dat er duidelijke afspraken zijn over welke identifier system gebruikt wordt. De conditional create helpt voorkomen dat er dubbele resources bij Koppeltaal aangemaakt worden. 

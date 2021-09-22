@@ -15,6 +15,10 @@ De response geeft netjes aan wat de `access_token` is en hoe lang \(in seconden\
 
 De response bevat ook een `refresh_token`. Deze token kan gebruikt worden om laagdrempelig een nieuwe `access_token` op te vragen.
 
+{% hint style="warning" %}
+Applicaties moeten er vanuit gaan dat `refresh_tokens` ook kunnen verlopen. Wanneer de `refresh_token` te oud is, zal de Auth Server deze, vanwege security redenen, niet meer inruilen voor een  `access_token`. Hou dus rekening met dit scenario. De code zal dan weer opnieuw moeten [autoriseren](smart-backend-service.md).
+{% endhint %}
+
 {% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" %}
 {% api-method-summary %}
 Refresh token consumeren
