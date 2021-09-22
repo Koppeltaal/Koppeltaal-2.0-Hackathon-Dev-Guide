@@ -62,5 +62,5 @@
 
 ## Downloads
 
-* [VZVZ Koppeltaal Documentatie](downloads/downloads.md)
+* [VZVZ Koppeltaal 2.0 Documentatie](downloads/vzvz-koppeltaal-2.0-documentatie.md)
 
