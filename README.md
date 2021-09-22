@@ -24,7 +24,7 @@ Ook is een groot voordeel dat Koppeltaal 2.0 met kleine berichten werkt. Dus gee
 
 Voorheen kon een aparte service gebruikt worden om te kijken of de content van een `Bundle` valide is. Deze validatie werd echter niet afgedwongen door de Koppeltaal server.
 
-Koppeltaal 2.0 maakt gebruik van [profielen](https://simplifier.net/koppeltaal2.0). Een profiel geeft exact aan wat de regels zijn per [Resource](https://www.hl7.org/fhir/resourcelist.html). De Koppeltaal server kan profielen afdwingen en valideren of men zich aan een profiel houdt.
+Koppeltaal 2.0 maakt gebruik van [profielen](https://simplifier.net/Koppeltaalv2.0/~resources?fhirVersion=R4). Een profiel geeft exact aan wat de regels zijn per [Resource](https://www.hl7.org/fhir/resourcelist.html). De Koppeltaal server kan profielen afdwingen en valideren of men zich aan een profiel houdt.
 
 ### **Autorisaties**
 
