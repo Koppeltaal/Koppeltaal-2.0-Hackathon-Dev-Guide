@@ -46,7 +46,7 @@
 
 * [Requirements](hackathon-use-cases/requirements/README.md)
   * [IRMA Installeren & Configureren](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
-* [CRUD Task](hackathon-use-cases/crud-task.md)
+* [Use-Cases](hackathon-use-cases/crud-task.md)
 
 ## Handige Links
 

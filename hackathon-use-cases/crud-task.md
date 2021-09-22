@@ -1,4 +1,4 @@
-# CRUD Task
+# Use-Cases
 
 De hackathon bestaat uit twee use-cases. Deze use-cases concentreren zich op de FHIR `Task` resource. Deze Resource is de kern van Koppeltaal en verwijst naar andere belangrijke Resources. Aan het einde van de hackathon willen we graag de volgende twee use-cases zien werken:
 
