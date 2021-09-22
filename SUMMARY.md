@@ -60,3 +60,7 @@
 * [FHIR Docs](https://simplifier.net/Koppeltaal2.0/~resources)
 * [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 
+## Downloads
+
+* [Downloads](downloads/downloads.md)
+
