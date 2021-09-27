@@ -2,7 +2,7 @@
 
 Koppeltaal gebruikt JWT tokens op verschillende plekken. Voor de dev  guide zijn twee plekken van belang:
 
-1. Voor het [ophalen van een access token](../toegang-tot-koppeltaal/smart-backend-service.md) die toegang geeft tot de Koppeltaal server.
+1. Voor het [ophalen van een access token]() die toegang geeft tot de Koppeltaal server.
 2. Voor het uitvoeren van een [Koppeltaal launch](../../launchen/) middels [HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md).
 
 ### Wat is een JWT?

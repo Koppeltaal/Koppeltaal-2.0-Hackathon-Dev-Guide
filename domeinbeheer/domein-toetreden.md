@@ -10,7 +10,7 @@ Om een domein toe te treden kan een verzoek ingediend worden bij [Domeinbeheer](
 6. Open de tab "OVERZICHT".
 7. Ken een rol toe aan de toegevoegde applicatie.
 8. Verander de status naar `Approved`.
-9. Gebruik de `client_id` in uw applicatie om een [SMART Backend Service](../technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal/smart-backend-service.md) request uit te voeren.
+9. Gebruik de `client_id` in uw applicatie om een [SMART Backend Service]() request uit te voeren.
 
 {% hint style="info" %}
 Koppeltaal vraagt alle applicaties om gebruik te maken van JWKS endpoints bij het opvragen van een`access_token`.   
