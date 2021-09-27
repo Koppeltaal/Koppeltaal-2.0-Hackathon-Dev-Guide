@@ -10,7 +10,7 @@
   * [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
   * [EPD](https://poc-epd.koppeltaal.headease.nl/)
   * [Portaal](https://poc-portal.koppeltaal.headease.nl/)
-  * [Domain Access Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
+  * [Domein Toegang Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
   * [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/)
 
 ## Domeinbeheer
