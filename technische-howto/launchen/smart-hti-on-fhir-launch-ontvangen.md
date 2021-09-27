@@ -11,7 +11,18 @@
 ![bron: https://github.com/Koppeltaal/Koppeltaal-2.0-SMART-HTI-On-FHIR/blob/master/SMART-HTI-On-FHIR.md](../../.gitbook/assets/image%20%281%29.png)
 
 1. Bij binnenkomst van de launch wordt de conformance opgehaald bij de Koppeltaal Server. Hier kan de [authorize & token URL](smart-hti-on-fhir-launch-ontvangen.md#token-url-metadata) opgevraagd worden.
-2. Er wordt een redirect gestuurd naar de authorize URL met de `launch` token. Dit geeft een `code` terug.
+2. Er wordt een redirect gestuurd naar de authorize URL met de onderstaande parameters. Dit geeft de `code` & `state` parameters terug aan de `redirect_url`.
+
+   | Parameters |  |  |
+   | :--- | :--- | :--- |
+   | `response_type` | required | Fixed value: `code`. |
+   | `client_id` | required | De `client_id` binnen het Domein. |
+   | `redirect_uri` | required | De URL  waar de code heengestuurd wordt |
+   | `launch` | required | Het HTI token \(deze komt binnen via de`launch` param\) |
+   | `scope` | required | Mag leeg blijven |
+   | `state` | required | Een opaque waarde die door de client wordt gebruikt om de status tussen de request en de callback te behouden. De autorisatieserver neemt deze waarde op bij het redirecten van de user-agent terug naar de client. De parameter MOET worden gebruikt voor het voorkomen van cross-site request forgery \(CSRF\) aanvallen of sessiefixatie. |
+   | `aud` | required | URL van de Koppeltaal Server \(zelfde als de launch `iss` value.\) |
+
 3. De token URL wordt uitgevoerd. Hierbij wordt  de`code` omgeruild voor:
    1. Een `id_token` \(bevat informatie  over de gebruiker\).
    2. Een no-op `access_token` \(niet te gebruiken op  de Koppeltaal Server omdat deze user-specific is\).
