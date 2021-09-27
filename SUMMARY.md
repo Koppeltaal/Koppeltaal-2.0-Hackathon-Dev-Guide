@@ -42,7 +42,9 @@
 * [Launchen](technische-howto/launchen/README.md)
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
-  * [Launch samenstellen](technische-howto/launchen/launch-samenstellen.md)
+  * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)
+    * [HTI Launch  Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
+    * [SHOF Launch Versturen](technische-howto/launchen/launch-samenstellen/shof-launch-versturen.md)
   * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
   * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
 
