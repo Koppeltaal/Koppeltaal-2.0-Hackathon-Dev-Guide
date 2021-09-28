@@ -41,7 +41,7 @@ Het `HTI:core` profiel beschrijft de volgende velden voor de JWT:
 | Description | Field | Value |
 | :--- | :--- | :--- |
 | Issuer | iss | De `client_id` van het portaal |
-| Audience | aud | De `URL` van de module provider |
+| Audience | aud | De launch `URL` van de module provider. Deze kan gevonden worden op de `ActivityDefinition`. |
 | Unique message id | jti | Een unieke identificatie voor dit bericht. Deze waarde MOET worden behandeld als een NONCE, een volgend bericht met een identieke jti MOET worden afgewezen. De jti-waarde moet een willekeurig of pseudo-getal zijn, de `jti` MOET voldoende entropie bevatten om brute-force-aanvallen te blokkeren. |
 | Issue time | iat | De timestamp van het genereren van het JWT-token. De waarde van dit veld MOET worden gevalideerd door de module provider om niet in de toekomst te zijn. |
 | Expiration time | exp | Deze waarde MOET de time-out zijn van de uitwisseling die het naar de klant verzendt plus de time-out van de uitwisseling die door de klant wordt gebruikt om het te verzenden, de waarde MOET beperkt zijn tot 5 minuten. Deze waarde MOET worden gevalideerd door de module provider, elke waarde die de time-out overschrijdt, MOET worden afgewezen. |
