@@ -13,7 +13,7 @@
 3. Voer vanuit de back-end de [Get Token request](smart-hti-on-fhir-launch-ontvangen.md#get-token) uit. Hierbij wordt de`code` omgeruild voor:
    1. Een `id_token` \(bevat informatie  over de gebruiker als `JWT`\).
    2. Een no-op `access_token` \(niet te gebruiken op  de Koppeltaal Server omdat deze user-specific is\).
-   3. Additionele `context` velden zoals `task`, deze vult de auth server a.d.h.v. het JWT token die als `launch` param is meegegeven.
+   3. Additionele context velden zoals `task`, deze vult de auth server a.d.h.v. het JWT token die als `launch` param is meegegeven.
 
 A.d.h.v. het context object kan bepaald worden wie met welke rol ingelogd is op het systeem en welke taak geopend moet worden. Wanneer er een valide response komt op deze request, is de user te authenticeren en kan er bijv. een sessie aangemaakt worden voor de gebruiker.
 
