@@ -2,10 +2,6 @@
 
 ## Request Flow
 
-{% hint style="info" %}
-Het onderstaande proces dient gebruikt te worden na bijvoorbeeld een server herstart. Als eenmaal een `access_token` is uitgegeven, kan deze [runtime ververst worden]() als de duur is verstreken.
-{% endhint %}
-
 Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow een `access_token` opgevraagd wordt. Hiervoor wordt het volgende diagram gehanteerd:
 
 ![bron: https://hl7.org/fhir/uv/bulkdata/authorization/index.html\#obtaining-an-access-token](../../.gitbook/assets/backend-service-authorization-diagram%20%281%29.png)
