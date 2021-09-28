@@ -14,3 +14,13 @@ Hiervoor kan [Launch samenstellen](../../technische-howto/launchen/launch-samens
 
 Hiervoor kan [SHOF Launch Ontvangen](../../technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md) geraadpleegd worden.
 
+### Testen
+
+De SHOF Launch kan getest worden middels de [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/portal.html). Er kan gelaunched worden naar de POC Module middels de volgende parameters in de Test Suite:
+
+| Attribuut | Waarde |
+| :--- | :--- |
+| Audience \(aud\) | [https://poc-module.koppeltaal.headease.nl/module\_launch](https://poc-module.koppeltaal.headease.nl/module_launch) |
+| Launch url | [https://poc-module.koppeltaal.headease.nl/module\_launch](https://poc-module.koppeltaal.headease.nl/module_launch) |
+| Issuer \(iss\) | 44fe19a0-8ea6-4a23-8be4-ffce364353ba |
+
