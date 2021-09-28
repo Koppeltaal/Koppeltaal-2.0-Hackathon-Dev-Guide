@@ -23,7 +23,7 @@ Authorize Request
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+De URL moet bepaald worden a.d.h.v. de `CapabilityStatement`
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -79,7 +79,7 @@ Get Token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+De URL moet bepaald worden a.d.h.v. de `CapabilityStatement`
 {% endapi-method-description %}
 
 {% api-method-spec %}
