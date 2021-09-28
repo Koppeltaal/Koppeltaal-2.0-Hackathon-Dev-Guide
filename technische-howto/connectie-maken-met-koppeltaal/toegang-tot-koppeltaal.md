@@ -2,10 +2,6 @@
 
 ## Request Flow
 
-{% hint style="danger" %}
-**TODO: JWKS endpoint ophalen uit domein reg? Zelf bijhouden?  Token introspection?**
-{% endhint %}
-
 {% hint style="info" %}
 Het onderstaande proces dient gebruikt te worden na bijvoorbeeld een server herstart. Als eenmaal een `access_token` is uitgegeven, kan deze [runtime ververst worden]() als de duur is verstreken.
 {% endhint %}
