@@ -39,8 +39,6 @@ De Token URL kan gevonden worden in de Koppeltaal Server `CapabilityStatement` [
 
 ![](../../.gitbook/assets/screenshot-2021-09-22-at-21.11.54.png)
 
-\`\`
-
 {% api-method method="get" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/authorize" %}
 {% api-method-summary %}
 Authorize Request
