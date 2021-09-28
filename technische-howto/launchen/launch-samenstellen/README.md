@@ -40,14 +40,14 @@ Het `HTI:core` profiel beschrijft de volgende velden voor de JWT:
 
 | Description | Field | Value |
 | :--- | :--- | :--- |
-| Issuer | iss | This field **MUST** be a reference to the portal application that creates the JWT token. It **MAY** consist of a url or domain name of the portal application. The portal application and module provider **MUST** agree on the value of the iss field. The module provider **MUST** validate the message with the public key associated with the iss reference. The portal application **MAY** disseminate its public keys by the JKWS protocol, in that case the JWT token **MUST** contain a kid field in the JWT header. |
-| Audience | aud | This field **MUST** be a reference to the module provider for which the JWT token is created for. The reference **MAY** consist of a url or domain name of the module provider. The portal application and module provider **MUST** agree on the value of the aud field. The module provider **MUST** validate the aud field to have the expected value. |
-| Unique message id | jti | A unique identifier for this message. This value **MUST** be treated as a NONCE, a subsequent message with an identical jti **MUST** be rejected. The jti value must be a random or pseudo number, the jti **MUST** contain enough entropy to block brute-force attacks. |
-| Issue time | iat | The timestamp of generating the JWT token, the value of this field **MUST** be validated by the module provider to not be in the future. |
-| Expiration time | exp | This value **MUST** be the time-out of the exchange sending it to the client plus the time-out of the exchange used by the client to send it, the value **MUST** be limited to 5 minutes. This value **MUST** be validated by the module provider, any value that exceeds the timeout **MUST** be rejected. |
-| Subject | sub | This value **MUST** be a person reference to the user executing the launch. This way, applications can understand _who_ is launching the provided `Task`. For example, `Practitioner/82421` |
-| Task | task | The FHIR Task object in JSON format. |
-| FHIR Version | fhir-version | The FHIR version for the provided `Task`. When this field is not provided, the FHIR version **MUST** be the latest stable FHIR release. Consumers should evaluate this field in a case-insensitive manner. Currently, the following fields are allowed: `STU3`, `R4` and `R5`. It is strongly advised to always set this field, even when using the latest stable FHIR version. This prevents HTI breaking after a new FHIR stable release. |
+| Issuer | iss | De `client_id` van het portaal |
+| Audience | aud | De `URL` van de module provider |
+| Unique message id | jti | Een unieke identificatie voor dit bericht. Deze waarde MOET worden behandeld als een NONCE, een volgend bericht met een identieke jti MOET worden afgewezen. De jti-waarde moet een willekeurig of pseudo-getal zijn, de `jti` MOET voldoende entropie bevatten om brute-force-aanvallen te blokkeren. |
+| Issue time | iat | De timestamp van het genereren van het JWT-token. De waarde van dit veld MOET worden gevalideerd door de module provider om niet in de toekomst te zijn. |
+| Expiration time | exp | Deze waarde MOET de time-out zijn van de uitwisseling die het naar de klant verzendt plus de time-out van de uitwisseling die door de klant wordt gebruikt om het te verzenden, de waarde MOET beperkt zijn tot 5 minuten. Deze waarde MOET worden gevalideerd door de module provider, elke waarde die de time-out overschrijdt, MOET worden afgewezen. |
+| Subject | sub | Deze waarde MOET een persoonsreferentie zijn naar de gebruiker die de lancering uitvoert. Op deze manier kunnen toepassingen begrijpen wie de opgegeven taak start. Bijvoorbeeld `Practitioner/82421` |
+| Task | task | De FHIR Task in JSON formaat. |
+| FHIR Version | fhir-version | Dit veld hoeft niet meegegeven te worden omdat Koppeltaal FHIR `R4` gebruikt, dit is de default in HTI. |
 
 The timestamps follows the ["UNIX time"](https://en.wikipedia.org/wiki/Unix_time) convention, being the number of seconds since the epoch.
 
