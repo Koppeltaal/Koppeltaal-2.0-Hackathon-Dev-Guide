@@ -49,6 +49,11 @@ In dit diagram is te zien dat er eerst een JWT token wordt samengesteld en [onde
           worden)</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">jti</td>
+      <td style="text-align:left">Random identifier, deze wordt gebruikt door de auth server om te verifi&#xEB;ren
+        dat JWT&apos;s niet gereplayed worden. Gebruik hier iets als een GUID.</td>
+    </tr>
   </tbody>
 </table>
 
