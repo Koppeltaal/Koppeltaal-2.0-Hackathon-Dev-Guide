@@ -22,5 +22,4 @@ De SHOF Launch kan getest worden middels de [Launch Test Suite](https://launch-t
 | :--- | :--- |
 | Audience \(aud\) | [https://poc-module.koppeltaal.headease.nl/module\_launch](https://poc-module.koppeltaal.headease.nl/module_launch) |
 | Launch url | [https://poc-module.koppeltaal.headease.nl/module\_launch](https://poc-module.koppeltaal.headease.nl/module_launch) |
-| Issuer \(iss\) | 44fe19a0-8ea6-4a23-8be4-ffce364353ba |
 
