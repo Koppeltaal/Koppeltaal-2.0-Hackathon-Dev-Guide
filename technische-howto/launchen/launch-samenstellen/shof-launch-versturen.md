@@ -6,6 +6,10 @@ De SHOF launch wordt middels een `GET` request uitgevoerd. De server kan de  geb
 Let op dat de SHOF launch twee keer een  `iss`  defined, één keer inde JWT en één keer in de launch. In beide gevallen hebben ze een andere waarde.
 {% endhint %}
 
+{% hint style="warning" %}
+Het staat nog ter discussie om de SHOF Launch middels een POST uit te voeren. Op deze manier maakt het niet uit of er een HTI of SHOF launch uitgestuurd wordt.
+{% endhint %}
+
 {% api-method method="get" host="{{ActivityDefinition.endpoint}}" path="" %}
 {% api-method-summary %}
 SHOF Launch 
