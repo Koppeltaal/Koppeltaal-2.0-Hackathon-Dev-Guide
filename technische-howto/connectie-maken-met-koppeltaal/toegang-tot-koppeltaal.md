@@ -4,11 +4,57 @@
 
 Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow een `access_token` opgevraagd wordt. Hiervoor wordt het volgende diagram gehanteerd:
 
+{% hint style="info" %}
+
+{% endhint %}
+
 ![bron: https://hl7.org/fhir/uv/bulkdata/authorization/index.html\#obtaining-an-access-token](../../.gitbook/assets/backend-service-authorization-diagram%20%281%29.png)
 
-In dit diagram is te zien dat er eerst een JWT token wordt samengesteld en [ondertekend](requirements/jwt-ondertekenen.md). Vervolgens wordt er een OAuth client credential flow uitgevoerd richting de auth server. 
-
+{% hint style="info" %}
 De inhoud van de JWT en de OAuth request worden [hier](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#protocol-details) gedetailleerd beschreven. Koppeltaal kent een uitzondering op de `scope` parameter. Deze mag meegestuurd worden maar is niet verplicht en wordt niet verwerkt.
+{% endhint %}
+
+### 1. JWT 
+
+In dit diagram is te zien dat er eerst een JWT token wordt samengesteld en [ondertekend](requirements/jwt-ondertekenen.md). De volgende velden moeten worden gezet:
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Veld</th>
+      <th style="text-align:left">Waarde</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">iss</td>
+      <td style="text-align:left">Vullen met de <code>client_id</code> verkregen uit <a href="../../domeinbeheer/domein-toetreden.md">Domein toetreden</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">sub</td>
+      <td style="text-align:left">Vullen met de <code>client_id</code> verkregen uit <a href="../../domeinbeheer/domein-toetreden.md">Domein toetreden</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">exp</td>
+      <td style="text-align:left">UNIX timestamp van nu + 5 minuten</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">aud</td>
+      <td style="text-align:left">
+        <p>Vullen met <a href="https://authentication-service.koppeltaal.headease.nl/oauth2/token">https://authentication-service.koppeltaal.headease.nl/oauth2/token</a>
+        </p>
+        <p>(deze waarde kan altijd uit de <a href="https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata"><code>CapabilityStatement</code></a> gehaald
+          worden)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### 2. Access Token Opvragen
+
+Voer de onderstaande request uit:
 
 {% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" %}
 {% api-method-summary %}
