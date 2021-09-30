@@ -73,7 +73,7 @@ Loocation: https://launch-testsuite.koppeltaal.headease.nl/module_authentication
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/authorize" %}
+{% api-method method="post" host="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" %}
 {% api-method-summary %}
 Get Token
 {% endapi-method-summary %}
