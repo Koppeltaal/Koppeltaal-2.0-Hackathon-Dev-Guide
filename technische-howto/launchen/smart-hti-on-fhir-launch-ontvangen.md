@@ -85,8 +85,8 @@ De URL moet bepaald worden a.d.h.v. de `CapabilityStatement`
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Content-Type" type="string" required=true %}
-
+{% api-method-parameter name="Content-Type" required=true %}
+application/x-www-form-urlencoded
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
