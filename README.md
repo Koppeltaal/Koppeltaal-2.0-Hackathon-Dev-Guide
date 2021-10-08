@@ -23,8 +23,6 @@ This document is in draft.
 [Joris Scharp](mailto:joris@headease.nl)  
 [Headease B.V.](https://www.headease.nl/)
 
-### 
-
 ## Belangrijke verschillen t.o.v. Koppeltaal 1.x
 
 | Concept | **KT 1.x** | KT 2.0 |
