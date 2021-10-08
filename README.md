@@ -6,6 +6,25 @@ description: >-
 
 # Developer Guide
 
+## Document Information
+
+### Copyright Notice
+
+![](https://lh3.googleusercontent.com/OOulGS7n3iwBmxopI-5TrBWVzAgShugACJOq3D61UVu8-Z3VJbcO-lkvnnpOlTrxTJQ1p5FasQVujHPNna64P8p5EPQkhdCnQGJl39LVokDNWNRTCtOKOM3MtWwHd2_BR6adVOIn)
+
+This document is released under the [Attribution-ShareAlike 4.0 International \(CC BY-SA 4.0\) license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+### Status
+
+This document is in draft.
+
+### Author / contact
+
+[Joris Scharp](mailto:joris@headease.nl)  
+[Headease B.V.](https://www.headease.nl/)
+
+### 
+
 ## Belangrijke verschillen t.o.v. Koppeltaal 1.x
 
 | Concept | **KT 1.x** | KT 2.0 |
@@ -36,5 +55,5 @@ Let op: Resources worden op applicatie-niveau gemanaged door Koppeltaal 2.0.
 De gouden regel is dat de applicatie **zelf** bepaalt welke resources toegankelijk zijn op user-niveau binnen de applicatie.
 {% endhint %}
 
-
+## 
 
