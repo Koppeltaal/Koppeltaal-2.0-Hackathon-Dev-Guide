@@ -1,17 +1,17 @@
 # Table of contents
 
-* [Developer Guide](README.md)
+* [Koppeltaal 2.0 Developer Guide](README.md)
 
-## POC \(Walking Skeleton\)
+## POC (Walking Skeleton)
 
 * [Proof Of Concept](poc-walking-skeleton/proof-of-concept/README.md)
   * [Koppeltaal Server](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata)
-  * [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/)
-  * [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
-  * [EPD](https://poc-epd.koppeltaal.headease.nl/)
-  * [Portaal](https://poc-portal.koppeltaal.headease.nl/)
-  * [Domein Toegang Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
-  * [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/)
+  * [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl)
+  * [Auth Server](https://authentication-service.koppeltaal.headease.nl)
+  * [EPD](https://poc-epd.koppeltaal.headease.nl)
+  * [Portaal](https://poc-portal.koppeltaal.headease.nl)
+  * [Domein Toegang Test Suite](https://smart-testsuite.koppeltaal.headease.nl)
+  * [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl)
 
 ## Domeinbeheer
 
@@ -22,7 +22,7 @@
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
 
-## Technische HOW-TO <a id="technische-howto"></a>
+## Technische HOW-TO <a href="technische-howto" id="technische-howto"></a>
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
@@ -41,7 +41,7 @@
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)
-    * [HTI Launch  Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
+    * [HTI Launch Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
     * [SHOF Launch Versturen](technische-howto/launchen/launch-samenstellen/shof-launch-versturen.md)
   * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
   * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
@@ -58,12 +58,11 @@
 
 ## Handige Links
 
-* [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/~resources?fhirVersion=R4)
-* [FHIR Docs](https://simplifier.net/Koppeltaal2.0/~resources)
+* [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
+* [FHIR Docs](https://simplifier.net/Koppeltaal2.0/\~resources)
 * [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
 
 ## Downloads
 
 * [VZVZ Koppeltaal 2.0 Documentatie](downloads/vzvz-koppeltaal-2.0-documentatie.md)
-
