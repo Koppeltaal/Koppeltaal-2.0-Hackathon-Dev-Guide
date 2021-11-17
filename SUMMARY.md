@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Koppeltaal 2.0 Developer Guide](README.md)
+* [Developer Guide](README.md)
 
 ## POC (Walking Skeleton)
 
@@ -41,7 +41,7 @@
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)
-    * [HTI Launch Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
+    * [HTI Launch  Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
     * [SHOF Launch Versturen](technische-howto/launchen/launch-samenstellen/shof-launch-versturen.md)
   * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
   * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
@@ -59,7 +59,7 @@
 ## Handige Links
 
 * [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
-* [FHIR Docs](https://simplifier.net/Koppeltaal2.0/\~resources)
+* [FHIR Docs](https://www.hl7.org/fhir/documentation.html)
 * [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
 
