@@ -22,7 +22,7 @@
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
 
-## Technische HOW-TO <a href="technische-howto" id="technische-howto"></a>
+## Technische HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
@@ -37,6 +37,7 @@
     * [Resource Ophalen](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
+  * [Abonneren op changes](technische-howto/resources-managen/abonneren-op-changes.md)
 * [Launchen](technische-howto/launchen/README.md)
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
@@ -55,6 +56,7 @@
     * [Zelf Een ActivityDefinition Maken](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
   * [Use-Case 2: HTI Launch](hackathon-use-cases/crud-task/use-case-2-hti-launch.md)
   * [Use-case 3: SHOF Launch](hackathon-use-cases/crud-task/use-case-3-smart-hti-on-fhir-launch.md)
+  * [Use-case 4: Abonneren op changes](hackathon-use-cases/crud-task/use-case-4-abonneren-op-changes.md)
 
 ## Handige Links
 
