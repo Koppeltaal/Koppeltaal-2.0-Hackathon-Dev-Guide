@@ -10,7 +10,7 @@
 
 ### JWT verifiëren
 
-De binnenkomende launches bevatten een `token` parameter. Deze token bevat de ondertekende JWT token (conform de [HTI spec](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#-the-message-format)).
+De binnenkomende launches bevatten een `token` parameter. Deze token bevat de ondertekende JWT token (zie [Launch samenstellen](../launch-samenstellen/)).
 
 #### Token Introspection
 
