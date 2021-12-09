@@ -12,7 +12,5 @@ Hiervoor kan [Launch samenstellen](../../technische-howto/launchen/launch-samens
 
 ### Launch Ontvangen
 
-Hiervoor kan [HTI Launch Ontvangen](../../technische-howto/launchen/launch-ontvangen.md) geraadpleegd worden.
-
-
+Hiervoor kan [HTI Launch Ontvangen](../../technische-howto/launchen/launch-ontvangen/) geraadpleegd worden.
 

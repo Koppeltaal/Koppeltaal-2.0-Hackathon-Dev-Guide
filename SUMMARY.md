@@ -44,7 +44,8 @@
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)
     * [HTI Launch  Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
     * [SHOF Launch Versturen](technische-howto/launchen/launch-samenstellen/shof-launch-versturen.md)
-  * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
+  * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen/README.md)
+    * [Token Introspection](technische-howto/launchen/launch-ontvangen/token-introspection.md)
   * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
 
 ## Hackathon Use Cases
