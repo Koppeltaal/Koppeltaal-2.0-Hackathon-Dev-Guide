@@ -24,6 +24,7 @@
 
 ## Technische HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 
+* [Koppeltaal server metadata opvragen](technische-howto/koppeltaal-server-metadata-opvragen.md)
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
     * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/requirements/key-pair-maken.md)
@@ -42,7 +43,7 @@
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)
-    * [HTI Launch  Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
+    * [HTI Launch Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
     * [SHOF Launch Versturen](technische-howto/launchen/launch-samenstellen/shof-launch-versturen.md)
   * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen/README.md)
     * [Token Introspection](technische-howto/launchen/launch-ontvangen/token-introspection.md)
