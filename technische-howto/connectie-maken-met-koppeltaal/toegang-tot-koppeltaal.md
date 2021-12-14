@@ -4,10 +4,6 @@
 
 Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow een `access_token` opgevraagd wordt. Hiervoor wordt het volgende diagram gehanteerd:
 
-{% hint style="info" %}
-
-{% endhint %}
-
 ![bron: https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token](<../../.gitbook/assets/backend-service-authorization-diagram (1).png>)
 
 {% hint style="info" %}
@@ -87,3 +83,7 @@ In de voorbeeld-response zou de header er als volgt uit moeten zien:
 ```
 Authorization: Bearer eyJraWQiOiJKR3pTYmgzVS1TQlVabllIQjJQaWhzN0FBc0Vubk8zelpqUS1RSjFTN0tzIiwiYWxnIjoiUlM1MTIiLCJ0eXAiOiJKV1QifQ
 ```
+
+### Token vernieuwen
+
+In de POC is een `access_token` maar liefst één uur geldig. Wanneer deze tijd verstreken is zal Koppeltaal server een `401` error teruggeven. De [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) kent geen `refresh_token`. De applicatie dient punt 1 & 2 opnieuw uit te voeren.
