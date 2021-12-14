@@ -13,7 +13,9 @@ Om een domein toe te treden kan een verzoek ingediend worden bij [Domeinbeheer](
 9. Gebruik de `client_id` in uw applicatie om een [SMART Backend Service](../technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md) request uit te voeren.
 
 {% hint style="info" %}
-Koppeltaal vraagt alle applicaties om gebruik te maken van JWKS endpoints bij het opvragen van een`access_token`. \
-\
+Koppeltaal vraagt alle applicaties om gebruik te maken van JWKS endpoints bij het opvragen van een`access_token`.&#x20;
+
 Wanneer applicaties lokaal getest worden is het erg lastig om JWKS te gebruiken. In dat geval is het ook mogelijk om simpelweg een public key in PEM formaat te registreren.
+
+Om toch snel middels JWKS te testen kan gebruik gemaakt worden van handige tools zoals [ngrok](https://ngrok.com).
 {% endhint %}
