@@ -42,19 +42,25 @@ De FHIR specificatie beschrijft [conditional creates](https://www.hl7.org/fhir/h
 
 {% endswagger-description %}
 
+{% swagger-parameter in="header" name="Content-Type" required="true" %}
+
+
+`application/fhir+json` OF `application/fhir+xml`
+{% endswagger-parameter %}
+
 {% swagger-parameter in="header" name="If-None-Exist" type="string" %}
 De logical identifier, bijv:
 
 `identifier=http://my-lab-system|123`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
-Het 
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Value 
 
-`access_token`
+`Bearer <access_token>`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="" type="object" %}
+{% swagger-parameter in="body" name="" type="object" required="true" %}
 Resource
 {% endswagger-parameter %}
 
@@ -94,13 +100,21 @@ Resource
 
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
-Het
+{% swagger-parameter in="header" name="Content-type" required="true" %}
+`application/fhir+json`
 
-`access_token`
+ OF 
+
+`application/fhir+xml`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="" type="object" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Value 
+
+`Bearer <access_token>`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="" type="object" required="true" %}
 Resource
 {% endswagger-parameter %}
 
