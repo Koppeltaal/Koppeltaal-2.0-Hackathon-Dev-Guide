@@ -15,7 +15,7 @@ Om een domein toe te treden kan een verzoek ingediend worden bij [Domeinbeheer](
 {% hint style="info" %}
 Koppeltaal vraagt alle applicaties om gebruik te maken van JWKS endpoints bij het opvragen van een`access_token`.&#x20;
 
-Wanneer applicaties lokaal getest worden is het erg lastig om JWKS te gebruiken. In dat geval is het ook mogelijk om simpelweg een public key in PEM formaat te registreren.
+Wanneer applicaties lokaal getest worden is het erg lastig om JWKS te gebruiken. In dat geval is het ook mogelijk om simpelweg een public key in PEM formaat te registreren. Om snel een bruikbare key te genereren kan gebruik gemaakt worden van [dit](https://github.com/Koppeltaal/Koppeltaal-2.0-Generate-KeyPair/) project.
 
 Om toch snel middels JWKS te testen kan gebruik gemaakt worden van handige tools zoals [ngrok](https://ngrok.com).
 {% endhint %}
