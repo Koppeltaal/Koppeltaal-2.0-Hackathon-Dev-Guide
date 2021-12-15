@@ -4,7 +4,7 @@
 
 Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow een `access_token` opgevraagd wordt. Hiervoor wordt het volgende diagram gehanteerd:
 
-![bron: https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token](<../../.gitbook/assets/backend-service-authorization-diagram (1).png>)
+![SMART Backend auth flow](<../../.gitbook/assets/backend-service-authorization-diagram (2).png>)
 
 {% hint style="info" %}
 De inhoud van de JWT en de OAuth request worden [hier](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#protocol-details) gedetailleerd beschreven. Koppeltaal kent een uitzondering op de `scope` parameter. Deze mag meegestuurd worden maar is niet verplicht en wordt niet verwerkt.
