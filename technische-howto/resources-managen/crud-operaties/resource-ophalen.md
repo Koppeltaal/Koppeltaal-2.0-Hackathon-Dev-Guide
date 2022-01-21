@@ -8,45 +8,87 @@ description: Haalt één specifieke Resource op
 Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meer informatie.
 {% endhint %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="get" summary="Specifieke  Resource Ophalen" %}
-{% swagger-description %}
+{% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" %}
+{% api-method-summary %}
+Specifieke  Resource Ophalen
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="path" name="id" type="string" %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=true %}
 Resource.id to be  retrieved
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
-{% swagger-parameter in="header" name="Authentication" type="string" %}
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
 Authentication token verkregen via de Auth Server
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```
+
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/_history/<:versie>" method="get" summary="Specifieke  versie van een Resource ophalen" %}
-{% swagger-description %}
+{% api-method method="get" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/\_history/<:versie>" %}
+{% api-method-summary %}
+Specifieke  versie van een Resource ophalen
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="path" name="id" %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" required=true %}
 Resource.id to be  retrieved
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
 
-{% swagger-parameter in="path" name="versie" type="string" %}
+{% api-method-parameter name="versie" type="string" required=true %}
 De versie
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="" %}
-```
-```
-{% endswagger-response %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
 
-{% swagger-response status="404" description="Versie bestaat niet" %}
+{% endapi-method-response-example-description %}
+
 ```
+
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+Versie bestaat niet
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+

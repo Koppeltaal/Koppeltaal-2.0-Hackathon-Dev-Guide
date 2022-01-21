@@ -9,11 +9,13 @@ description: Health Tools Interoperability
 ### Requirements
 
 1. Er moet een [JWKS endpoint opgezet](../connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md) zijn.
-2. De `module provider` gebruikt [Token Introspection](launch-ontvangen/token-introspection.md) OF moet in het bezit zijn van de issuer en de gerelateerde JWKS endpoint
+2. De `module provider` moet in het bezit zijn van de issuer en de gerelateerde JWKS endpoint
 
 ### Informatie Flow
 
 De HTI launch gebeurt zonder een authenticatie server. Daarom is het van belang dat de `module provider` in het bezit is van de issuer en de gerelateerde JWKS endpoint. Op deze manier kan bewezen worden dat het `portal` daadwerkelijk het bericht heeft samengesteld. Ook mag er een public key uitgewisseld worden, al is er  een sterke voorkeur om JWKS te gebruiken aangezien applicaties dit moeten implementeren om een [Connectie te maken met Koppeltaal](../connectie-maken-met-koppeltaal/).
 
-![bron: https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#implementation-guide](../../.gitbook/assets/image.png)
+![bron: https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md\#implementation-guide](../../.gitbook/assets/image.png)
+
+
 

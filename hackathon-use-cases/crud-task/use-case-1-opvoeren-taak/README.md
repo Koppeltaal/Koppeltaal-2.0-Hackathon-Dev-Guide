@@ -10,7 +10,7 @@ Wanneer er Resources aangemaakt moeten worden die nodig zijn voor het aanmaken v
 
 ### Taak aanmaken
 
-Een `Task` aanmaken in de Koppeltaal Server werkt net als alle andere Resources: middels de RESTful API.&#x20;
+Een `Task` aanmaken in de Koppeltaal Server werkt net als alle andere Resources: middels de RESTful API. 
 
 De `Task` resource kan het makkelijkst aangemaakt worden middels een officiële FHIR library. Raadpleeg eerst de [FHIR Downloads pagina](https://hl7.org/fhir/r4/downloads.html) om te kijken of hier een bruikbare library tussen staat. De uiteindelijk uitkomst van de code moet een POST zijn richting de Koppeltaal Server. Meer informatie over het aanmaken van resources is [hier](../../../technische-howto/resources-managen/crud-operaties/resource-aanmaken.md) beschreven.
 
@@ -27,7 +27,7 @@ Dit is een voorbeeld van een valide `Task` payload:
   "resourceType": "Task",
   "meta": {
     "profile": [
-      "http://koppeltaal.nl/fhir/StructureDefinition/KT2Task"
+      "http://example.org/fhir/StructureDefinition/KT2Task"
     ]
   },
   "identifier": [
@@ -47,3 +47,4 @@ Dit is een voorbeeld van een valide `Task` payload:
   }
 }
 ```
+

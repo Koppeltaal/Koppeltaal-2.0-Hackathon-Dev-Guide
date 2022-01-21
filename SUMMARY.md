@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Developer Guide](README.md)
+* [Koppeltaal 2.0 Developer Guide](README.md)
 
 ## POC (Walking Skeleton)
 
@@ -24,7 +24,6 @@
 
 ## Technische HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 
-* [Koppeltaal server metadata opvragen](technische-howto/koppeltaal-server-metadata-opvragen.md)
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
     * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/requirements/key-pair-maken.md)
@@ -38,15 +37,13 @@
     * [Resource Ophalen](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
-  * [Abonneren op changes](technische-howto/resources-managen/abonneren-op-changes.md)
 * [Launchen](technische-howto/launchen/README.md)
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)
     * [HTI Launch Versturen](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
     * [SHOF Launch Versturen](technische-howto/launchen/launch-samenstellen/shof-launch-versturen.md)
-  * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen/README.md)
-    * [Token Introspection](technische-howto/launchen/launch-ontvangen/token-introspection.md)
+  * [HTI Launch Ontvangen](technische-howto/launchen/launch-ontvangen.md)
   * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
 
 ## Hackathon Use Cases
@@ -58,12 +55,11 @@
     * [Zelf Een ActivityDefinition Maken](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
   * [Use-Case 2: HTI Launch](hackathon-use-cases/crud-task/use-case-2-hti-launch.md)
   * [Use-case 3: SHOF Launch](hackathon-use-cases/crud-task/use-case-3-smart-hti-on-fhir-launch.md)
-  * [Use-case 4: Abonneren op changes](hackathon-use-cases/crud-task/use-case-4-abonneren-op-changes.md)
 
 ## Handige Links
 
 * [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
-* [FHIR Docs](https://www.hl7.org/fhir/documentation.html)
+* [FHIR Docs](https://simplifier.net/Koppeltaal2.0/\~resources)
 * [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
 

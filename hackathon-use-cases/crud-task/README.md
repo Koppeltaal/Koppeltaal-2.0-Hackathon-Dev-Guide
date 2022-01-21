@@ -4,8 +4,9 @@ De hackathon bestaat uit drie use-cases. Deze use-cases concentreren zich op de 
 
 1. Vanuit een behandelarenportaal een `Task` toekennen aan een `Patient` .
 2. Vanuit een patiëntenportaal de `Task` uitvoeren middels [HTI](../../technische-howto/launchen/).
-3. Vanuit een patiëntenportaal de `Task` uitvoeren middels [SMART HTI On FHIR](broken-reference).
+3. Vanuit een patiëntenportaal de `Task` uitvoeren middels [SMART HTI On FHIR]().
 
 {% hint style="info" %}
 Wanneer
 {% endhint %}
+
