@@ -1,7 +1,7 @@
 # Resource Updaten
 
 {% hint style="danger" %}
-TODO: If-Match discussie verwerken  - afdwingen of niet
+TODO: If-Match discussie verwerken - afdwingen of niet
 {% endhint %}
 
 {% hint style="info" %}
@@ -12,115 +12,77 @@ Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#update) voor meer 
 
 Om te voorkomen dat er data wordt overschreven, moet een applicatie altijd aangeven op basis van welke versie de`Resource` geüpdate wordt. Dit wordt [gedaan](https://www.hl7.org/fhir/http.html#concurrency) middels de `If-Match` header. Wanneer de update gebaseerd is op een te oude versie zal de server met een `409 Conflict` responden. De `If-Match` value moet overeenkomen de `ETag` value. De `ETag` is een response header die na een [Create](resource-aanmaken.md) of [Get](resource-ophalen.md) meegegeven wordt door de Koppeltaal server.
 
-{% api-method method="put" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" %}
-{% api-method-summary %}
-Complete resource
-{% endapi-method-summary %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="put" summary="Complete resource" %}
+{% swagger-description %}
+De logische id moet ook aanwezig zijn in de 
 
-{% api-method-description %}
-De logische id moet ook aanwezig zijn in de `Resource` zelf.
-{% endapi-method-description %}
+`Resource`
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" required=true %}
-De "logical id" van de `Resource`
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+ zelf.
+{% endswagger-description %}
 
-{% api-method-headers %}
-{% api-method-parameter name="If-Match" type="string" required=true %}
+{% swagger-parameter name="id" type="string" required="true" in="path" %}
+De "logical id" van de 
+
+`Resource`
+{% endswagger-parameter %}
+
+{% swagger-parameter name="If-Match" type="string" required="true" in="header" %}
 De versie waarop de update toegepast is, bijv: W/"23"
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Authorization" type="string" required=true %}
-De access\_token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter name="Authorization" type="string" required="true" in="header" %}
+De access_token
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-De `Resource`
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter name="" type="string" required="false" in="body" %}
+De 
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Resource is aangepast. De resource met resource-origin extensie en logical id wordt teruggegeven
-{% endapi-method-response-example-description %}
+`Resource`
+{% endswagger-parameter %}
 
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-De resource kan niet geparsed worden of comformeert niet aan de basis FHIR validatie regels
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Resource type wordt niet ondersteund, of geen FHIR-endpoint
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="404" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=405 %}
-{% api-method-response-example-description %}
-De Resource bestaat niet \(a.d.h.v. de logische id\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="405" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=409 %}
-{% api-method-response-example-description %}
-Change gebaseerd op een oude versie
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="409" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=422 %}
-{% api-method-response-example-description %}
-Voldoet niet aan de FHIR profielen of Koppeltaal business regels
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="422" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ### Delen van een Resource Updaten
 
-Om middels een kleine payload een  resource  te updaten kan gebruik gemaakt worden van een  `PATCH` request. De payload van de `PATCH` moet een van de volgende zijn:
+Om middels een kleine payload een resource te updaten kan gebruik gemaakt worden van een `PATCH` request. De payload van de `PATCH` moet een van de volgende zijn:
 
-1. Een [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902)  \(Content-Type application/json-patch+json\)
-2. Een [XML Patch](https://datatracker.ietf.org/doc/html/rfc5261)  \(Content-Type application/xml-patch+xml\)
-3. Een [FHIRPath Patch](https://www.hl7.org/fhir/fhirpatch.html) parameters Resource  \(Content-Type [FHIR Content Type](https://www.hl7.org/fhir/http.html#mime-type)\)
+1. Een [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) (Content-Type application/json-patch+json)
+2. Een [XML Patch](https://datatracker.ietf.org/doc/html/rfc5261) (Content-Type application/xml-patch+xml)
+3. Een [FHIRPath Patch](https://www.hl7.org/fhir/fhirpatch.html) parameters Resource (Content-Type [FHIR Content Type](https://www.hl7.org/fhir/http.html#mime-type))
 
 Zo ziet de payload er uit van een JSON Patch om de status te updaten van een `Task`:
 
-```text
+```
 [{
     "op": "replace",
     "path": "/status",
@@ -130,51 +92,31 @@ Zo ziet de payload er uit van een JSON Patch om de status te updaten van een `Ta
 
 Voorbeelden van meer type patches kunnen [hier](https://www.hl7.org/fhir/test-cases.zip) gedownload worden.
 
-{% api-method method="patch" host="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" %}
-{% api-method-summary %}
-Deel van een Resource Updaten
-{% endapi-method-summary %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Deel van een Resource Updaten" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter required="true" in="path" %}
+De "logical id" van de 
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter required=true %}
-De "logical id" van de `Resource`
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+`Resource`
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="If-Match" required=true type="string" %}
+{% swagger-parameter name="If-Match" required="true" type="string" in="header" %}
 De versie waarop de update toegepast is, bijv: W/"23"
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter name="Authorization" type="string" required="true" in="header" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="" type="object" required=true %}
+{% swagger-parameter name="" type="object" required="true" in="body" %}
 De Patch
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Patch is toegepast. De complete Resource wordt teruggegeven
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

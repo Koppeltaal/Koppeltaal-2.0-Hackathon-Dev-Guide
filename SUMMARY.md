@@ -59,10 +59,9 @@
 ## Handige Links
 
 * [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
-* [FHIR Docs](https://simplifier.net/Koppeltaal2.0/\~resources)
 * [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
 
 ## Downloads
 
-* [VZVZ Koppeltaal 2.0 Documentatie](downloads/vzvz-koppeltaal-2.0-documentatie.md)
+* [Koppeltaal 2.0 Specificaties & Architectuur](downloads/koppeltaal-2.0-specificaties-and-architectuur.md)
