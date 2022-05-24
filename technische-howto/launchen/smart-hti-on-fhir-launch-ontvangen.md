@@ -11,8 +11,8 @@
 1. Bij binnenkomst van de launch wordt de conformance opgehaald bij de Koppeltaal Server. Hier kan de [authorize & token URL](smart-hti-on-fhir-launch-ontvangen.md#token-and-authorize-url-metadata) opgevraagd worden.
 2. Er wordt een [redirect gestuurd](smart-hti-on-fhir-launch-ontvangen.md#authorize-request) naar de authorize URL. Dit geeft de `code` & `state` parameters terug aan de `redirect_url`. Let er op dat de state waarde gekoppeld wordt aan de `redirect_uri`, deze moet in de volgende stap namelijk weer meegegeven worden.
 3. Voer vanuit de back-end de [Get Token request](smart-hti-on-fhir-launch-ontvangen.md#get-token) uit. Hierbij wordt de`code` omgeruild voor:
-   1. Een `id_token` (bevat informatie over de gebruiker als `JWT`).
-   2. Een no-op `access_token` (niet te gebruiken op de Koppeltaal Server omdat deze user-specific is).
+   1. Een `id_token` (bevat informatie  over de gebruiker als `JWT`).
+   2. Een no-op `access_token` (niet te gebruiken op  de Koppeltaal Server omdat deze user-specific is).
    3. Additionele context velden zoals `task`, deze vult de auth server a.d.h.v. het JWT token die als `launch` param is meegegeven.
 
 A.d.h.v. het context object kan bepaald worden wie met welke rol ingelogd is op het systeem en welke taak geopend moet worden. Wanneer er een valide response komt op deze request, is de user te authenticeren en kan er bijv. een sessie aangemaakt worden voor de gebruiker.
@@ -24,7 +24,7 @@ De URL moet bepaald worden a.d.h.v. de
 `CapabilityStatement`
 {% endswagger-description %}
 
-{% swagger-parameter type="string" name="aud" required="true" in="query" %}
+{% swagger-parameter in="query" name="aud" type="string" %}
 URL van de Koppeltaal Server (zelfde als de launch 
 
 `iss`
@@ -32,35 +32,35 @@ URL van de Koppeltaal Server (zelfde als de launch
  value)
 {% endswagger-parameter %}
 
-{% swagger-parameter type="string" name="scope" required="true" in="query" %}
+{% swagger-parameter in="query" name="scope" type="string" %}
 Altijd: 
 
 `launch openid`
 {% endswagger-parameter %}
 
-{% swagger-parameter type="string" name="state" required="true" in="query" %}
+{% swagger-parameter in="query" name="state" type="string" %}
 Een opaque waarde die door de client wordt gebruikt om de status tussen de request en de callback te behouden. De autorisatieserver neemt deze waarde op bij het redirecten van de user-agent terug naar de client. De parameter MOET worden gebruikt voor het voorkomen van cross-site request forgery (CSRF) aanvallen of sessiefixatie.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="launch" required="true" type="string" in="query" %}
+{% swagger-parameter in="query" name="launch" type="string" %}
 Het HTI token (deze komt binnen via delaunch param)
 {% endswagger-parameter %}
 
-{% swagger-parameter name="redirect:uri" type="string" required="true" in="query" %}
+{% swagger-parameter in="query" name="redirect_uri" type="string" %}
 De URL waar de code naartoe teruggestuurd moet worden
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:id" type="string" required="true" in="query" %}
+{% swagger-parameter in="query" name="client_id" type="string" %}
 De client_id uit Domeinbeheer
 {% endswagger-parameter %}
 
-{% swagger-parameter name="response:type" type="string" required="true" in="query" %}
+{% swagger-parameter in="query" name="response_type" type="string" %}
 Altijd: 
 
 `code`
 {% endswagger-parameter %}
 
-{% swagger-response status="302" description="" %}
+{% swagger-response status="302" description="The Location header will redirect with a code and the state" %}
 ```
 Loocation: https://launch-testsuite.koppeltaal.headease.nl/module_authentication_shof?code=05b542e2-6206-449b-924b-99d39168029b&state=99a8cf9a-28c2-4867-8123-486c04003482
 ```
@@ -74,11 +74,11 @@ De URL moet bepaald worden a.d.h.v. de
 `CapabilityStatement`
 {% endswagger-description %}
 
-{% swagger-parameter name="Content-Type" required="true" in="header" %}
+{% swagger-parameter in="header" name="Content-Type" %}
 application/x-www-form-urlencoded
 {% endswagger-parameter %}
 
-{% swagger-parameter type="string" name="redirect:uri" required="true" in="body" %}
+{% swagger-parameter in="body" name="redirect_uri" type="string" %}
 Dezelfde 
 
 `redirect_uri`
@@ -86,11 +86,11 @@ Dezelfde
  die gebruikt is bij de authorization request
 {% endswagger-parameter %}
 
-{% swagger-parameter type="string" name="code" required="true" in="body" %}
+{% swagger-parameter in="body" name="code" type="string" %}
 Code die meegegeven wordt op de redirect
 {% endswagger-parameter %}
 
-{% swagger-parameter name="grant:type" required="true" type="string" in="body" %}
+{% swagger-parameter in="body" name="grant_type" type="string" %}
 Altijd: 
 
 `authorization_code`

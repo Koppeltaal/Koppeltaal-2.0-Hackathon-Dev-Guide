@@ -4,7 +4,7 @@ description: >-
   hoe te integreren.
 ---
 
-# Koppeltaal 2.0 Developer Guide
+# Developer Guide
 
 ## Document Information
 
@@ -16,14 +16,12 @@ This document is released under the [Attribution-ShareAlike 4.0 International (C
 
 ### Status
 
-Version 0.7.&#x20;
-
 This document is in draft.
 
 ### Author / contact
 
 [Joris Scharp](mailto:joris@headease.nl)\
-[Headease B.V.](https://www.headease.nl)
+[Headease B.V.](https://www.headease.nl/)
 
 ## Belangrijke verschillen t.o.v. Koppeltaal 1.x
 
@@ -35,7 +33,7 @@ This document is in draft.
 
 ### FHIR Exchange
 
-Door het gebruik van de RESTful API exchange is er een enkele bron van waarheid. Koppeltaal 1.x fungeerde als een message broker, waardoor elke deelnemen de verantwoordelijkheid had om alle data zelf up-to-date te houden.
+Door het gebruik van de RESTful API exchange is er een enkele bron van waarheid. Koppeltaal 1.x fungeerde als een message broker, waardoor elke deelnemen de verantwoordelijkheid had om alle data zelf up-to-date te houden.&#x20;
 
 Ook is een groot voordeel dat Koppeltaal 2.0 met kleine berichten werkt. Dus geen self-contained bundels. Dit scheelt een hoop data over de lijn en de kans op `409 Conflicts` wordt aanzienlijk verkleind.
 
@@ -50,7 +48,7 @@ Koppeltaal 2.0 maakt gebruik van [profielen](https://simplifier.net/Koppeltaalv2
 Applicaties maken verbinding met de Koppeltaal Server. Binnen Domeinbeheer worden [rollen toegekend](domeinbeheer/rollen-beheren/) aan applicaties. Een rol kan per [Resource](https://www.hl7.org/fhir/resourcelist.html) een CRUD-permissie bevatten. Zo mag je in Koppeltaal 2.0 alleen werken met resources waar je toe gerechtigd bent. Binnen Koppeltaal 1.x kunnen applicaties alles zien waar ze op geabonneerd zijn binnen een Domein.
 
 {% hint style="warning" %}
-Let op: Resources worden op applicatie-niveau gemanaged door Koppeltaal 2.0.
+Let op: Resources worden op applicatie-niveau gemanaged door Koppeltaal 2.0.&#x20;
 
 De gouden regel is dat de applicatie **zelf** bepaalt welke resources toegankelijk zijn op user-niveau binnen de applicatie.
 {% endhint %}

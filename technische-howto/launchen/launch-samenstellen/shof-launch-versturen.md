@@ -10,39 +10,21 @@ Let op dat de SHOF launch twee keer een  `iss`  defined, één keer inde JWT en 
 Het staat nog ter discussie om de SHOF Launch middels een POST uit te voeren. Op deze manier maakt het niet uit of er een HTI of SHOF launch uitgestuurd wordt.
 {% endhint %}
 
-{% api-method method="get" host="{{ActivityDefinition.endpoint}}" path="" %}
-{% api-method-summary %}
-SHOF Launch 
-{% endapi-method-summary %}
+{% swagger baseUrl="{{ActivityDefinition.endpoint}}" path="" method="get" summary="SHOF Launch " %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="launch" type="string" required=true %}
+{% swagger-parameter in="query" name="launch" type="string" %}
 Ondertekende  JWT
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="iss" type="string" required=true %}
+{% swagger-parameter in="query" name="iss" type="string" %}
 De URL van de Koppeltaal Server
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

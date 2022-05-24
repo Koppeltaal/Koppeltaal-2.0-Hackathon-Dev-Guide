@@ -10,15 +10,15 @@ Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meer in
 
 {% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>" method="get" summary="Alle Resources Ophalen" %}
 {% swagger-description %}
-Get ALL voor type <Resource>.
+Get ALL voor type <Resource>. 
 {% endswagger-description %}
 
-{% swagger-parameter name="Resource" type="string" required="true" in="path" %}
+{% swagger-parameter in="path" name="Resource" type="string" %}
 Resource van de resource list
 {% endswagger-parameter %}
 
-{% swagger-parameter name="Authentication" type="string" required="true" in="header" %}
-Authentication token verkregen via de Auth Server
+{% swagger-parameter in="header" name="Authentication" type="string" %}
+Authentication token verkregen via de Auth Server 
 
 \
 
