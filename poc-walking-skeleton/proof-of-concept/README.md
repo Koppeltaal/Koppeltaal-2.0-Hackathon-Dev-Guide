@@ -12,16 +12,18 @@ Applicaties binnen de POC gebruiken nu vaak IRMA om de gebruiker te identificere
 
 De POC bestaat uit verschillende type applicaties:
 
-| Stelselcomponent  | Applicaties die de kern van Koppeltaal 2.0 vormen.                                                              |
+| Applicatietype    | Beschrijving                                                                                                    |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| Stelselcomponent  | Applicaties die de kern van Koppeltaal 2.0 vormen.                                                              |
 | Leverancier       | Een leverancier die echte content middels een POC-versie van hun platform gebruikt i.c.m. de Koppeltaal Server. |
 | Pseudo-applicatie | Applicaties die e-health applicaties imiteren.                                                                  |
 | Extra dienst      | Applicaties die  buiten de kern  van Koppeltaal 2.0 vallen maar handig zijn voor de ontwikkeling.               |
 
 De POC bestaat uit de volgende applicaties:
 
-| Koppeltaal Server        | Stelselcomponent  | Een FHIR HAPI R4 implementatie voor Koppeltaal.                                                                                                                                                                                                                                                                                        |
+| Applicatie               | Type              | Beschrijving                                                                                                                                                                                                                                                                                                                           |
 | ------------------------ | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Koppeltaal Server        | Stelselcomponent  | Een FHIR HAPI R4 implementatie voor Koppeltaal.                                                                                                                                                                                                                                                                                        |
 | Domeinbeheer             | Stelselcomponent  | Hier kunnen applicaties zich aanmelden voor een domein. Ook wordt hier een rol toegekend aan de applicatie die bepaalt welke acties de applicatie mag uitvoeren op de Koppeltaal Server.                                                                                                                                               |
 | Auth Server              | Stelselcomponent  | Hier kan een applicatie - na goedkeuring bij het Domeinbeheer - een access token opvragen middels de [Backend Services Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow.                                                                                                       |
 | Koppeltaal IdP           | Stelselcomponent  | IdP die gebruikt wordt om tijdens de launch te valideren dat de launch user overeenkomt met de ingelogde gebruiker. Dit voorkomt dus wezenlijk dat tokens onderschept en uitgevoerd worden.                                                                                                                                            |
