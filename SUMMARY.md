@@ -8,6 +8,7 @@
   * [Koppeltaal Server](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata)
   * [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/)
   * [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
+  * [Koppeltaal IdP](https://iam.koppeltaal.headease.nl)
   * [EPD](https://poc-epd.koppeltaal.headease.nl/)
   * [Portaal](https://poc-portal.koppeltaal.headease.nl/)
   * [Domein Toegang Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
