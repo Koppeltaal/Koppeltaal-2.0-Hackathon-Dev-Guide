@@ -13,12 +13,21 @@ Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meer in
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="string" %}
+{% swagger-parameter in="path" name="id" type="string" required="true" %}
 Resource.id to be  retrieved
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authentication" type="string" %}
-Authentication token verkregen via de Auth Server
+{% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
+Bearer token verkregen via de Auth Server 
+
+\
+
+
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -32,12 +41,25 @@ Authentication token verkregen via de Auth Server
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" %}
+{% swagger-parameter in="path" name="id" required="true" %}
 Resource.id to be  retrieved
 {% endswagger-parameter %}
 
-{% swagger-parameter in="path" name="versie" type="string" %}
+{% swagger-parameter in="path" name="versie" type="string" required="true" %}
 De versie
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" required="true" %}
+Bearer token verkregen via de Auth Server 
+
+\
+
+
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}

@@ -10,7 +10,7 @@ Koppeltaal adviseert om gebruik te maken van [logische referenties](https://www.
 
 ### Koppeltaal Profielen
 
-De Koppeltaal Server valideert alle binnenkomende resources. Ook dwingt de server af dat de resources conform de [Koppeltaal profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?category=Profile\&fhirVersion=R4\&sortBy=RankScore\_desc) worden verstuurd. Profielen worden in FHIR opgeslagen als [StructureDefinition](http://www.hl7.org/FHIR/structuredefinition.html) resource. Om aan te geven dat een resource conform een profiel werkt kan de `Resource.meta.profiles` array gebruikt worden. De waarde moet altijd gevuld worden met de canonical identifier van het profiel. Deze kan hier gevonden worden:
+De Koppeltaal Server valideert alle binnenkomende resources. Ook dwingt de server af dat de resources conform de [Koppeltaal profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?category=Profile\&fhirVersion=R4\&sortBy=RankScore\_desc) worden verstuurd. Profielen worden in FHIR opgeslagen als [StructureDefinition](http://www.hl7.org/FHIR/structuredefinition.html) resource. Om aan te geven dat een resource conform een profiel is aangemaakt kan de `Resource.meta.profiles` array gevuld worden. De waarde moet altijd gevuld worden met de canonical identifier van het profiel. Deze kan hier gevonden worden:
 
 ![Canonical identifier ophalen bij simplifier.net](<../../../.gitbook/assets/Screenshot 2021-12-09 at 10.42.16.png>)
 
@@ -55,9 +55,16 @@ De logical identifier, bijv:
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Value 
+Bearer token verkregen via de Auth Server 
 
-`Bearer <access_token>`
+\
+
+
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="" type="object" required="true" %}
@@ -109,9 +116,16 @@ Resource
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Value 
+Bearer token verkregen via de Auth Server 
 
-`Bearer <access_token>`
+\
+
+
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="" type="object" required="true" %}

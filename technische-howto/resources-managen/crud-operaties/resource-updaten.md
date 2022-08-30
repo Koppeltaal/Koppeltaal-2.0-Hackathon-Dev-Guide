@@ -30,7 +30,16 @@ De versie waarop de update toegepast is, bijv: W/"23"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-De access_token
+Bearer token verkregen via de Auth Server 
+
+\
+
+
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="" type="string" required="true" %}
@@ -106,7 +115,16 @@ De versie waarop de update toegepast is, bijv: W/"23"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+Bearer token verkregen via de Auth Server 
 
+\
+
+
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="" type="object" required="true" %}
