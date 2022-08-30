@@ -72,7 +72,7 @@ Bad request
 {% endswagger-response %}
 {% endswagger %}
 
-Zoals hierboven in de `Response` tab te zien is, wordt de `access_token` als onderdeel van de response  meegegeven. Deze  `access_token` moet meegegeven worden als [`Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) op elke request naar de Koppeltaal server. Het formaat van de header is als volgt:
+Zoals hierboven in de 200 `Response` te zien is, wordt de `access_token` als onderdeel van de response  meegegeven. Deze `access_token` moet meegegeven worden als `Bearer` token in de [`Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) op elke request naar de Koppeltaal server. Het formaat van de header is als volgt:
 
 ```
 Authorization: <type> <credentials>
