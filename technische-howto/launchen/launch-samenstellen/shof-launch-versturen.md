@@ -10,16 +10,16 @@ Let op dat de SHOF launch twee keer een  `iss`  defined, één keer inde JWT en 
 Het staat nog ter discussie om de SHOF Launch middels een POST uit te voeren. Op deze manier maakt het niet uit of er een HTI of SHOF launch uitgestuurd wordt.
 {% endhint %}
 
-{% swagger baseUrl="{{ActivityDefinition.endpoint}}" path="" method="get" summary="SHOF Launch " %}
+{% swagger baseUrl="{{ActivityDefinition.endpoint}}" path="/" method="post" summary="SHOF Launch " %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="launch" type="string" %}
+{% swagger-parameter in="query" name="launch" type="string" required="true" %}
 Ondertekende  JWT
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="iss" type="string" %}
+{% swagger-parameter in="query" name="iss" type="string" required="true" %}
 De URL van de Koppeltaal Server
 {% endswagger-parameter %}
 
