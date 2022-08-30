@@ -8,7 +8,7 @@ Het notificatie-mechanisme heeft een maturity level 3. We weten dat FHIR hard we
 
 ### Een notificatie aanmaken
 
-Applicaties kunnen zelf een notificatie aanmaken middels de [Subscription](https://www.hl7.org/fhir/subscription.html) resource. Deze dient zich te houden aan het [Koppeltaal 2.0 profiel](https://simplifier.net/koppeltaalv2.0/kt2subscription). De `Subscription` kan, net als de andere resources, beheerd worden middels de [CRUD Operaties](crud-operaties/).&#x20;
+Applicaties kunnen zelf een notificatie aanmaken middels de [Subscription](https://www.hl7.org/fhir/subscription.html) resource. Deze dient zich te houden aan het [Koppeltaal 2.0 profiel](https://simplifier.net/koppeltaalv2.0/kt2\_subscription). De `Subscription` kan, net als de andere resources, beheerd worden middels de [CRUD Operaties](crud-operaties/).&#x20;
 
 #### Criteria
 
