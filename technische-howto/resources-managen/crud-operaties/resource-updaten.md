@@ -1,16 +1,14 @@
 # Resource Updaten
 
-{% hint style="danger" %}
-TODO: If-Match discussie verwerken  - afdwingen of niet
-{% endhint %}
-
 {% hint style="info" %}
 Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#update) voor meer informatie.
 {% endhint %}
 
 ### Concurrency
 
-Om te voorkomen dat er data wordt overschreven, moet een applicatie altijd aangeven op basis van welke versie de`Resource` geüpdate wordt. Dit wordt [gedaan](https://www.hl7.org/fhir/http.html#concurrency) middels de `If-Match` header. Wanneer de update gebaseerd is op een te oude versie zal de server met een `409 Conflict` responden. De `If-Match` value moet overeenkomen de `ETag` value. De `ETag` is een response header die na een [Create](resource-aanmaken.md) of [Get](resource-ophalen.md) meegegeven wordt door de Koppeltaal server.
+Om te voorkomen dat er data wordt overschreven, moet een applicatie altijd aangeven op basis van welke versie de`Resource` geüpdate wordt. Dit wordt [gedaan](https://www.hl7.org/fhir/http.html#concurrency) middels de `If-Match` header. Indien deze header mist, zal de Koppeltaal server de request afkeuren. Als de update niet gebaseerd is op de laatste versie zal de server met een `409 Conflict` reageren.&#x20;
+
+De `If-Match` value moet overeenkomen de `ETag` value. De `ETag` is een response header die na een [Create](resource-aanmaken.md) of [Get](resource-ophalen.md) meegegeven wordt door de Koppeltaal server.
 
 {% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="put" summary="Complete resource" %}
 {% swagger-description %}
@@ -21,21 +19,21 @@ De logische id moet ook aanwezig zijn in de
  zelf.
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="string" %}
+{% swagger-parameter in="path" name="id" type="string" required="true" %}
 De "logical id" van de 
 
 `Resource`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="If-Match" type="string" %}
+{% swagger-parameter in="header" name="If-Match" type="string" required="true" %}
 De versie waarop de update toegepast is, bijv: W/"23"
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 De access_token
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="" type="string" %}
+{% swagger-parameter in="body" name="" type="string" required="true" %}
 De 
 
 `Resource`
@@ -97,21 +95,21 @@ Voorbeelden van meer type patches kunnen [hier](https://www.hl7.org/fhir/test-ca
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" %}
+{% swagger-parameter in="path" required="true" %}
 De "logical id" van de 
 
 `Resource`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="If-Match" type="string" %}
+{% swagger-parameter in="header" name="If-Match" type="string" required="true" %}
 De versie waarop de update toegepast is, bijv: W/"23"
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="" type="object" %}
+{% swagger-parameter in="body" name="" type="object" required="true" %}
 De Patch
 {% endswagger-parameter %}
 
