@@ -10,6 +10,10 @@ Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https:
 De inhoud van de JWT en de OAuth request worden [hier](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#protocol-details) gedetailleerd beschreven. Koppeltaal kent een uitzondering op de `scope` parameter. Deze mag meegestuurd worden maar is niet verplicht en wordt niet verwerkt.
 {% endhint %}
 
+{% hint style="warning" %}
+De FHIR documentatie geeft als voorbeeld van de `alg` header voorbeelden aan (e.g., `RS384`, `ES384`). Binnen de POC-omgeving ondersteunen we enkel RS512.
+{% endhint %}
+
 ### 1. JWT samenstellen
 
 In dit diagram is te zien dat er eerst een JWT token wordt samengesteld en [ondertekend](requirements/jwt-ondertekenen.md). De volgende velden moeten worden gezet:
