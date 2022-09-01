@@ -40,7 +40,7 @@ Dit is een voorbeeld van een valide `Task` payload:
       "value": "a4fb3572-e82c-421d-aca3-42c26face61a"
     }
   ],
-  "instantiatesCanonical": "https://staging-hapi-fhir-server.koppeltaal.headease.nl/fhir/ActivityDefinition/762/_history/1",
+  "instantiatesCanonical": "https://hapi-fhir-server.koppeltaal.headease.nl/fhir/ActivityDefinition/762/_history/1",
   "status": "ready",
   "intent": "order",
   "executionPeriod": {
