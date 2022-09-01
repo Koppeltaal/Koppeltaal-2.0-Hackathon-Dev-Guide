@@ -11,7 +11,7 @@
 
 1. Bij binnenkomst van de launch wordt de conformance opgehaald bij de Koppeltaal Server. Hier kan de [authorize & token URL](smart-hti-on-fhir-launch-ontvangen.md#token-and-authorize-url-metadata) opgevraagd worden.
 2. Er wordt een [redirect gestuurd](smart-hti-on-fhir-launch-ontvangen.md#authorize-request) naar de authorize URL. De auth server zal de browser redirecten naar een gedeelde IdP middels een OIDC code flow. Als het launcerende platform geen gebruik maakt van dit gedeelde IdP zal de gebruiker nog een keer moet inloggen. Bij de POC is het vanaf dit login scherm direct mogelijk om een account aan te maken. Nieuwe gebruikers krijgen by default de rol `patient`. De authorize call zal kijken of de ingelogde gebruiker overeenkomt met de gebruiker uit het launch token.
-3. Een succesvolle authorize call geeft de `code` & `state` parameters terug aan de `redirect_url`. Let er op dat de state waarde gekoppeld wordt aan de `redirect_uri`, deze moet in de volgende stap namelijk weer meegegeven worden.
+3. Een succesvolle authorize call geeft de `code` & `state` parameters terug aan de `redirect_url`. Let op dat de state weer meegegeven wordt aan de `redirect_uri`, op deze manier kan achterhaald worden over welke launch request het gaat.
 4. Voer vanuit de back-end de [Get Token request](smart-hti-on-fhir-launch-ontvangen.md#get-token) uit. Hierbij wordt de`code` omgeruild voor:
    1. Een `id_token` (bevat informatie  over de gebruiker als `JWT`).
    2. Een no-op `access_token` (niet te gebruiken op  de Koppeltaal Server omdat deze user-specific is).
