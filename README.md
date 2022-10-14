@@ -33,7 +33,7 @@ This document is in draft.
 
 ### FHIR Exchange
 
-Door het gebruik van de RESTful API exchange is er een enkele bron van waarheid. Koppeltaal 1.x fungeerde als een message broker, waardoor elke deelnemen de verantwoordelijkheid had om alle data zelf up-to-date te houden.&#x20;
+Door het gebruik van de (FHIR) RESTful API exchange is er een enkele bron van waarheid. Koppeltaal 1.x fungeerde als een message broker, waardoor elke deelnemen de verantwoordelijkheid had om alle data zelf up-to-date te houden.&#x20;
 
 Ook is een groot voordeel dat Koppeltaal 2.0 met kleine berichten werkt. Dus geen self-contained bundels. Dit scheelt een hoop data over de lijn en de kans op `409 Conflicts` wordt aanzienlijk verkleind.
 
