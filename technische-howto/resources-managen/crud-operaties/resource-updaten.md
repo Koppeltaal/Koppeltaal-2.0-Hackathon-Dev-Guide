@@ -97,7 +97,7 @@ Zo ziet de payload er uit van een JSON Patch om de status te updaten van een `Ta
 }]
 ```
 
-Voorbeelden van meer type patches kunnen [hier](https://www.hl7.org/fhir/test-cases.zip) gedownload worden.
+Voorbeelden van meer type patches kunnen [hier](https://www.hl7.org/fhir/r4/test-cases.zip) gedownload worden.
 
 {% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Deel van een Resource Updaten" %}
 {% swagger-description %}
