@@ -90,4 +90,4 @@ Authorization: Bearer eyJraWQiOiJKR3pTYmgzVS1TQlVabllIQjJQaWhzN0FBc0Vubk8zelpqUS
 
 ### Token vernieuwen
 
-In de POC is een `access_token` maar liefst één uur geldig. Wanneer deze tijd verstreken is zal Koppeltaal server een `401` error teruggeven. De [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) kent geen `refresh_token`. De applicatie dient punt 1 & 2 opnieuw uit te voeren.
+Het `access_token` heeft een relatief korte levensduur. Wanneer het token verlopen is zal Koppeltaal server een `401` error teruggeven. De [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) kent geen `refresh_token`. De applicatie dient punt 1 & 2 opnieuw uit te voeren.
