@@ -26,7 +26,7 @@ De URL moet bepaald worden a.d.h.v. de
 `CapabilityStatement`
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="aud" type="string" %}
+{% swagger-parameter in="query" name="aud" type="string" required="true" %}
 URL van de Koppeltaal Server (zelfde als de launch 
 
 `iss`
@@ -34,29 +34,29 @@ URL van de Koppeltaal Server (zelfde als de launch
  value)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="scope" type="string" %}
+{% swagger-parameter in="query" name="scope" type="string" required="true" %}
 Altijd: 
 
 `launch openid`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="state" type="string" %}
+{% swagger-parameter in="query" name="state" type="string" required="false" %}
 Een opaque waarde die door de client wordt gebruikt om de status tussen de request en de callback te behouden. De autorisatieserver neemt deze waarde op bij het redirecten van de user-agent terug naar de client. De parameter MOET worden gebruikt voor het voorkomen van cross-site request forgery (CSRF) aanvallen of sessiefixatie.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="launch" type="string" %}
+{% swagger-parameter in="query" name="launch" type="string" required="true" %}
 Het HTI token (deze komt binnen via delaunch param)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="redirect_uri" type="string" %}
+{% swagger-parameter in="query" name="redirect_uri" type="string" required="true" %}
 De URL waar de code naartoe teruggestuurd moet worden
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="client_id" type="string" %}
+{% swagger-parameter in="query" name="client_id" type="string" required="true" %}
 De client_id uit Domeinbeheer
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="response_type" type="string" %}
+{% swagger-parameter in="query" name="response_type" type="string" required="true" %}
 Altijd: 
 
 `code`
@@ -76,11 +76,15 @@ De URL moet bepaald worden a.d.h.v. de
 `CapabilityStatement`
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Content-Type" %}
+{% swagger-parameter in="header" name="Authorization" required="true" %}
+SMART Backend Service Bearer token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Content-Type" required="true" %}
 application/x-www-form-urlencoded
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="redirect_uri" type="string" %}
+{% swagger-parameter in="body" name="redirect_uri" type="string" required="true" %}
 Dezelfde 
 
 `redirect_uri`
@@ -88,11 +92,11 @@ Dezelfde
  die gebruikt is bij de authorization request
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="code" type="string" %}
+{% swagger-parameter in="body" name="code" type="string" required="true" %}
 Code die meegegeven wordt op de redirect
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="grant_type" type="string" %}
+{% swagger-parameter in="body" name="grant_type" type="string" required="true" %}
 Altijd: 
 
 `authorization_code`
