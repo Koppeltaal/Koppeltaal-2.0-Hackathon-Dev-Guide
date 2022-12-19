@@ -14,7 +14,11 @@ Momenteel vereist de introspection endpoint nog geen `Authorization` header. Dit
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="client_assertion" required="true" %}
-JWT token from launch
+JWT samengesteld zoals bij de 
+
+[SMART Backend Service](../../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen)
+
+
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
@@ -31,8 +35,8 @@ Altijd:
 `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-De "smart backend" access token die ook wordt gebruikt wordt om te communiceren met de Koppeltaal Server.
+{% swagger-parameter in="body" name="token" required="true" %}
+De JWT die gevalideerd moet worden
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="De token is geïntrospect. Het active veld geeft weer of deze valide is" %}
