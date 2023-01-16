@@ -76,12 +76,22 @@ De URL moet bepaald worden a.d.h.v. de
 `CapabilityStatement`
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-SMART Backend Service Bearer token
+{% swagger-parameter in="body" name="client_assertion" required="true" %}
+JWT samengesteld zoals bij de 
+
+[SMART Backend Service](../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen)
+
+
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
 application/x-www-form-urlencoded
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="client_assertion_type" required="true" %}
+Altijd: 
+
+`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="redirect_uri" type="string" required="true" %}
