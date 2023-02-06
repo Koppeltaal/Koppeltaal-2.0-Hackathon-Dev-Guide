@@ -1,8 +1,8 @@
 ---
 description: >-
-  Koppeltaal 2.0 has an authorization model. This means that an application
+  Koppeltaal 2.0 has an authorisation model. This means that an application
   cannot simply see all data in a domain. What can be viewed is determined with
-  the authorization model.
+  the authorisation model.
 ---
 
 # Autorisation model
