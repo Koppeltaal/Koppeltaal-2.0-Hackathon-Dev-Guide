@@ -31,7 +31,7 @@
     * [Create a key pair](technische-howto/connectie-maken-met-koppeltaal/requirements/key-pair-maken.md)
     * [Signing the JWT](technische-howto/connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md)
     * [JWKS setup](technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md)
-  * [Toegang tot Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md)
+  * [Access to Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md)
 * [Resources Managen](technische-howto/resources-managen/README.md)
   * [Versionering](technische-howto/resources-managen/versionering.md)
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties/README.md)
