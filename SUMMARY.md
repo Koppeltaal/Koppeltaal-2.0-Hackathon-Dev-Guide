@@ -23,9 +23,9 @@
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
 
-## Technische HOW-TO <a href="#technische-howto" id="technische-howto"></a>
+## Technical HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 
-* [Koppeltaal server metadata opvragen](technische-howto/koppeltaal-server-metadata-opvragen.md)
+* [Request Koppeltaal server metadata](technische-howto/koppeltaal-server-metadata-opvragen.md)
 * [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
     * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/requirements/key-pair-maken.md)
