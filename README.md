@@ -1,7 +1,7 @@
 ---
 description: >-
-  Deze guide geeft een beknopt overzicht van de Koppeltaal 2.0 kernconcepten en
-  hoe te integreren.
+  This guide gives a brief overview of the core Koppeltaal 2.0 concepts and how
+  to integrate with its services
 ---
 
 # Developer Guide
@@ -23,7 +23,7 @@ This document is in draft.
 [Joris Scharp](mailto:joris@headease.nl)\
 [Headease B.V.](https://www.headease.nl/)
 
-## Belangrijke verschillen t.o.v. Koppeltaal 1.x
+## Important differences with Koppeltaal 1.x
 
 | Concept               | **KT 1.x**                   | KT 2.0                    |
 | --------------------- | ---------------------------- | ------------------------- |
@@ -33,24 +33,26 @@ This document is in draft.
 
 ### FHIR Exchange
 
-Door het gebruik van de (FHIR) RESTful API exchange is er een enkele bron van waarheid. Koppeltaal 1.x fungeerde als een message broker, waardoor elke deelnemen de verantwoordelijkheid had om alle data zelf up-to-date te houden.&#x20;
+By using the (FHIR) RESTful API exchange there is a single source of truth. Koppeltaal 1.x acted as a message broker, giving each participant the responsibility to keep all data up-to-date.&#x20;
 
-Ook is een groot voordeel dat Koppeltaal 2.0 met kleine berichten werkt. Dus geen self-contained bundels. Dit scheelt een hoop data over de lijn en de kans op `409 Conflicts` wordt aanzienlijk verkleind.
+Another big advantage is that Koppeltaal 2.0 works with small messages. So no self-contained bundles. This saves a lot of data being transferred over the line and the chance of 409 Conflicts is considerably reduced.
 
 ### Content Validatie
 
-Voorheen kon een aparte service gebruikt worden om te kijken of de content van een `Bundle` valide is. Deze validatie werd echter niet afgedwongen door de Koppeltaal server.
+Previously, a separate service could be used to check whether the content of a `Bundle` is valid. However, this validation was not enforced by the Koppeltaal server.&#x20;
 
-Koppeltaal 2.0 maakt gebruik van [profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4). Een profiel geeft exact aan wat de regels zijn per [Resource](https://www.hl7.org/fhir/resourcelist.html). De Koppeltaal server kan profielen afdwingen en valideren of men zich aan een profiel houdt.
+Koppeltaal 2.0 uses [profiles](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4). A profile indicates exactly what the rules are per [Resource](https://www.hl7.org/fhir/r4/resourcelist.html). The Koppeltaal server can enforce profiles by validating that Resources adhere to the profile.
 
 ### **Autorisaties**
 
 Applicaties maken verbinding met de Koppeltaal Server. Binnen Domeinbeheer worden [rollen toegekend](domeinbeheer/rollen-beheren/) aan applicaties. Een rol kan per [Resource](https://www.hl7.org/fhir/resourcelist.html) een CRUD-permissie bevatten. Zo mag je in Koppeltaal 2.0 alleen werken met resources waar je toe gerechtigd bent. Binnen Koppeltaal 1.x kunnen applicaties alles zien waar ze op geabonneerd zijn binnen een Domein.
 
-{% hint style="warning" %}
-Let op: Resources worden op applicatie-niveau gemanaged door Koppeltaal 2.0.&#x20;
+Applications connect to the Koppeltaal Server. Within "Domeinbeheer" (Domain Management), roles are assigned to applications. A role can contain a CRUD permission per Resource. For example, in Koppeltaal 2.0 you are only allowed to work with resources to which you are entitled. With Koppeltaal 1.x, applications can see everything that they are subscribed to within a Domain.
 
-De gouden regel is dat de applicatie **zelf** bepaalt welke resources toegankelijk zijn op user-niveau binnen de applicatie.
+{% hint style="warning" %}
+Note: Resources are managed at application level Koppeltaal 2.0.
+
+The golden rule is that the application **itself** determines which resources are accessible at user level within the application.
 {% endhint %}
 
 ##
