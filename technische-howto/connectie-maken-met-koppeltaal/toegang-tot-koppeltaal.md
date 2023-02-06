@@ -2,8 +2,6 @@
 
 ## Request Flow
 
-Koppeltaal vereist dat middels de [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow een `access_token` opgevraagd wordt. Hiervoor wordt het volgende diagram gehanteerd:
-
 Koppeltaal requires that applications use the [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow to request an `access_token`. The following diagram is used for this purpose
 
 ![SMART Backend auth flow](<../../.gitbook/assets/backend-service-authorization-diagram (2).png>)
@@ -32,7 +30,7 @@ The above diagram shows that a JWT token is first compiled and [signed](requirem
 
 Execute the following request:
 
-{% swagger baseUrl="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" method="post" summary="Request access_token" %}
+{% swagger baseUrl="https://auth-service.koppeltaal.headease.nl" path="/oauth2/token" method="post" summary="Request access_token" %}
 {% swagger-description %}
 See the Response tab for an example response.
 {% endswagger-description %}
@@ -82,8 +80,6 @@ Bad request
 {% endswagger-response %}
 {% endswagger %}
 
-Zoals hierboven in de 200 `Response` te zien is, wordt de `access_token` als onderdeel van de response  meegegeven. Deze `access_token` moet meegegeven worden als `Bearer` token in de [`Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) op elke request naar de Koppeltaal server. Het formaat van de header is als volgt:
-
 As shown above in the 200 Response, the `access_token` is passed as part of the response. This `access_token` must be passed along as a `Bearer` token in the [`Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) on every request to the Koppeltaal server. The format of the header is as follows:
 
 ```
@@ -97,7 +93,5 @@ Authorization: Bearer T8DR5tcOo7xfDYD086AUUr0hQIkzbrhuLGHSM5X6QcX84IfZlC0jQ6v_Yb
 ```
 
 ### Refreshing the access\_token&#x20;
-
-Het `access_token` heeft een relatief korte levensduur. Wanneer het token verlopen is zal Koppeltaal server een `401` error teruggeven. De [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) kent geen `refresh_token`. De applicatie dient punt 1 & 2 opnieuw uit te voeren.
 
 The `access_token` has a relatively short lifetime. When the token expires, the Koppeltaal server will return a `401` error. The [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) does not support a `refresh_token`. The application needs to redo steps 1 & 2.
