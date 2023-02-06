@@ -19,7 +19,7 @@
 * [Joining a domain](domeinbeheer/domein-toetreden.md)
 * [Role-based access control](domeinbeheer/rollen-beheren/README.md)
   * [Autorisation model](domeinbeheer/rollen-beheren/autorisatiemodel.md)
-  * [Rol aanmaken](domeinbeheer/rollen-beheren/rol-aanmaken.md)
+  * [Creating a role](domeinbeheer/rollen-beheren/rol-aanmaken.md)
   * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
   * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
 
