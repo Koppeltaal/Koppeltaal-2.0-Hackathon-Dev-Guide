@@ -5,7 +5,7 @@ description: Het opvoeren van een Taak
 # Use-Case 1: Opvoeren Taak
 
 {% hint style="info" %}
-Wanneer er Resources aangemaakt moeten worden die nodig zijn voor het aanmaken van een Task, kan gebruik gemaakt worden van het [EPD](https://poc-epd.koppeltaal.headease.nl). Hier kunnen bijv.`ActivityDefinitions` en `Endpoints` aangemaakt worden. Wel is het belangrijk dat je als applicatie ook [rechten nodig hebt](../../../domeinbeheer/rollen-beheren/autorisatiemodel.md) om deze Resources te zien/gebruiken.
+Wanneer er Resources aangemaakt moeten worden die nodig zijn voor het aanmaken van een Task, kan gebruik gemaakt worden van het [EPD](https://poc-epd.koppeltaal.headease.nl). Hier kunnen bijv.`ActivityDefinitions` en `Endpoints` aangemaakt worden. Wel is het belangrijk dat je als applicatie ook [rechten nodig hebt](../../../domain-access/rollen-beheren/autorisatiemodel.md) om deze Resources te zien/gebruiken.
 {% endhint %}
 
 {% hint style="warning" %}

@@ -14,14 +14,14 @@
   * [Domein Access Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
   * [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/)
 
-## Domeinbeheer
+## Domain access
 
-* [Domein toetreden](domeinbeheer/domein-toetreden.md)
-* [Rollen beheren](domeinbeheer/rollen-beheren/README.md)
-  * [Autorisatiemodel](domeinbeheer/rollen-beheren/autorisatiemodel.md)
-  * [Rol aanmaken](domeinbeheer/rollen-beheren/rol-aanmaken.md)
-  * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
-  * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
+* [Joining a domain](domain-access/domein-toetreden.md)
+* [Rollen beheren](domain-access/rollen-beheren/README.md)
+  * [Autorisatiemodel](domain-access/rollen-beheren/autorisatiemodel.md)
+  * [Rol aanmaken](domain-access/rollen-beheren/rol-aanmaken.md)
+  * [Search Narrowing](domain-access/rollen-beheren/search-narrowing.md)
+  * [Revoke Permission](domain-access/rollen-beheren/revoke-permission.md)
 
 ## Technische HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 

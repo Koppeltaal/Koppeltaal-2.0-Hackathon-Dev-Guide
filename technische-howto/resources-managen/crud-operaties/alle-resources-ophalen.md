@@ -13,17 +13,21 @@ Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#read) voor meer in
 Get ALL voor type <Resource>. 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="Resource" type="string" %}
+{% swagger-parameter in="path" name="Resource" type="string" required="true" %}
 Resource van de resource list
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authentication" type="string" %}
-Authentication token verkregen via de Auth Server 
+{% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
+Bearer token verkregen via de Auth Server 
 
 \
 
 
-(zie Connectie maken met Koppeltaal)
+(zie 
+
+[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+
+)
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -33,5 +37,5 @@ Authentication token verkregen via de Auth Server
 {% endswagger %}
 
 {% hint style="info" %}
-Teruggegeven resultaten kunnen gefilterd zijn i.v.m. [Search Narrowing](../../../domeinbeheer/rollen-beheren/search-narrowing.md).
+Teruggegeven resultaten kunnen gefilterd zijn i.v.m. [Search Narrowing](../../../domain-access/rollen-beheren/search-narrowing.md).
 {% endhint %}
