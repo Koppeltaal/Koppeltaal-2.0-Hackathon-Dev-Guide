@@ -45,7 +45,7 @@ Koppeltaal 2.0 uses [profiles](https://simplifier.net/Koppeltaalv2.0/\~resources
 
 ### **Autorisaties**
 
-Applicaties maken verbinding met de Koppeltaal Server. Binnen Domeinbeheer worden [rollen toegekend](domain-access/rollen-beheren/) aan applicaties. Een rol kan per [Resource](https://www.hl7.org/fhir/resourcelist.html) een CRUD-permissie bevatten. Zo mag je in Koppeltaal 2.0 alleen werken met resources waar je toe gerechtigd bent. Binnen Koppeltaal 1.x kunnen applicaties alles zien waar ze op geabonneerd zijn binnen een Domein.
+Applicaties maken verbinding met de Koppeltaal Server. Binnen Domeinbeheer worden [rollen toegekend](domeinbeheer/rollen-beheren/) aan applicaties. Een rol kan per [Resource](https://www.hl7.org/fhir/resourcelist.html) een CRUD-permissie bevatten. Zo mag je in Koppeltaal 2.0 alleen werken met resources waar je toe gerechtigd bent. Binnen Koppeltaal 1.x kunnen applicaties alles zien waar ze op geabonneerd zijn binnen een Domein.
 
 Applications connect to the Koppeltaal Server. Within "Domeinbeheer" (Domain Management), roles are assigned to applications. A role can contain a CRUD permission per Resource. For example, in Koppeltaal 2.0 you are only allowed to work with resources to which you are entitled. With Koppeltaal 1.x, applications can see everything that they are subscribed to within a Domain.
 

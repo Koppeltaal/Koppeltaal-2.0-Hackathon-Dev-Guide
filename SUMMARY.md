@@ -16,12 +16,12 @@
 
 ## Domain access
 
-* [Joining a domain](domain-access/domein-toetreden.md)
-* [Rollen beheren](domain-access/rollen-beheren/README.md)
-  * [Autorisatiemodel](domain-access/rollen-beheren/autorisatiemodel.md)
-  * [Rol aanmaken](domain-access/rollen-beheren/rol-aanmaken.md)
-  * [Search Narrowing](domain-access/rollen-beheren/search-narrowing.md)
-  * [Revoke Permission](domain-access/rollen-beheren/revoke-permission.md)
+* [Joining a domain](domeinbeheer/domein-toetreden.md)
+* [Role-based access control](domeinbeheer/rollen-beheren/README.md)
+  * [Autorisation model](domeinbeheer/rollen-beheren/autorisatiemodel.md)
+  * [Rol aanmaken](domeinbeheer/rollen-beheren/rol-aanmaken.md)
+  * [Search Narrowing](domeinbeheer/rollen-beheren/search-narrowing.md)
+  * [Revoke Permission](domeinbeheer/rollen-beheren/revoke-permission.md)
 
 ## Technische HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 

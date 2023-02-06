@@ -37,5 +37,5 @@ Bearer token verkregen via de Auth Server
 {% endswagger %}
 
 {% hint style="info" %}
-Teruggegeven resultaten kunnen gefilterd zijn i.v.m. [Search Narrowing](../../../domain-access/rollen-beheren/search-narrowing.md).
+Teruggegeven resultaten kunnen gefilterd zijn i.v.m. [Search Narrowing](../../../domeinbeheer/rollen-beheren/search-narrowing.md).
 {% endhint %}

@@ -19,7 +19,7 @@ Het `Subscription.criteria` veld kan door applicaties zelf gevuld worden. Bij el
 Het `Subscription.channel` wordt gebruikt om aan te geven hoe en waar de notificatie heen moet. In de POC is het momenteel alleen mogelijk om het type `email` en `rest-hook` te gebruiken.
 
 {% hint style="info" %}
-De Koppeltaal Server past "Notification Narrowing" toe; vergelijkbaar met [Search Narrowing](../../domain-access/rollen-beheren/search-narrowing.md) maar dan voor het notificeren. Echter, wanneer er iets mis gaat in dit process, wordt de notificatie WEL verstuurd. Daarnaast kan het zijn dat een applicatie meerdere `Subscriptions` hebben die matchen op de gestelde `criteria`
+De Koppeltaal Server past "Notification Narrowing" toe; vergelijkbaar met [Search Narrowing](../../domeinbeheer/rollen-beheren/search-narrowing.md) maar dan voor het notificeren. Echter, wanneer er iets mis gaat in dit process, wordt de notificatie WEL verstuurd. Daarnaast kan het zijn dat een applicatie meerdere `Subscriptions` hebben die matchen op de gestelde `criteria`
 
 Applicaties dienen er rekening mee te houden dat een notificatie niet altijd resulteert in een op te halen resource.
 {% endhint %}
