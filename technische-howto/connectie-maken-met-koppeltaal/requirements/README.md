@@ -1,9 +1,8 @@
 # Requirements
 
-Om toegang te krijgen tot de Koppeltaal server is een `access_token` nodig. Hiervoor moeten de volgende stappen uitgevoerd zijn:
+An `access_token` is required to access the Koppeltaal server. For this, the following steps must be performed:&#x20;
 
-1. De applicatie  bezit over een [key pair](key-pair-maken.md) en kan [JWTs ondertekenen](jwt-ondertekenen.md).
-2. De applicatie heeft een [JWKS endpoint](jwks-opzetten.md).
-3. De applicatie is het [domein toegetreden](../../../domeinbeheer/domein-toetreden.md) met het opgezette JWKS endpoint en is in het bezit van een   `client_id`. 
-4. De applicatie heeft een rol en de status "Actief".
-
+1. The application possesses a [key pair](key-pair-maken.md) and can sign [JWTs](jwt-ondertekenen.md).&#x20;
+2. The application has a [JWKS endpoint](jwks-opzetten.md).&#x20;
+3. The application has [joined the domain](../../../domeinbeheer/domein-toetreden.md) with the JWKS endpoint set up and possesses a `client_id`.&#x20;
+4. The application has a [role](../../../domeinbeheer/rollen-beheren/) and the status "Active".

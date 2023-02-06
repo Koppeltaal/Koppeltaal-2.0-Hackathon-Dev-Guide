@@ -26,7 +26,7 @@
 ## Technical HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 
 * [Request Koppeltaal server metadata](technische-howto/koppeltaal-server-metadata-opvragen.md)
-* [Connectie maken met Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
+* [Connecting to Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
     * [Key Pair Maken](technische-howto/connectie-maken-met-koppeltaal/requirements/key-pair-maken.md)
     * [JWT Ondertekenen](technische-howto/connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md)
