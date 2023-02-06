@@ -1,13 +1,13 @@
 ---
 description: >-
-  A video that shows how to assign a role and how to create a new role with
-  specific permissions
+  Een video die aantoont hoe een rol toegekend kan worden en hoe een nieuwe rol
+  met permissies aangemaakt kan worden.
 ---
 
-# Creating a role
+# Rol aanmaken
 
 {% hint style="info" %}
-Permissions bound to a role are set as OAuth scopes on the `access_token` used to communicate with the Koppeltaal server. Therefore, the `access_tokens` should be short lived. Revoking a permissions will not be instantly applied.
+Rollen en permissies worden elke 5 seconden in de cache ververst. Wanneer er  aanpassingen gemaakt worden kan het 5 seconden duren voordat deze in werking treden.
 {% endhint %}
 
 {% embed url="https://drive.google.com/file/d/1KPeYBPs0pvOvYhsjiOtCJfDj_K6evk6c/view" %}
