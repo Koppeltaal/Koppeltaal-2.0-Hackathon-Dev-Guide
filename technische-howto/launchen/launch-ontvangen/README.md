@@ -10,7 +10,7 @@
 
 ### JWT verifiëren
 
-De binnenkomende launches bevatten een `token` parameter. Deze token bevat de ondertekende JWT token (zie [Launch samenstellen](../launch-samenstellen/)).
+De binnenkomende launches bevatten een `token` parameter. Deze token bevat de ondertekende JWT token (zie [Launch samenstellen](../launch-samenstellen.md)).
 
 #### Token Introspection
 

@@ -1,25 +1,25 @@
 ---
-description: De launch samenstellen werkt hetzelfde voor HTI als SHOF
+description: The launch steps on this page are the same for HTI as SHOF
 ---
 
-# Launch samenstellen
+# Compose a launch
 
-Om de launch uit te voeren moeten de volgende stappen uitgevoerd worden:
+To perform the launch, the following steps must be performed for both HTI and SHOF:
 
-### 1. FHIR Task maken
+### 1. Create a FHIR Task
 
-Het `HTI:core` profiel beschrijft de volgende velden voor de  `Task`:
+The `HTI:core` v1.1 profile describes the following fields for the `Task`:
 
-| FHIR task field | Verplicht | Beschrijving |
-| :--- | :--- | :--- |
-| resourceType | ja | Dit veld moet altijd gevuld zijn met de waarde "Task". |
-| id | ja | De logische identifier van de taak. Meer details staan beschreven in de [Task id](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#the-task-id) sectie. |
-| instantiatesCanonical | nee | Een [canonical](http://hl7.org/fhir/R4/references.html#canonical) URL die refereert naar de FHIR definition. Meer details hierover zijn te vinden in de [activity definition](https://www.hl7.org/fhir/activitydefinition.html) documentatie. |
-| for | ja | Een [person reference](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#person-reference) naar de gebruiker die de taak moet uitvoeren. |
-| intent | ja | Dit veld moet altijd gevuld zijn met een waarde van de [FHIR value set RequestIntent](https://www.hl7.org/fhir/R4/valueset-request-intent.html), indien niet van toepassing, gebruik "plan". |
-| status | ja | Status van de taak. Dit veld moet gevuld zijn met een waarde van de [FHIR value set TaskStatus](https://www.hl7.org/fhir/R4/valueset-task-status.html). |
+| FHIR task field       | Mandatory | Description                                                                                                                                                                                                                        |
+| --------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| resourceType          | yes       | This field must always be filled with the value "Task".                                                                                                                                                                            |
+| id                    | yes       | The logical identifier of the task. More details are described in the [Task id section](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#the-task-id).                                                  |
+| instantiatesCanonical | no        | A [canonical](http://hl7.org/fhir/R4/references.html#canonical) URL that refers to the FHIR definition. More details can be found in the [activity definition](https://www.hl7.org/fhir/r4/activitydefinition.html) documentation. |
+| for                   | yes       | A [person reference](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#person-reference) to the user that has to execute the `Task`.                                                                     |
+| intent                | yes       | This field must always be filled with a value from the [RequestIntent value set](https://www.hl7.org/fhir/R4/valueset-request-intent.html), if not applicable, use `plan`.                                                         |
+| status                | yes       | Status of the task. This field must be filled with a value from the [TaskStatus value set](https://www.hl7.org/fhir/R4/valueset-task-status.html).                                                                                 |
 
-Een `HTI:core Task` kan er als volgt uitzien:
+A `HTI:core Task` can look like this:
 
 ```javascript
 {
@@ -34,82 +34,29 @@ Een `HTI:core Task` kan er als volgt uitzien:
 }
 ```
 
-### 2. JWT Maken
+### 2. Create the JWT
 
-Het `HTI:core` profiel beschrijft de volgende velden voor de JWT:
+The `HTI:core` v1.1 profile describes the following fields for the JWT:
 
-| Description | Field | Value |
-| :--- | :--- | :--- |
-| Issuer | iss | This field **MUST** be a reference to the portal application that creates the JWT token. It **MAY** consist of a url or domain name of the portal application. The portal application and module provider **MUST** agree on the value of the iss field. The module provider **MUST** validate the message with the public key associated with the iss reference. The portal application **MAY** disseminate its public keys by the JKWS protocol, in that case the JWT token **MUST** contain a kid field in the JWT header. |
-| Audience | aud | This field **MUST** be a reference to the module provider for which the JWT token is created for. The reference **MAY** consist of a url or domain name of the module provider. The portal application and module provider **MUST** agree on the value of the aud field. The module provider **MUST** validate the aud field to have the expected value. |
-| Unique message id | jti | A unique identifier for this message. This value **MUST** be treated as a NONCE, a subsequent message with an identical jti **MUST** be rejected. The jti value must be a random or pseudo number, the jti **MUST** contain enough entropy to block brute-force attacks. |
-| Issue time | iat | The timestamp of generating the JWT token, the value of this field **MUST** be validated by the module provider to not be in the future. |
-| Expiration time | exp | This value **MUST** be the time-out of the exchange sending it to the client plus the time-out of the exchange used by the client to send it, the value **MUST** be limited to 5 minutes. This value **MUST** be validated by the module provider, any value that exceeds the timeout **MUST** be rejected. |
-| Subject | sub | This value **MUST** be a person reference to the user executing the launch. This way, applications can understand _who_ is launching the provided `Task`. For example, `Practitioner/82421` |
-| Task | task | The FHIR Task object in JSON format. |
-| FHIR Version | fhir-version | The FHIR version for the provided `Task`. When this field is not provided, the FHIR version **MUST** be the latest stable FHIR release. Consumers should evaluate this field in a case-insensitive manner. Currently, the following fields are allowed: `STU3`, `R4` and `R5`. It is strongly advised to always set this field, even when using the latest stable FHIR version. This prevents HTI breaking after a new FHIR stable release. |
+| Description       | Field        | Value                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Issuer            | iss          | The `client_id` van het portaal                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Audience          | aud          | The launch `URL` of the module provider. This can be found via the `ActivityDefinition.endpoint` extension.                                                                                                                                                                                                                                                                                                                                 |
+| Unique message id | jti          | A unique identifier for this message. This value **MUST** be treated as a NONCE, a subsequent message with an identical jti **MUST** be rejected. The jti value must be a random or pseudo number, the jti **MUST** contain enough entropy to block brute-force attacks.                                                                                                                                                                    |
+| Issue time        | iat          | The timestamp of generating the JWT token, the value of this field **MUST** be validated by the module provider to not be in the future.                                                                                                                                                                                                                                                                                                    |
+| Expiration time   | exp          | The "exp" (expiration time) claim identifies the expiration time on or after which the JWT **MUST NOT** be accepted for processing. The value **MUST** be limited to 5 minutes. This value **MUST** be validated by the module provider, any value that exceeds the timeout **MUST** be rejected.                                                                                                                                           |
+| Subject           | sub          | This value **MUST** be a person reference to the user executing the launch. This way, applications can understand _who_ is launching the provided `Task`. For example, `Practitioner/82421`                                                                                                                                                                                                                                                 |
+| Task              | task         | The FHIR Task object in JSON format.                                                                                                                                                                                                                                                                                                                                                                                                        |
+| FHIR Version      | fhir-version | The FHIR version for the provided `Task`. When this field is not provided, the FHIR version **MUST** be the latest stable FHIR release. Consumers should evaluate this field in a case-insensitive manner. Currently, the following fields are allowed: `STU3`, `R4` and `R5`. It is strongly advised to always set this field, even when using the latest stable FHIR version. This prevents HTI breaking after a new FHIR stable release. |
 
-The timestamps follows the ["UNIX time"](https://en.wikipedia.org/wiki/Unix_time) convention, being the number of seconds since the epoch.
+The timestamps follows the ["UNIX time"](https://en.wikipedia.org/wiki/Unix\_time) convention, being the number of seconds since the epoch.
 
-### 3. JWT Ondertekenen
+### 3. Sign the JWT&#x20;
 
-Nadat de JWT volledig gevuld is, moet deze worden ondertekend. Hiervoor kan [JWT Ondertekenen](../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) gevolgd worden.
+After the JWT is completely filled, it must be signed. For this, [Signing the JWT](../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) can be followed.
 
-### 4. Launchen
+### 4.  Launch
 
-De ondertekende token kan nu gelaunched worden naar de client. Om de endpoint te vinden waarheen gelaunched moet worden kan gebruik gemaakt worden van de `ActivityDefinition.endpoint` extensie. De juiste `ActivityDefinition` kan gevonden worden a.d.h.v. `Task.instantiatesCanonical` \(zie [Resource Ophalen](../resources-managen/crud-operaties/resource-ophalen.md)\).
+The signed token can now be launched to the client. To find the endpoint to be launched to, the `ActivityDefinition.endpoint` extension can be used. The correct ActivityDefinition can be found using `Task.instantiatesCanonical` (see [resource-ophalen.md](../resources-managen/crud-operaties/resource-ophalen.md "mention")).&#x20;
 
-Middels een `<form>` en de `form-post-redirect` flow kan de launch uitgevoerd worden. Bijv:
-
-```markup
-<html>
-<head>
-</head>
-<body onload="document.forms[0].submit();">
-<form action="https://module.provider.eu/modules/x" method="post">
-<input type="hidden" name="token" value="eyJhbGciO..."/>
-</form>
-</body>
-</html>
-```
-
-{% api-method method="post" host="{{ActivityDefinition.endpoint}}" path="" %}
-{% api-method-summary %}
-HTI Launch 
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content-Type" required=true %}
-application/x-www-form-urlencoded
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
-Ondertekende JWT
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
-
+There are minimal differences between sending via [HTI](hti-launch-versturen.md) and [SHOF](broken-reference).
