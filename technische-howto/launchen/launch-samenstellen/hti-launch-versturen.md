@@ -1,10 +1,12 @@
-# HTI Launch Versturen
+# Performing a HTI Launch
+
+
 
 {% hint style="warning" %}
-Het staat nog ter discussie om bij de HTI Launch de token als`launch` param mee te geven en om ook een `iss` mee te geven net als [SHOF Launch Versturen](shof-launch-versturen.md). Op deze manier maakt het niet uit of er een HTI of SHOF launch uitgestuurd wordt.
+It is still under discussion whether to rename the `token` param to `launch` and also to include an `iss` just like [Performing a SHOF launch](shof-launch-versturen.md). This way it does not matter whether an HTI or SHOF launch is sent out.
 {% endhint %}
 
-Middels een `<form>` en de `form-post-redirect` flow kan de launch uitgevoerd worden. Bijv:
+The launch can be initiated via a `<form>` and the `form-post-redirect` flow, e.g:
 
 ```markup
 <html>
@@ -18,21 +20,24 @@ Middels een `<form>` en de `form-post-redirect` flow kan de launch uitgevoerd wo
 </html>
 ```
 
-{% swagger baseUrl="{{ActivityDefinition.endpoint}}" path="" method="post" summary="HTI Launch " %}
+{% swagger baseUrl="{{ActivityDefinition.endpoint}}" path="/" method="post" summary="HTI Launch " %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Content-Type" %}
+{% swagger-parameter in="header" name="Content-Type" required="true" %}
 application/x-www-form-urlencoded
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="token" type="string" %}
+{% swagger-parameter in="body" name="token" type="string" required="true" %}
 Ondertekende JWT
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="" %}
-```
+{% swagger-response status="302: Found" description="Redirects to the ActivityDefinition.endpoint value" %}
+```javascript
+{
+    // Response
+}
 ```
 {% endswagger-response %}
 {% endswagger %}
