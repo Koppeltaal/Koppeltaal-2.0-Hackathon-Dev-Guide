@@ -1,30 +1,28 @@
-# HTI Launch Ontvangen
+# Receiving a HTI Launch
 
 ### Requirements
 
-* De applicatie moet een [`ActivityDefinition`](https://simplifier.net/koppeltaalv2.0/kt2activitydefinition) hebben [aangemaakt](../../resources-managen/crud-operaties/resource-aanmaken.md).
+* The application [created](../../resources-managen/crud-operaties/resource-aanmaken.md) an [`ActivityDefinition`](https://simplifier.net/koppeltaalv2.0/kt2activitydefinition).
 
-#### Indien de applicatie geen [Token Introspection](token-introspection.md) gebruikt:&#x20;
+#### When the application does not use [Token Introspection](token-introspection.md):&#x20;
 
-* De applicatie moet de `issuer` kennen en een JWKS endpoint hieraan gekoppeld hebben.
+* The application must be able to map the `issuer` to its corresponding JWKS endpoint.
 
-### JWT verifiëren
+### Verify the JWT
 
-De binnenkomende launches bevatten een `token` parameter. Deze token bevat de ondertekende JWT token (zie [Launch samenstellen](../launch-samenstellen/)).
+Incoming HTI launches have a `token` parameter. This value represents the signed JWT (see [Compose a launch](../launch-samenstellen/))
 
 #### Token Introspection
 
-Het makkelijkste is om gebruik te maken van Token Introspection. Op deze manier hoeft de applicatie niet zelf alle security checks op de binnenkomende JWT token te verifiëren. De token kan simpelweg doorgestuurd worden naar de authenticatie server en deze zal de check uitvoer.&#x20;
+The easiest and safest way to verify the JWT is to use [Token Introspection](token-introspection.md). This way, the application itself does not have to verify all the security checks on the incoming JWT. The token can simply be forwarded to the authentication server and it will perform all the required checks.&#x20;
 
-Lees voor meer informatie de [Token Introspection](token-introspection.md) pagina.
+#### Verify the JWT yourself
 
-#### Zelf het token verifiëren
-
-De applicatie kan aan de hand van de issuer en de JWKS endpoint valideren of de JWT daadwerkelijk ondertekend is door de private key van het asymmetrische key pair. De JWK kan gevonden worden m.b.v. het `kid` (key id) veld uit de JWT Header sectie. Bijvoorbeeld:
+Using the issuer and the JWKS endpoint, the application can validate whether the JWT is actually signed by the private key of the asymmetric key pair. The JWK can be found using the kid (key id) field from the JWT Header section. For example:
 
 ![jwt.io debugger](../../../.gitbook/assets/screenshot-2021-09-22-at-20.22.09.png)
 
-Deze kan gemapt worden op JWK objecten uit het JWKS endpoint:
+This can be mapped to JWK objects from the JWKS endpoint:
 
 ```javascript
 {
@@ -40,14 +38,14 @@ Deze kan gemapt worden op JWK objecten uit het JWKS endpoint:
 }
 ```
 
-De JWK geeft de public key weer die gebruikt kan worden om de signature te valideren.
+The JWK represents the public key that can be used to validate the signature.
 
-### Andere Belangrijke Checks
+### Other important checks&#x20;
 
-Naast het verifiëren van de signature, bevat de JWT Payload velden die belangrijk zijn om te valideren.&#x20;
+In addition to verifying the signature, the JWT payload contains fields that are important to validate.
 
-| JWT attribuut           | Details                                                                                                                                                    | Implementatie                                    |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| `exp` (expiration time) | Na dit tijdstip is de JWT niet meer valide                                                                                                                 | Wordt vaak automatisch gedaan door JWT-libraries |
-| `iat`  (issued at)      | Uitgifte datum, deze mag niet in de toekomst zijn                                                                                                          | Wordt vaak automatisch gedaan door JWT-libraries |
-| `jti` (JWT ID)          | Unieke identifier voor deze JWT. De gebruikte `jti`  waarden moeten bijgehouden worden. Als een `jti` waarde al gebruikt is moet  de JWT afgekeurd worden. | Dient zelf geïmplementeerd te worden             |
+| JWT claim (attribute)   | Details                                                                                                                                      | Implementation                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `exp` (expiration time) | After this time, the JWT is no longer valid                                                                                                  | Is often done automatically by JWT libraries      |
+| `iat`  (issued at)      | Issue date, it must not be in the future                                                                                                     | Is often done automatically by JWT libraries      |
+| `jti` (JWT ID)          | Unique identifier for this JWT. The `jti` values used must be tracked. If a `jti` value has already been consumed, the JWT must be rejected. | Should most likely be implemented in custom logic |
