@@ -1,6 +1,5 @@
-# Resources Managen
+# Managing resources
 
-Het is van groot belang om in te zien dat de **applicaties** verbinden met de Koppeltaal Server, en niet de **eindgebruikers**. Koppeltaal draagt er zorg voor dat de applicaties alleen operaties mogen uitvoeren op resources waartoe zij bevoegd zijn. Op gebruikers-niveau zijn de applicaties zelf verantwoordelijk om bij  te houden welke operaties uitgevoerd mogen worden.
+It is very important to understand that **applications** connect to the Koppeltaal Server, and not the **end users**. Koppeltaal ensures that applications are only allowed to perform operations on resources to which they are authorised. At the user level, the applications themselves are responsible for keeping track of which operations are allowed to be performed.&#x20;
 
-Dit houdt dus, bijvoorbeeld, in dat een applicatie alle taken mag opvragen waartoe zij bevoegd zijn. Echter weet de Koppeltaal Server niet aan **wie** deze resource getoond wordt \(deze wordt immers aan een applicatie geleverd\). Het is dus aan de applicatie om de zorgen dat de taken van bijv. `Patient/123` enkel getoond wordt aan bevoegden.
-
+So this means, for example, that an application may request all tasks to which they are authorised. However, the Koppeltaal Server does not know to whom this resource is shown (after all, it is provided to an application). So it is up to the application to ensure that the tasks of e.g. `Patient/123` are only shown to authorised users.
