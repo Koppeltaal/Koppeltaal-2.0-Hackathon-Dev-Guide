@@ -25,7 +25,7 @@ The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="aud" type="string" required="true" %}
-URL van de Koppeltaal Server (zelfde als de launch 
+URL of the Koppeltaal Server (the same as the 
 
 `iss`
 
@@ -33,25 +33,37 @@ URL van de Koppeltaal Server (zelfde als de launch
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="scope" type="string" required="true" %}
-Altijd: 
+Always: 
 
 `launch openid`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="state" type="string" required="false" %}
-Een opaque waarde die door de client wordt gebruikt om de status tussen de request en de callback te behouden. De autorisatieserver neemt deze waarde op bij het redirecten van de user-agent terug naar de client. De parameter MOET worden gebruikt voor het voorkomen van cross-site request forgery (CSRF) aanvallen of sessiefixatie.
+An opaque value used by the client to maintain the state between the request and the callback. The authorization server takes this value when redirecting the user agent back to the client. The parameter MUST be used to prevent cross-site request forgery (CSRF) attacks or session fixation
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="launch" type="string" required="true" %}
-Het HTI token (deze komt binnen via delaunch param)
+The HTI token (from the 
+
+`launch`
+
+ param)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="redirect_uri" type="string" required="true" %}
-De URL waar de code naartoe teruggestuurd moet worden
+The URL to which the 
+
+`code`
+
+ should be returned
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="client_id" type="string" required="true" %}
-De client_id uit Domeinbeheer
+The 
+
+`client_id`
+
+ from Domain management
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="response_type" type="string" required="true" %}
@@ -69,13 +81,11 @@ Loocation: https://launch-testsuite.koppeltaal.headease.nl/module_authentication
 
 {% swagger baseUrl="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" method="post" summary="Get Token" %}
 {% swagger-description %}
-De URL moet bepaald worden a.d.h.v. de 
-
-`CapabilityStatement`
+The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="client_assertion" required="true" %}
-JWT samengesteld zoals bij de 
+JWT as composed for the 
 
 [SMART Backend Service](../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen)
 
@@ -83,29 +93,31 @@ JWT samengesteld zoals bij de
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
-application/x-www-form-urlencoded
+`application/x-www-form-urlencoded`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="client_assertion_type" required="true" %}
-Altijd: 
+Always: 
 
 `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="redirect_uri" type="string" required="true" %}
-Dezelfde 
+The same 
 
 `redirect_uri`
 
- die gebruikt is bij de authorization request
+ as used at the authorize request
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="code" type="string" required="true" %}
-Code die meegegeven wordt op de redirect
+`code`
+
+ provided by the auth server on the redirect from the authorize request
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="grant_type" type="string" required="true" %}
-Altijd: 
+Always: 
 
 `authorization_code`
 {% endswagger-parameter %}
@@ -127,9 +139,3 @@ Altijd:
 ```
 {% endswagger-response %}
 {% endswagger %}
-
-## Token & Authorize URL - Metadata
-
-De Token URL kan gevonden worden in de Koppeltaal Server `CapabilityStatement` [https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata):
-
-![](../../.gitbook/assets/screenshot-2021-09-22-at-21.11.54.png)
