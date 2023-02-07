@@ -1,8 +1,10 @@
-# CRUD Operations
+# CRUD Operaties
 
 {% hint style="info" %}
-A complete overview of the RESTful API can be found [here](https://www.hl7.org/fhir/http.html).
+Een compleet overzicht van de RESTful API is [hier](https://www.hl7.org/fhir/http.html) te vinden.
 {% endhint %}
 
-Primary overview of useful RESTful calls and advice on which calls to use.
+Primair overzicht van handige RESTful calls en adviezen over welke calls te gebruiken.
+
+
 
