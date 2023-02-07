@@ -40,7 +40,7 @@
     * [Create a Resource](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Update a Resource](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
   * [Subscribing to changes](technische-howto/resources-managen/abonneren-op-changes.md)
-* [Launchen](technische-howto/launchen/README.md)
+* [Launching](technische-howto/launchen/README.md)
   * [HTI Flow](technische-howto/launchen/hti.md)
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Launch samenstellen](technische-howto/launchen/launch-samenstellen/README.md)

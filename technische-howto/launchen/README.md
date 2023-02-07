@@ -1,8 +1,7 @@
-# Launchen
+# Launching
 
-Koppeltaal ondersteunt twee launch-mechanismen: [HTI](hti.md) en [SMART HTI On FHIR](smart-hti-on-fhir.md). Beide mechanismen werken in de kern met het HTI JWT token, waardoor beide systemen erg vergelijkbaar zijn qua implementatie. Voor het uitsturen van een launch zijn er minimale verschillen. De ontvangende partij \(`module provider`\) kan, in het geval van een SHOF launch, er nog voor kiezen om de [HTI Flow](hti.md) uit te voeren.
+Koppeltaal supports two launch mechanisms: [HTI](hti.md) and [SMART HTI On FHIR](smart-hti-on-fhir.md). Both mechanisms work at their core with the HTI JWT token, making both systems very similar in implementation. For sending out a launch, there are minimal differences. The receiving party (`module provider`) can, in the case of a SHOF launch, still choose to execute the HTI Flow.&#x20;
 
 {% hint style="info" %}
-Na het lezen va de launch documentatie raden wij aan om te kijken naar de [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl). Via deze suite worden de verschillen tussen HTI en SHOF inzichtelijk gemaakt. Ook wordt het duidelijk welke payload opgestuurd wordt. 
+After reading the launch documentation, we recommend looking at the [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/portal.html). Through this suite, the differences between HTI and SHOF are made clear. It also clarifies which payload is sent.
 {% endhint %}
-
