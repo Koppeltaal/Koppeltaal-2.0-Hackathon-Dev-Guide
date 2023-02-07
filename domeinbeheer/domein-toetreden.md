@@ -1,21 +1,21 @@
-# Domein toetreden
+# Joining a domain
 
-Om een domein toe te treden kan een verzoek ingediend worden bij [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/register). Na het inloggen binnen Domeinbeheer worden momenteel alle schermen getoond (zowel beheer als de eigenlijke  aanvraag). Volg de volgende stappen om een domein toe te treden:
+To join a domain, a request can be submitted to [Domain Management](https://domain-admin.koppeltaal.headease.nl/). After logging in to Domain Management, pages for all roles will be displayed (both management and requesting access). Follow these steps to join a domain:
 
-1. Navigeer naar [Domeinbeheer](https://smart-backend-services.koppeltaal.headease.nl/register).
-2. Log via uw mobiel in met de [IRMA app](https://irma.app/).
-3. Open de tab "AANVRAAG INDIENEN"
-4. Voer een naam in en de [JWKS endpoint](../technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md) van uw applicatie.
-5. Submit de aanvraag.
-6. Open de tab "OVERZICHT".
-7. Ken een rol toe aan de toegevoegde applicatie.
-8. Verander de status naar `Approved`.
-9. Gebruik de `client_id` in uw applicatie om een [SMART Backend Service](../technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md) request uit te voeren.
+1. Navigate to [Domain management](https://domain-admin.koppeltaal.headease.nl/).
+2. Login via the [IRMA app](https://irma.app/) on your mobile device.
+3. Open the tab "AANVRAAG INDIENEN"
+4. Enter the name of you application and its corresponding [JWKS endpoint](../technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md).
+5. Submit the request.
+6. Open the tab "OVERZICHT".
+7. Assign a role to your newly created application.
+8. Change the status to `Approved`.
+9. Use the `client_id` in your application to execute a [SMART Backend Service](../technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md) request.
 
 {% hint style="info" %}
-Koppeltaal vraagt alle applicaties om gebruik te maken van JWKS endpoints bij het opvragen van een`access_token`.&#x20;
+Koppeltaal recommends all applications to use JWKS endpoints when requesting an `access_token`.&#x20;
 
-Wanneer applicaties lokaal getest worden is het erg lastig om JWKS te gebruiken. In dat geval is het ook mogelijk om simpelweg een public key in PEM formaat te registreren. Om snel een bruikbare key te genereren kan gebruik gemaakt worden van [dit](https://github.com/Koppeltaal/Koppeltaal-2.0-Generate-KeyPair/) project.
+When applications are tested locally, it is difficult to use JWKS. In that case it is also possible to simply register a public key in PEM format. [This](https://github.com/Koppeltaal/Koppeltaal-2.0-Generate-KeyPair/) project can be used to quickly generate a usable key pair for the Koppeltaal POC components.&#x20;
 
-Om toch snel middels JWKS te testen kan gebruik gemaakt worden van handige tools zoals [ngrok](https://ngrok.com/).
+To test using JWKS locally, handy tools such as [ngrok](https://ngrok.com/) can be used.
 {% endhint %}

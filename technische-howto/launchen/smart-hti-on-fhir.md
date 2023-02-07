@@ -5,20 +5,20 @@ description: SMART HTI On FHIR
 # SHOF Flow
 
 {% hint style="warning" %}
-De Koppeltaal Server autoriseert applicaties, geen gebruikers. Dit is een mismatch met het [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/) (SALF). Zo verwacht de SALF-flow altijd een `access_token` op gebruikers-niveau  terug te krijgen. Bij SHOF zal er ook een `access_token` teruggegeven worden, alleen is dit een no-op token.
+The Koppeltaal Server authorises applications, not users. This is a mismatch with the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/) (SALF). For example, the SALF flow always expects to return a user-level `access_token`. With SMART HTI On FHIR (SHOF), an `access_token` will also be returned, only this is a `no-op` token.
 {% endhint %}
 
-SMART HTI On FHIR (SHOF) is compatible met HTI. Dit houdt in dat de lancerende partij geen weet heeft of er een HTI of SHOF-flow uitgevoerd wordt. De voornaamste verschillen tussen HTI en SHOF zijn:
+SMART HTI On FHIR (SHOF) uses the HTI token as the `launch` parameter value. This means that the launching party can reuse all logic during a launch. The main differences between HTI and SHOF are:&#x20;
 
-1. SHOF sluit aan op een internationale standaard, namelijk het SALF.&#x20;
-2. Er een auth server die de JWT-logica uit handen neemt voor de applicatie die een launch ontvangt.
-3. SHOF voert tijdens de `/authorize` stap een extra controle uit op de ingelogde gebruiker middels een gedeelde IdP. Dit voorkomt dat een launch token onderschept en uitgevoerd wordt. De user identifier die in het launch token zit wordt vergeleken met de identifier van de ingelogde gebruiker op het IdP.&#x20;
+1. SHOF uses the `launch` parameter to pass the context as a HTI token, where HTI uses the `token` parameter to pass the context as a HTI token
+2. SHOF is based on an international standard: [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/).&#x20;
+3. SHOF performs an additional check on the logged-in user during the `/authorize` step using a shared IdP when the `fhirUser` scope is provided. This prevents a launch token from being intercepted and executed. The user identifier contained in the launch token is compared to the identifier of the logged in user on the IdP.
 
 ### Requirements
 
-1. Er moet een [JWKS endpoint opgezet](../connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md) zijn.
-2. De gebruiker die de launch uitvoert moet een account hebben op de gedeelde IdP.&#x20;
+1. A [JWKS endpoint must be available](../connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md).
+2. The user performing the launch must have an account on the shared IdP (when the `fhirUser` scope is provided), the username has to be present on the corresponding user Resource (`Patient`, `Practitioner`).
 
-### Informatie Flow
+### Information Flow
 
-![bron: https://github.com/Koppeltaal/Koppeltaal-2.0-SMART-HTI-On-FHIR/blob/master/SMART-HTI-On-FHIR.md](<../../.gitbook/assets/image (1).png>)
+<figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio.png" alt="SHOF Sequence Diagram"><figcaption><p>SHOF Sequence Diagram</p></figcaption></figure>

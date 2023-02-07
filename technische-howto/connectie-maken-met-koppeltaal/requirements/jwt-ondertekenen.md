@@ -1,15 +1,15 @@
-# JWT Ondertekenen
+# Signing the JWT
 
-Koppeltaal gebruikt JWT tokens op verschillende plekken. Voor de dev  guide zijn twee plekken van belang:
+Koppeltaal uses JWTs in several places. For the dev guide, two places are good to know about:&#x20;
 
-1. Voor het [ophalen van een access token](../toegang-tot-koppeltaal.md) die toegang geeft tot de Koppeltaal server.
-2. Voor het uitvoeren van een [Koppeltaal launch](../../launchen/) middels [HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md).
+1. For [retrieving an access token](../toegang-tot-koppeltaal.md) that provides access to the Koppeltaal server.&#x20;
+2. For performing a [Koppeltaal launch](../../launchen/) using [HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md) or [SMART HTI](../../launchen/smart-hti-on-fhir.md).&#x20;
 
-### Wat is een JWT?
+### What is a JWT?&#x20;
 
-JWT staat voor JSON Web Token. Een praktische uitleg over hoe een JWT werkt is [hier](https://jwt.io/introduction) te vinden. Een belangrijk stuk is:
+JWT stands for JSON Web Token. A practical explanation of how a JWT works can be found [here](https://jwt.io/introduction). An important piece is:
 
-> In its compact form, JSON Web Tokens consist of three parts separated by dots \(`.`\), which are:
+> In its compact form, JSON Web Tokens consist of three parts separated by dots (`.`), which are:
 >
 > * Header
 > * Payload
@@ -19,15 +19,14 @@ JWT staat voor JSON Web Token. Een praktische uitleg over hoe een JWT werkt is [
 >
 > `xxxxx.yyyyy.zzzzz`
 
-### Signen
+### Signing
 
-Het ondertekenen van de JWT vindt plaats in de derde deel van de JWT: de signature. Koppeltaal gebruikt asymmetrische key pairs om de JWTs te ondertekenen. Het signature-deel wordt geëncrypt middels de private-key van de asymmetrische key pair. Het public-key deel wordt gepubliceerd onder de [JWKS](jwks-opzetten.md). Zo wordt bewezen dat een JWT daadwerkelijk van een partij komt die in het bezit is van de private-key. Het signen van de JWT kan het makkelijkst  uitgevoerd worden middels een JWT library voor de betreffende programmeertaal.
+The signing of the JWT takes place in the third part of the JWT: the signature (`zzzzz` in the example above). Koppeltaal uses asymmetric key pairs to sign the JWTs. The signature part is encrypted using the private key of the asymmetric key pair. The public-key part is published at the [JWKS](jwks-opzetten.md) endpoint. This proves that a JWT is signed by a party in possession of the private-key. Signing the JWT is most easily performed using a JWT library for the relevant programming language.
 
 {% hint style="info" %}
-De JWT debugger is een mooie plek om runtime te kijken wat de  inhoud  van de JWT is en hoe de token er dan uitziet. Let op dat het geselecteerde algoritme een RS-variant is  aangezien wij met key pairs werken en niet met shared secrets.
+The [JWT debugger](https://jwt.io/?debug) is a great place to see, at runtime, what the contents of the JWT are and what the token looks like. Note that we work with key pairs and not shared secrets. So make sure to select algorithms that work with key pairs like `RS` and `ES`.
 {% endhint %}
 
 {% hint style="info" %}
-RSA is ingewikkelder te implementeren dan bijv. HMAC algoritmen. Het is echter wel een stuk veiliger. Zo is er geen gedeelde secret. Ook is het middels JWKS snel mogelijk om keys in te roteren.
+RSA is more complicated to implement than, say, HMAC algorithms. However, it is a lot more secure. For example, there is no shared secret. Also, using JWKS, it is possible to quickly rotate keys.
 {% endhint %}
-

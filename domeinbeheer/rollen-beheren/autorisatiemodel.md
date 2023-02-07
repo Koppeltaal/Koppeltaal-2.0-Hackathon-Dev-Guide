@@ -1,39 +1,38 @@
 ---
 description: >-
-  Koppeltaal 2.0 kent een autorisatiemodel. Dit houdt in dat een applicatie niet
-  zomaar alle data in een domein kan zien. Wat er precies ingezien mag worden,
-  wordt bepaald met het autorisatiemodel.
+  Koppeltaal 2.0 has an authorisation model. This means that an application
+  cannot simply see all data in a domain. What can be viewed is determined with
+  the authorisation model.
 ---
 
-# Autorisatiemodel
+# Autorisation model
 
-## 1. Authenticeren
+## 1. Authenticate
 
-Wanneer een applicatie een [domein is toegetreden](../domein-toetreden.md), zal de applicatie een `client_id` toegekend hebben gekregen. Deze `client_id` zit verwerkt in het `access_token` dat wordt gebruikt om [connectie te maken met Koppeltaal](../../technische-howto/connectie-maken-met-koppeltaal/). Zo weet de Koppeltaal server welke applicatie een request uitvoert en ook de bijbehorende rol.
+When an application has [joined a domain](../domein-toetreden.md), the application will have been assigned a `client_id`. This `client_id` is included in the `access_token` that is required to communicate with the Koppeltaal server. This way, the Koppeltaal server knows which application is performing a request and therefore the associated permissions.
 
-## 2. Eigenaarschap van Resources
+## 2. Resource ownership
 
-De Koppeltaal server voegt automatisch een `resource-origin` extensie toe op elke `DomainResource` die aangemaakt wordt. Middels deze extensie kan de server bepalen wie de originele auteur is van resources. Dit is een essentieel deel van het autorisatiemodel.
+The Koppeltaal server automatically adds a `resource-origin` extension to every `DomainResource` that is created. This extension references to a specific `Device` resource that has a 1-on-1 relation with the `client_id`. This way, the origin of a resource can always be found. This is an essential part of the authorisation model.
 
-## 3. Rol + permissies
+## 3. Role and permissions
 
-Elke applicatie die een domein is toegetreden krijgt één rol toegekend. Een rol is gekoppeld aan meerdere permissies. Een permissie kent 3 eigenschappen:
+Every application in a domain is assigned a single role. A role maps to multiple permissions. A permission has the following 3 properties:
 
-### Resource 
+### Resource&#x20;
 
-Een permissie is altijd gekoppeld aan een enkele [FHIR Domain Resource](https://www.hl7.org/fhir/domainresource.html). 
+A permission always applies to a single [FHIR Domain Resource](https://www.hl7.org/fhir/r4/domainresource.html#bnr).&#x20;
 
-### Actie 
+### Action&#x20;
 
-In de permissie wordt aangegeven welke CRUD-actie \(create, read, update, delete\) het betreft. 
+A CRUD-level (create, read, update, delete) action.&#x20;
 
-### Scope 
+### Scope&#x20;
 
-De permissie geeft de `resource-owner` scope aan. De volgende waarden zijn mogelijk:
+The `resource-owner` scope. The following scopes are supported:
 
-| Scope | Beschrijving |
-| :--- | :--- |
-| Own | De permissie is enkel van toepassing op resources \(geselecteerde resource type van de permissie\) waarvan de `resource-owner` overeenkomt met de geauthenticeerde applicatie. |
-| All | De permissie is van toepassing op alle resources \(geselecteerde resource type van de permissie\) in het domein. |
-| Granted | De permissie is van toepassing op resources \(geselecteerde resource type van de permissie\) waarvan de `resource-owner` overeenkomt met de geselecteerde applicatie\(s\). |
-
+| Scope   | Description                                                                                                                                        |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Own     | The permission only applies to resources (selected resource type of the permission) whose `resource-origin` matches the authenticated application. |
+| All     | The permission applies to all resources (selected resource type of the permission) in the domain.                                                  |
+| Granted | The permission applies to resources (selected resource type of the permission) whose `resource-origin` matches the selected application(s).        |

@@ -1,7 +1,11 @@
-# Koppeltaal server metadata opvragen
+# Request Koppeltaal server metadata
 
-De Koppeltaal Server biedt een [`CapabilityStatement`](https://www.hl7.org/fhir/capabilitystatement.html) aan. Deze statement bevat handige metadata m.b.t. de Koppeltaal Server. Zo wordt er bijvoorbeeld aangegeven wat de URL van de authenticatie server is.
+Koppeltaal metadata resides at two places
 
-Binnen de applicatie hoeven dus geen hard-coded URLs geconfigureerd te worden die al bekend zijn bij de Koppeltaal Server. Zie bijvoorbeeld `CapabilityStatement.rest.security` in de [Koppeltaal `CapabilityStatement`](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata). Deze sectie bevat OAuth URLs conform de [OAuth extensie](https://www.hl7.org/fhir/extension-oauth-uris.html).
+### CapabilityStatement
 
-Naast het aanbieden van URLs, beschrijft de `CapabilityStatement` nog veel meer. Bijvoorbeeld welke resources en functionaliteiten de Koppeltaal Server aanbiedt.&#x20;
+The Koppeltaal Server provides a [`CapabilityStatement`](https://www.hl7.org/fhir/r4/capabilitystatement.html). This statement contains useful metadata related to the Koppeltaal Server. For example, it indicates the supported Resource types and supported MIME types.
+
+### SMART on FHIR Conformance
+
+Koppeltaal also makes use of the [SMART on FHIR conformance](https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#conformance). This specifically contains metadata used whilst executing the [SMART on FHIR specifications](https://smarthealthit.org/). This conformance can be found `<BASE_FHIR_URL>/.well-known/smart-configuration`. This way, there is no need to configure hard-coded URLs. This configuration can be used to, for example, retrieve the Auth Server URL for the specific Koppeltaal server at runtime.
