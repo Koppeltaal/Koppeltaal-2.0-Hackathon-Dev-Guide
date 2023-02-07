@@ -34,7 +34,7 @@
   * [Access to Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md)
 * [Managing resources](technische-howto/resources-managen/README.md)
   * [Versioning](technische-howto/resources-managen/versionering.md)
-  * [CRUD Operaties](technische-howto/resources-managen/crud-operaties/README.md)
+  * [CRUD Operations](technische-howto/resources-managen/crud-operaties/README.md)
     * [Alle Resources Ophalen](technische-howto/resources-managen/crud-operaties/alle-resources-ophalen.md)
     * [Resource Ophalen](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
     * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
