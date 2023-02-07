@@ -1,29 +1,27 @@
-# SHOF Launch Ontvangen
+# Receiving a SHOF launch
 
 ## Requirements
 
-1. De applicatie moet een [`ActivityDefinition`](https://simplifier.net/koppeltaalv2.0/kt2activitydefinition) hebben [aangemaakt](../resources-managen/crud-operaties/resource-aanmaken.md).
-2. De gebruiker die de launch uitvoert moet een account hebben op de gedeelde IdP
+1. The application [created](../resources-managen/crud-operaties/resource-aanmaken.md) an [`ActivityDefinition`](https://simplifier.net/koppeltaalv2.0/kt2activitydefinition).
+2. The user performing the launch must have an account on the shared IdP
 
 ## Flow
 
-![bron: https://github.com/Koppeltaal/Koppeltaal-2.0-SMART-HTI-On-FHIR/blob/master/SMART-HTI-On-FHIR.md](<../../.gitbook/assets/image (1).png>)
+<figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio.png" alt=""><figcaption></figcaption></figure>
 
-1. Bij binnenkomst van de launch wordt de conformance opgehaald bij de Koppeltaal Server. Hier kan de [authorize & token URL](smart-hti-on-fhir-launch-ontvangen.md#token-and-authorize-url-metadata) opgevraagd worden.
-2. Er wordt een [redirect gestuurd](smart-hti-on-fhir-launch-ontvangen.md#authorize-request) naar de authorize URL. De auth server zal de browser redirecten naar een gedeelde IdP middels een OIDC code flow. Als het launcerende platform geen gebruik maakt van dit gedeelde IdP zal de gebruiker nog een keer moet inloggen. Bij de POC is het vanaf dit login scherm direct mogelijk om een account aan te maken. Nieuwe gebruikers krijgen by default de rol `patient`. De authorize call zal kijken of de ingelogde gebruiker overeenkomt met de gebruiker uit het launch token.
-3. Een succesvolle authorize call geeft de `code` & `state` parameters terug aan de `redirect_url`. Let op dat de state weer meegegeven wordt aan de `redirect_uri`, op deze manier kan achterhaald worden over welke launch request het gaat.
-4. Voer vanuit de back-end de [Get Token request](smart-hti-on-fhir-launch-ontvangen.md#get-token) uit. Hierbij wordt de`code` omgeruild voor:
-   1. Een `id_token` (bevat informatie  over de gebruiker als `JWT`).
-   2. Een no-op `access_token` (niet te gebruiken op  de Koppeltaal Server omdat deze user-specific is).
-   3. Additionele context velden zoals `task`, deze vult de auth server a.d.h.v. het JWT token die als `launch` param is meegegeven.
+1. When the launch arrives, the [conformance is retrieved from the Koppeltaal Server](../koppeltaal-server-metadata-opvragen.md). Here the authorize & token URL can be requested.
+2. A redirect is sent to the authorize URL. The auth server will redirect the browser to a shared IdP using an OIDC code flow if the `fhirUser` scope is set. If the launching platform does not use this shared IdP the user will have to login here as well. At the POC it is possible to create an account directly from this login screen. New users are given the role patient by default. The authorize call will check if the logged in user matches the user from the launch token.
+3. A successful authorize call returns the `code` & `state` parameters to the `redirect_uri`. Note that the `state` (provided at the start of the `/authorize` call) is returned to the `redirect_uri`, this way you can find out which launch request is involved and, for example, relate to a specific user session.
+4. From the back-end, execute the [Get Token request](smart-hti-on-fhir-launch-ontvangen.md#get-token). Here, the `code` is exchanged for:
+   1. an `id_token` (contains information of the logged in user as `JWT`).
+   2. A no-op `access_token` (not to be used on the Koppeltaal Server because it is user-specific).
+   3. Additional context fields such as `task`, which the auth server fills based on the JWT provided as launch param.
 
-A.d.h.v. het context object kan bepaald worden wie met welke rol ingelogd is op het systeem en welke taak geopend moet worden. Wanneer er een valide response komt op deze request, is de user te authenticeren en kan er bijv. een sessie aangemaakt worden voor de gebruiker.
+By means of the context object it can be determined who, with which role, is logged on to the system and which task should be opened. When there is a valid response to this request, the user can be authenticated and e.g. a session can be created for the user.
 
-{% swagger baseUrl="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/authorize" method="get" summary="Authorize Request" %}
+{% swagger baseUrl="https://auth-service.koppeltaal.headease.nl" path="/oauth2/authorize" method="get" summary="Authorize Request" %}
 {% swagger-description %}
-De URL moet bepaald worden a.d.h.v. de 
-
-`CapabilityStatement`
+The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="aud" type="string" required="true" %}

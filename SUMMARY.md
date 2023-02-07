@@ -45,9 +45,9 @@
   * [SHOF Flow](technische-howto/launchen/smart-hti-on-fhir.md)
   * [Compose a launch](technische-howto/launchen/launch-samenstellen/README.md)
   * [Initiating a launch](technische-howto/launchen/launch-samenstellen/hti-launch-versturen.md)
-  * [Receiving a HTI Launch](technische-howto/launchen/launch-ontvangen/README.md)
-    * [Token Introspection](technische-howto/launchen/launch-ontvangen/token-introspection.md)
-  * [SHOF Launch Ontvangen](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
+  * [Receiving a HTI launch](technische-howto/launchen/launch-ontvangen/README.md)
+    * [Token introspection](technische-howto/launchen/launch-ontvangen/token-introspection.md)
+  * [Receiving a SHOF launch](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
 
 ## Hackathon Use Cases
 

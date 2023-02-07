@@ -1,7 +1,3 @@
----
-description: The launch steps on this page are the same for HTI as SHOF
----
-
 # Initiating a launch
 
 The launch can be initiated via a `<form>` and the `form-post-redirect` flow. Both HTI and SHOF are similar while initiating a launch.
