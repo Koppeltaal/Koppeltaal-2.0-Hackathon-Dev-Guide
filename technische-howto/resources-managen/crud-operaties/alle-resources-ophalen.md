@@ -2,10 +2,10 @@
 description: Request all resources for a specific Resource-type
 ---
 
-# Retrieving all Resources
+# Retrieve all Resources
 
 {% hint style="info" %}
-See the [FHIR documentation](https://www.hl7.org/fhir/http.html#read) for more information
+See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#read) for more information
 {% endhint %}
 
 {% hint style="info" %}
