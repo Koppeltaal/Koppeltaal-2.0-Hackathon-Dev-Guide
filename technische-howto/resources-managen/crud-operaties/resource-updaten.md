@@ -1,41 +1,45 @@
-# Resource Updaten
+# Update a Resource
 
 {% hint style="info" %}
-Zie de [FHIR documentatie](https://www.hl7.org/fhir/http.html#update) voor meer informatie.
+See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#update) for more information.
 {% endhint %}
 
 ### Concurrency
 
-Om te voorkomen dat er data wordt overschreven, moet een applicatie altijd aangeven op basis van welke versie de`Resource` geüpdate wordt. Dit wordt [gedaan](https://www.hl7.org/fhir/http.html#concurrency) middels de `If-Match` header. Indien deze header mist, zal de Koppeltaal server de request afkeuren. Als de update niet gebaseerd is op de laatste versie zal de server met een `409 Conflict` reageren.&#x20;
+To avoid overwriting data, an application must always indicate which version of a `Resource` the update is based on. This is done using the `If-Match` header. If this header is missing, the Koppeltaal server will reject the request. If the update is not based on the latest version, the server will respond with a `409 Conflict` or a `412 Precondition Failed`.&#x20;
 
-De `If-Match` value moet overeenkomen de `ETag` value. De `ETag` is een response header die na een [Create](resource-aanmaken.md) of [Get](resource-ophalen.md) meegegeven wordt door de Koppeltaal server.
+The `If-Match` value must match the latest `ETag` value. The `ETag` value is provided via a response header sent by the Koppeltaal server after a [`Create`](resource-aanmaken.md), [`Update`](resource-updaten.md) or [`Get`](resource-ophalen.md#retrieve-specific-resource).
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="put" summary="Complete resource" %}
+{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>/<:id>" method="put" summary="Update a complete resource" %}
 {% swagger-description %}
-De logische id moet ook aanwezig zijn in de 
+Note: the 
 
-`Resource`
+`id`
 
- zelf.
+ property has to be set in the body as well
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="id" type="string" required="true" %}
-De "logical id" van de 
+The "logical id" of the 
 
 `Resource`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="If-Match" type="string" required="true" %}
-De versie waarop de update toegepast is, bijv: W/"23"
+A 
+
+["weak" ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match)
+
+ to the version the update is based on, e.g: W/"3"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token verkregen via de Auth Server 
+Bearer token obtained from the Auth Server 
 
 \
 
 
-(zie 
+(see 
 
 [Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
@@ -43,37 +47,45 @@ Bearer token verkregen via de Auth Server
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="" type="string" required="true" %}
-De 
+The 
 
 `Resource`
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="Resource is aangepast. De resource met resource-origin extensie en logical id wordt teruggegeven" %}
+{% swagger-response status="200" description="Resource is modified. The resource with resource-origin extension and logical id is returned" %}
 ```
 ```
 {% endswagger-response %}
 
-{% swagger-response status="400" description="De resource kan niet geparsed worden of comformeert niet aan de basis FHIR validatie regels" %}
+{% swagger-response status="400" description="The resource cannot be parsed or does not conform to the basic FHIR validation rules" %}
 ```
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404" description="Resource type wordt niet ondersteund, of geen FHIR-endpoint" %}
+{% swagger-response status="404" description="Resource type not supported, or not a FHIR end-point" %}
 ```
 ```
 {% endswagger-response %}
 
-{% swagger-response status="405" description="De Resource bestaat niet (a.d.h.v. de logische id)" %}
+{% swagger-response status="405" description="The Resource did not exist prior to the update, and the server does not allow client defined ids" %}
 ```
 ```
 {% endswagger-response %}
 
-{% swagger-response status="409" description="Change gebaseerd op een oude versie" %}
+{% swagger-response status="409" description="Version conflict, update is based on an old version" %}
 ```
 ```
 {% endswagger-response %}
 
-{% swagger-response status="422" description="Voldoet niet aan de FHIR profielen of Koppeltaal business regels" %}
+{% swagger-response status="412: Precondition Failed" description="Version conflict, update is based on an old version" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="422" description="Does not meet FHIR profiles or Koppeltaal business rules" %}
 ```
 ```
 {% endswagger-response %}
@@ -81,13 +93,17 @@ De
 
 ### Delen van een Resource Updaten
 
-Om middels een kleine payload een  resource  te updaten kan gebruik gemaakt worden van een  `PATCH` request. De payload van de `PATCH` moet een van de volgende zijn:
+{% hint style="warning" %}
+PATCH requests are optional. See the [`Conformance`](../../koppeltaal-server-metadata-opvragen.md#capabilitystatement) to find out if the server supports this.
+{% endhint %}
 
-1. Een [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902)  (Content-Type application/json-patch+json)
-2. Een [XML Patch](https://datatracker.ietf.org/doc/html/rfc5261)  (Content-Type application/xml-patch+xml)
-3. Een [FHIRPath Patch](https://www.hl7.org/fhir/fhirpatch.html) parameters Resource  (Content-Type [FHIR Content Type](https://www.hl7.org/fhir/http.html#mime-type))
+To update a `Resource` via a small payload, the Koppeltaal server may support `PATCH` requests. The payload of the `PATCH` must be one of the following:&#x20;
 
-Zo ziet de payload er uit van een JSON Patch om de status te updaten van een `Task`:
+1. A [JSON Patch](https://datatracker.ietf.org/doc/html/rfc6902) (Content-Type application/json-patch+json).&#x20;
+2. An [XML Patch](https://datatracker.ietf.org/doc/html/rfc5261) (Content-Type application/xml-patch+xml)&#x20;
+3. A [FHIRPath Patch](https://www.hl7.org/fhir/r4/fhirpatch.html) parameters Resource (Content-Type [FHIR Content Type](https://www.hl7.org/fhir/r4/http.html#mime-type)).&#x20;
+
+This is what the payload looks like from a JSON Patch to update the status of a `Task`
 
 ```
 [{
@@ -97,30 +113,34 @@ Zo ziet de payload er uit van een JSON Patch om de status te updaten van een `Ta
 }]
 ```
 
-Voorbeelden van meer type patches kunnen [hier](https://www.hl7.org/fhir/r4/test-cases.zip) gedownload worden.
+More examples of patches can be downloaded [here](https://www.hl7.org/fhir/r4/test-cases.zip).
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Deel van een Resource Updaten" %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Patch a Resource" %}
 {% swagger-description %}
-
+As an alternative to updating an entire resource, clients can perform a patch operation. This can be useful when a client is seeking to minimize its bandwidth utilization.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" required="true" %}
-De "logical id" van de 
+The "logical id" of the 
 
 `Resource`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="If-Match" type="string" required="true" %}
-De versie waarop de update toegepast is, bijv: W/"23"
+A 
+
+["weak" ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match)
+
+ to the version the update is based on, e.g: W/"3"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token verkregen via de Auth Server 
+Bearer token obtained from the Auth Server 
 
 \
 
 
-(zie 
+(see 
 
 [Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
@@ -128,11 +148,35 @@ Bearer token verkregen via de Auth Server
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="" type="object" required="true" %}
-De Patch
+The Patch
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="Patch is toegepast. De complete Resource wordt teruggegeven" %}
+{% swagger-response status="200" description="Patch is applied. The complete Resource will be returned" %}
 ```
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="Resource type not supported, or not a FHIR end-point" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="405: Method Not Allowed" description="" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="412: Precondition Failed" description="Version conflict, update is based on an old version" %}
+```javascript
+{
+    // Response
+}
 ```
 {% endswagger-response %}
 {% endswagger %}
