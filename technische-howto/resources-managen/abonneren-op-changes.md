@@ -1,34 +1,40 @@
-# Abonneren op changes
+---
+description: >-
+  It is often important to be notified of changes to specific resources. Within
+  Koppeltaal it is possible to be notified of changes on a very accurate level.
+---
 
-Het is vaak van belang om genotificeerd te worden van changes op specifieke resources. Binnen Koppeltaal is het mogelijk om op zeer nauwkeurig niveau genotificeerd te worden van changes.
+# Subscribing to changes
 
 {% hint style="warning" %}
-Het notificatie-mechanisme heeft een maturity level 3. We weten dat FHIR hard werkt aan het verbeteren van het notificatie-mechanisme. In de toekomstige versie is het erg waarschijnlijk dat deze functionaliteit verandert. Momenteel is er bijvoorbeeld geen notificatie wanneer een resource verwijderd wordt.
+The notification mechanism has a maturity level 3. We know that FHIR is working hard to improve the notification mechanism. In the future version, it is very likely that this functionality will change. For example, currently there is no notification when a resource is deleted.
 {% endhint %}
 
-### Een notificatie aanmaken
+### Subscribe to changes
 
-Applicaties kunnen zelf een notificatie aanmaken middels de [Subscription](https://www.hl7.org/fhir/subscription.html) resource. Deze dient zich te houden aan het [Koppeltaal 2.0 profiel](https://simplifier.net/koppeltaalv2.0/kt2\_subscription). De `Subscription` kan, net als de andere resources, beheerd worden middels de [CRUD Operaties](crud-operaties/).&#x20;
+Applications can create their own notification using the [`Subscription`](https://www.hl7.org/fhir/r4/subscription.html) resource. This must adhere to the [Koppeltaal 2.0 profile](https://simplifier.net/koppeltaalv2.0/kt2subscription). The `Subscription`, like the other resources, can be managed through the [CRUD Operations](crud-operaties/).
 
 #### Criteria
 
-Het `Subscription.criteria` veld kan door applicaties zelf gevuld worden. Bij elke change zal de Koppeltaal Server nagaan of er `Subscriptions` zijn waarbij de criteria matches aan de doorgevoerde change. Indien dit zo is, zal voor de gematchde subscriptions een notificatie gestuurd worden naar de `Subscription.channel.endpoint`.
+The `Subscription.criteria` field can be filled by applications themselves. With each change, the Koppeltaal server will check if there are `Subscriptions` where the criteria matches the created/changed `Resource`. If so, a `POST` notification will be sent to the `Subscription.channel.endpoint` for the matched subscriptions.&#x20;
 
 #### Channel
 
-Het `Subscription.channel` wordt gebruikt om aan te geven hoe en waar de notificatie heen moet. In de POC is het momenteel alleen mogelijk om het type `email` en `rest-hook` te gebruiken.
+The `Subscription.channel` is used to specify how and where the notification should go. In the POC, Koppeltaal will only support the `rest-hook` type without a payload.
 
 {% hint style="info" %}
-De Koppeltaal Server past "Notification Narrowing" toe; vergelijkbaar met [Search Narrowing](../../domeinbeheer/rollen-beheren/search-narrowing.md) maar dan voor het notificeren. Echter, wanneer er iets mis gaat in dit process, wordt de notificatie WEL verstuurd. Daarnaast kan het zijn dat een applicatie meerdere `Subscriptions` hebben die matchen op de gestelde `criteria`
+The Koppeltaal Server applies "Notification Narrowing"; similar to [Search Narrowing](../../domeinbeheer/rollen-beheren/search-narrowing.md) but for notifications. However, when something goes wrong in this process, the notification WILL be sent. In addition, an application may have multiple `Subscriptions` that match the set `criteria`.&#x20;
 
-Applicaties dienen er rekening mee te houden dat een notificatie niet altijd resulteert in een op te halen resource.
+Applications should therefore note that a notification does not always result in a`Resource` to be retrieved.
+
+Applications should also note that subscriptions might not be received. Perhaps the webhook endpoint was unavailable, or the process runs into an error somewhere. When syncing state is important, it is important to keep the before-mentioned in mind and implement a mechanism that still synchronises all data.
 {% endhint %}
 
-### Limitaties
+### Limitations
 
-Er zijn verschillen tussen de FHIR Subscription en het Koppeltaal 2.0 profiel. Zo staat Koppeltaal het niet toe om een `Subscription` aan te maken waar de `Subscription.payload` aangezet wordt. Op deze manier is de notificatie puur een "ping" om aan te geven dat er wat veranderd is, maar niet WAT er inhoudelijk veranderd is. Deze keuze is gemaakt om te voorkomen dat er per ongeluk gevoelige informatie naar een verkeerde endpoint wordt gestuurd.&#x20;
+There are differences between the FHIR `Subscription` and the Koppeltaal 2.0 profile. For example, Koppeltaal does not allow the creation of a `Subscription` where the `Subscription.payload` is turned on. This way, the notification is purely a "ping" to indicate that something has changed, but not WHAT content has changed. This choice was made to avoid accidentally sending sensitive information to the wrong endpoint.
 
-### Voorbeeldbericht
+### Example Subscription
 
 ```json
 {
@@ -39,7 +45,7 @@ Er zijn verschillen tussen de FHIR Subscription en het Koppeltaal 2.0 profiel. Z
     ]
   },
   "status": "active",
-  "reason": "Meld afgeronde taken",
+  "reason": "Process finished Tasks",
   "criteria": "Task?status=ready",
   "channel": {
     "type": "rest-hook",
