@@ -6,11 +6,11 @@ See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#create) for m
 
 ### Business identifiers
 
-Koppeltaal enforces setting business identifiers on Resources by making the `identifier` field mandatory. The main reason for this is so that a source system can consistently keep track of whether a Koppeltaal variant of their entity already exists. In addition, business identifiers can help when there are multiple source systems that need to know if a Resource already exists.
+Koppeltaal enforces setting business identifiers on `Resources` by making the `identifier` field mandatory. The main reason for this is so that a source system can consistently keep track of whether a Koppeltaal variant of their entity already exists. In addition, business identifiers can help when there are multiple source systems that need to know if a `Resource` already exists.
 
 ### Koppeltaal Profiles
 
-The Koppeltaal server validates all resources being created or updated. The server enforces that resources are sent in compliance with the [Koppeltaal profiles](https://simplifier.net/Koppeltaalv2.0/\~resources?category=Profile\&fhirVersion=R4\&sortBy=RankScore\_desc). Profiles are stored in FHIR as [`StructureDefinition`](https://www.hl7.org/FHIR/r4/structuredefinition.html) resources. To indicate that a resource has been created in compliance with a profile, the `Resource.meta.profiles` array must be filled. The value should always be filled with the canonical identifier of the profile. This can be found in [simplifier](https://simplifier.net/Koppeltaalv2.0/\~resources?category=Profile\&fhirVersion=R4\&sortBy=RankScore\_desc):
+The Koppeltaal server validates all `Resources` being created or updated. The server enforces that resources are sent in compliance with the [Koppeltaal profiles](https://simplifier.net/Koppeltaalv2.0/\~resources?category=Profile\&fhirVersion=R4\&sortBy=RankScore\_desc). Profiles are stored in FHIR as [`StructureDefinition`](https://www.hl7.org/FHIR/r4/structuredefinition.html) resources. To indicate that a resource has been created in compliance with a profile, the `Resource.meta.profiles` array must be filled. The value should always be filled with the canonical identifier of the profile. This can be found in [simplifier](https://simplifier.net/Koppeltaalv2.0/\~resources?category=Profile\&fhirVersion=R4\&sortBy=RankScore\_desc):
 
 ![Canonical identifier ophalen bij simplifier.net](<../../../.gitbook/assets/Screenshot 2021-12-09 at 10.42.16.png>)
 
