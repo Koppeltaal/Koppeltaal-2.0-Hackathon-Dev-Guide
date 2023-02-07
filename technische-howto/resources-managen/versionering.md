@@ -1,8 +1,5 @@
-# Versionering
+# Versioning
 
-### De basis
+The Koppeltaal server keeps track of all versions of resources. Thus, all versions of a `Resource` can be [retrieved](crud-operaties/resource-ophalen.md#specifieke-versie-van-een-resource-ophalen). The Koppeltaal server also enforces that changes to a `Resource` are based on the [latest version](crud-operaties/resource-updaten.md#concurrency).
 
-De Koppeltaal server houdt alle versies bij van resources. Zo kunnen alle versies van een `Resource` [opgevraagd](crud-operaties/resource-ophalen.md#specifieke-versie-van-een-resource-ophalen) worden. Ook zorgt de Koppeltaal server er voor dat changes op een `Resource` gebaseerd zijn op de [laatste versie](crud-operaties/resource-updaten.md#concurrency).
-
-### 
-
+###

@@ -33,7 +33,7 @@
     * [JWKS setup](technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md)
   * [Access to Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md)
 * [Managing resources](technische-howto/resources-managen/README.md)
-  * [Versionering](technische-howto/resources-managen/versionering.md)
+  * [Versioning](technische-howto/resources-managen/versionering.md)
   * [CRUD Operaties](technische-howto/resources-managen/crud-operaties/README.md)
     * [Alle Resources Ophalen](technische-howto/resources-managen/crud-operaties/alle-resources-ophalen.md)
     * [Resource Ophalen](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
