@@ -53,10 +53,10 @@ The timestamps follows the ["UNIX time"](https://en.wikipedia.org/wiki/Unix\_tim
 
 ### 3. Sign the JWT&#x20;
 
-After the JWT is completely filled, it must be signed. For this, [Signing the JWT](../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) can be followed.
+After the JWT is completely filled, it must be signed. For this, [Signing the JWT](../../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) can be followed.
 
 ### 4.  Launch
 
-The signed token can now be launched to the client. To find the endpoint to be launched to, the `ActivityDefinition.endpoint` extension can be used. The correct ActivityDefinition can be found using `Task.instantiatesCanonical` (see [resource-ophalen.md](../resources-managen/crud-operaties/resource-ophalen.md "mention")).&#x20;
+The signed token can now be launched to the client. To find the endpoint to be launched to, the `ActivityDefinition.endpoint` extension can be used. The correct ActivityDefinition can be found using `Task.instantiatesCanonical` (see [resource-ophalen.md](../../resources-managen/crud-operaties/resource-ophalen.md "mention")).&#x20;
 
 There are minimal differences between sending via [HTI](hti-launch-versturen.md) and [SHOF](broken-reference).

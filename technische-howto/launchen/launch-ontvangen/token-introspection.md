@@ -1,6 +1,6 @@
 # Token Introspection
 
-Wanneer een applicatie een HTI launch ontvangt, zal deze een [JWT token bevatten](../launch-samenstellen.md). Om er voor te zorgen dat niet elke applicatie alle security logica moet inbouwen om dit token te controleren, biedt Koppeltaal [Token Introspection](https://datatracker.ietf.org/doc/html/rfc7662) aan op de authenticatie server. Zo hoeft de applicatie niet meer zelf de [JWT te verifiëren](./#jwt-verifieren).
+Wanneer een applicatie een HTI launch ontvangt, zal deze een [JWT token bevatten](../launch-samenstellen/). Om er voor te zorgen dat niet elke applicatie alle security logica moet inbouwen om dit token te controleren, biedt Koppeltaal [Token Introspection](https://datatracker.ietf.org/doc/html/rfc7662) aan op de authenticatie server. Zo hoeft de applicatie niet meer zelf de [JWT te verifiëren](./#jwt-verifieren).
 
 Wanneer de Token Introspection een token goedkeurt, zal de uitgepakte body van de JWT token teruggegeven worden. Indien er een `200` response code wordt teruggegeven, moet de applicatie ALTIJD verifiëren dat het `active` attribuut in de response `true` is.&#x20;
 

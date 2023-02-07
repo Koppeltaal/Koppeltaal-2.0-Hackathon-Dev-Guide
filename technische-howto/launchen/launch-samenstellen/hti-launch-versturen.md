@@ -4,7 +4,7 @@
 It is still under discussion whether to rename the `token` param to `launch` and also to include an `iss` just like the SHOF launch. This way it does not matter whether an HTI or SHOF launch is sent out.
 {% endhint %}
 
-The launch can be initiated via a `<form>` and the `form-post-redirect` flow. Both HTI and SHOF are very similar, they just vary in parameter names:
+The launch can be initiated via a `<form>` and the `form-post-redirect` flow. Both HTI and SHOF are very similar while initiating a launch; they just vary in parameter names.
 
 ### HTI
 

@@ -8,7 +8,7 @@ Deze use-case zorgt er voor dat er op een laagdrempelige manier van de ene clien
 
 ### Launch Uitsturen
 
-Hiervoor kan [Launch samenstellen](../../technische-howto/launchen/launch-samenstellen.md) geraadpleegd worden.
+Hiervoor kan [Launch samenstellen](../../technische-howto/launchen/launch-samenstellen/) geraadpleegd worden.
 
 ### Launch Ontvangen
 
