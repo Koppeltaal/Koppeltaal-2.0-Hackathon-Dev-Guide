@@ -37,7 +37,7 @@
   * [CRUD Operations](technische-howto/resources-managen/crud-operaties/README.md)
     * [Retrieve all Resources](technische-howto/resources-managen/crud-operaties/alle-resources-ophalen.md)
     * [Retrieve specific Resource](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
-    * [Resource Aanmaken](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
+    * [Create a Resource](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Resource Updaten](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
   * [Abonneren op changes](technische-howto/resources-managen/abonneren-op-changes.md)
 * [Launchen](technische-howto/launchen/README.md)

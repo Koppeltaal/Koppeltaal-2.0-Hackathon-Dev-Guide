@@ -100,7 +100,7 @@ Bearer token obtained from the Auth Server (see
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/_history/<:versie>" method="get" summary="retrieve specific version of a Resource (vread) " %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/_history/<:versie>" method="get" summary="Retrieve specific version of a Resource (vread) " %}
 {% swagger-description %}
 
 {% endswagger-description %}
