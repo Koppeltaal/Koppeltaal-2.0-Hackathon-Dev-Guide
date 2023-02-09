@@ -1,16 +1,19 @@
 ---
-description: Lanceren van een taak middels HTI
+description: Launching a Task via HTI
 ---
 
 # Use-Case 2: HTI Launch
 
-Deze use-case zorgt er voor dat er op een laagdrempelige manier van de ene client naar de andere client gelaunched kan worden. Bij het launchen middels HTI is geen authenticatie server betrokken. In de [technische how-to](../../technische-howto/launchen/hti.md) wordt beschreven hoe de HTI launch geïmplementeerd kan worden.
+This use case showcases the ease of implementation for launching from one client to another by using HTI. The [launch section](../../technische-howto/launchen/) describes how to implement the HTI launch.
 
-### Launch Uitsturen
+### Composing a launch
 
-Hiervoor kan [Launch samenstellen](../../technische-howto/launchen/launch-samenstellen/) geraadpleegd worden.
+{% hint style="info" %}
+This step is identical between HTI and SHOF
+{% endhint %}
 
-### Launch Ontvangen
+The documentation [Compose a launch](use-case-2-hti-launch.md#composing-a-launch) explains in detail how to this should be done.&#x20;
 
-Hiervoor kan [HTI Launch Ontvangen](../../technische-howto/launchen/launch-ontvangen/) geraadpleegd worden.
+### Receiving a HTI launch
 
+The documentation [Receiving a HTI launch](use-case-2-hti-launch.md#receiving-a-hti-launch) explains in detail how to handle being launched to via HTI.
