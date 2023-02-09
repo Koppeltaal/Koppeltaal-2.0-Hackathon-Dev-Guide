@@ -19,13 +19,13 @@
 
 By means of the context object it can be determined who, with which role, is logged on to the system and which task should be opened. When there is a valid response to this request, the user can be authenticated and e.g. a session can be created for the user.
 
-{% swagger baseUrl="https://auth-service.koppeltaal.headease.nl" path="/oauth2/authorize" method="get" summary="Authorize Request" %}
+{% swagger baseUrl="https://auth-service.koppeltaal.headease.nl" path="/oauth2/authorize" method="get" summary="Authorize Request" expanded="true" %}
 {% swagger-description %}
 The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="aud" type="string" required="true" %}
-URL of the Koppeltaal Server (the same as the 
+URL of the Koppeltaal server (the same as the 
 
 `iss`
 
@@ -35,7 +35,11 @@ URL of the Koppeltaal Server (the same as the
 {% swagger-parameter in="query" name="scope" type="string" required="true" %}
 Always: 
 
-`launch openid`
+`openid fhirUser launch`
+
+ or 
+
+`openid fhirUser`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="state" type="string" required="false" %}
@@ -72,6 +76,20 @@ Altijd:
 `code`
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="code_challenge" required="true" %}
+A generated code challenge as per 
+
+[rfc7636](https://www.rfc-editor.org/rfc/rfc7636#appendix-B)
+
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="code_challenge_method" required="true" %}
+Always: 
+
+`S256`
+{% endswagger-parameter %}
+
 {% swagger-response status="302" description="The Location header will redirect with a code and the state" %}
 ```
 Loocation: https://launch-testsuite.koppeltaal.headease.nl/module_authentication_shof?code=05b542e2-6206-449b-924b-99d39168029b&state=99a8cf9a-28c2-4867-8123-486c04003482
@@ -79,7 +97,7 @@ Loocation: https://launch-testsuite.koppeltaal.headease.nl/module_authentication
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" method="post" summary="Get Token" %}
+{% swagger baseUrl="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" method="post" summary="Get Token" expanded="true" %}
 {% swagger-description %}
 The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
@@ -122,6 +140,18 @@ Always:
 `authorization_code`
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="code_verifier" required="true" %}
+Unhashed value used foe generating the 
+
+`code_challenge`
+
+ in the authorize step as per 
+
+[rfc7636](https://www.rfc-editor.org/rfc/rfc7636#appendix-B)
+
+
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="" %}
 ```javascript
 {
@@ -135,6 +165,14 @@ Always:
   "relatedperson": null,
   "activity": "https://hapi-fhir-server.koppeltaal.headease.nl/fhir/ActivityDefinition/1959",
   "id_token": "eyJraWQiOiJvUDQ4NmxJcmwzRFFQdXF0dVVqUmxqc01oWFA0alJmdXoxS19uX0dpQmRrIiwiYWxnIjoiUlM1MTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2F1dGhlbnRpY2F0aW9uLXNlcnZpY2Uua29wcGVsdGFhbC5oZWFkZWFzZS5ubC8iLCJhdWQiOiJiMDJkNmVhNi1iMWEyLTRjZDQtODJmNS1iNjQyM2Q2NmE5ODgiLCJuYmYiOjE2MzI4MTMzNTAsImV4cCI6MTYzMjgxNjk1MCwibm9uY2UiOiJmNGMxODZlNy1jMzI2LTQxODAtYjFmMi1jYTllMWI4YTgyYWQiLCJzdWIiOiJQYXRpZW50LzE5NjMiLCJhenAiOiJiMDJkNmVhNi1iMWEyLTRjZDQtODJmNS1iNjQyM2Q2NmE5ODgifQ.UfBtTACLOhsCMr4Tlen3RUFek06WgWc-aaTPQzJzmHVGYBLY3CnJXTLI1FfCzp1ChM3vx-e2jbFCDHak6ennsuitki-1HnrZitTKpG8qKZK_f24gwVFM5LmzdUXtuTszJSeulpRG8zmNI96pqaIW4ru995LwhKLd-XSOY02BbAMo4XZ46ZW8DBXnhr32CI9TUza8NEQoxlQAF8EboUhro5vauPrjdshP3jQFUNSs5NceB4er3RnF10Zd6SiLFP-_c2ynaj_v87fJEgVGw63byYcKm6O3bTW2KsSz_YNYDYv8DWjYAp25P79e-Hlc3ERcybhLnLy0_-Rkvjk5P_240g"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="Client unauthorized or wrong code_verifier" %}
+```javascript
+{
+    // Response
 }
 ```
 {% endswagger-response %}
