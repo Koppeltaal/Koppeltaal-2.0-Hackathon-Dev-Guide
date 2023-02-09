@@ -1,10 +1,7 @@
 # Requirements
 
-Om de use-cases te kunnen implementeren moet voldaan zijn aan een aantal zaken:
+To implement the use cases, several tasks must be completed:&#x20;
 
-1. De IRMA app moet geïnstalleerd zijn
-2. Er  moet een e-mailadres attribuut toegevoegd zijn aan IRMA
-3. De applicatie moet een [connectie kunnen maken met Koppeltaal](../../technische-howto/connectie-maken-met-koppeltaal/)
-
-
-
+1. The IRMA app must be installed&#x20;
+2. An email address attribute must have been added to IRMA&#x20;
+3. The application must be able to [connect to Koppeltaal](../../technische-howto/connectie-maken-met-koppeltaal/)

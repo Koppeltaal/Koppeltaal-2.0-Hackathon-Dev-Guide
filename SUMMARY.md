@@ -55,7 +55,7 @@
   * [IRMA Installeren & Configureren](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
 * [Use-Cases](hackathon-use-cases/crud-task/README.md)
   * [Use-Case 1: Create a Task](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/README.md)
-    * [Zelf Een ActivityDefinition Maken](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
+    * [Create an ActivityDefinition](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
   * [Use-Case 2: HTI Launch](hackathon-use-cases/crud-task/use-case-2-hti-launch.md)
   * [Use-case 3: SHOF Launch](hackathon-use-cases/crud-task/use-case-3-smart-hti-on-fhir-launch.md)
   * [Use-case 4: Abonneren op changes](hackathon-use-cases/crud-task/use-case-4-abonneren-op-changes.md)
