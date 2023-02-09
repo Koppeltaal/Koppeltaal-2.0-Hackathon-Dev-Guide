@@ -22,9 +22,7 @@ The documentation [Receiving a SHOF launch](../../technische-howto/launchen/smar
 
 ### Testing
 
-De SHOF Launch kan getest worden middels de [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/portal.html). Er kan gelaunched worden naar de POC Module middels de volgende parameters in de Test Suite:
-
-The SHOF Launch can be tested using the [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/portal.html). You can launch to the POC Module using the following parameters in the Test Suite:
+The SHOF Launch can be tested using the [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/portal.html) to launch to the POC module. You can launch to the POC module using the following parameters in the Test Suite:
 
 | Attribute      | Value                                                                                                                |
 | -------------- | -------------------------------------------------------------------------------------------------------------------- |
