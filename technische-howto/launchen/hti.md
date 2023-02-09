@@ -4,7 +4,7 @@ description: Health Tools Interoperability
 
 # HTI Flow
 
-[HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md) is a light-weight solution from [GIDS](https://www.gidsopenstandaarden.org/hti-health-tools-interoperability) to quickly implement client-to-client launches. In short, the HTI launch is simply a [signed JWT](../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) with a partial [FHIR Task](https://www.hl7.org/fhir/r4/task.html) as payload that is sent from one client to another. A public key can be used to verify that the JWT comes from a trusted source. The `Task` serves as the context for the launch.
+[HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md) is a light-weight solution from [GIDS](https://www.gidsopenstandaarden.org/hti-health-tools-interoperability) to quickly implement client-to-client launches. In short, the HTI launch is simply a [signed JWT](../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) with HTI-specific claims that is sent from one client to another. A public key can be used to verify that the JWT comes from a trusted source.&#x20;
 
 ### Requirements
 
