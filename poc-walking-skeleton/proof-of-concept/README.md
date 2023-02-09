@@ -12,7 +12,7 @@ Applications within the POC now often use IRMA to identify the user and relate a
 
 The POC consists of the following type of applications:
 
-| Applicatietype     | Description                                                                                    |
+| Application type   | Description                                                                                    |
 | ------------------ | ---------------------------------------------------------------------------------------------- |
 | System component   | Applications that form the core of Koppeltaal 2.0.                                             |
 | Supplier           | A supplier who uses their non-production platform together with the PoC Koppeltaal 2.0 Server. |

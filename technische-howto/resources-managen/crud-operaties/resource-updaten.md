@@ -10,7 +10,7 @@ To avoid overwriting data, an application must always indicate which version of 
 
 The `If-Match` value must match the latest `ETag` value. The `ETag` value is provided via a response header sent by the Koppeltaal server after a [`Create`](resource-aanmaken.md), [`Update`](resource-updaten.md) or [`Get`](resource-ophalen.md#retrieve-specific-resource).
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>/<:id>" method="put" summary="Update a complete resource" %}
+{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>/<:id>" method="put" summary="Update a complete resource" expanded="true" %}
 {% swagger-description %}
 Note: the 
 
@@ -41,7 +41,7 @@ Bearer token obtained from the Auth Server
 
 (see 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}
@@ -115,7 +115,7 @@ This is what the payload looks like from a JSON Patch to update the status of a 
 
 More examples of patches can be downloaded [here](https://www.hl7.org/fhir/r4/test-cases.zip).
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Patch a Resource" %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Patch a Resource" expanded="true" %}
 {% swagger-description %}
 As an alternative to updating an entire resource, clients can perform a patch operation. This can be useful when a client is seeking to minimize its bandwidth utilization.
 {% endswagger-description %}
@@ -142,7 +142,7 @@ Bearer token obtained from the Auth Server
 
 (see 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}

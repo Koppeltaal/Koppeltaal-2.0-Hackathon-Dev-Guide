@@ -42,7 +42,7 @@ Always:
 `openid fhirUser`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="state" type="string" required="false" %}
+{% swagger-parameter in="query" name="state" type="string" required="true" %}
 An opaque value used by the client to maintain the state between the request and the callback. The authorization server takes this value when redirecting the user agent back to the client. The parameter MUST be used to prevent cross-site request forgery (CSRF) attacks or session fixation
 {% endswagger-parameter %}
 

@@ -4,7 +4,7 @@ description: Launching a Task via HTI
 
 # Use-Case 2: HTI Launch
 
-This use case showcases the ease of implementation for launching from one client to another by using HTI. The [launch section](../../technische-howto/launchen/) describes how to implement the HTI launch.
+This use case showcases the lightweight launch from one client to another by using HTI. The [launch section](../../technische-howto/launchen/) describes how to implement the HTI launch.
 
 ### Composing a launch
 

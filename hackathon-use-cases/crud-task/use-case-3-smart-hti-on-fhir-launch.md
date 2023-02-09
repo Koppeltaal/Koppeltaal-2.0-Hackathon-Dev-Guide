@@ -4,8 +4,6 @@ description: Launching a Task via SMART HTI On FHIR (SHOF).
 
 # Use-case 3: SHOF Launch
 
-Deze use-case zorgt er voor dat er zo veel mogelijk als Koppeltaal 1.x ingelogd kan worden. Daarnaast voert de SHOF launch een extra security-check uit die waarborgt dat de launch token niet onderschept is en wordt uitgevoerd door iemand anders.
-
 This use-case ensures that clients can launch in a similar way to Koppeltaal 1.x. In addition, the SHOF launch performs an additional security check that ensures the launch token is not intercepted and executed by someone else.
 
 ### Composing a launch

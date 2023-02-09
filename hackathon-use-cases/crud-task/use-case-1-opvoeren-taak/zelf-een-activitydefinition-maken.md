@@ -18,7 +18,7 @@ Koppeltaal adds three [extensions](https://simplifier.net/koppeltaalv2.0/kt2acti
 | publisherId     | A unique identifier for the client publishing the `ActivityDefinition`. This can be used to, for example, retrieve all Tasks that refer to any `ActivityDefinition` from publisher _**X**_. This can be very useful for subscribing to changes in `Tasks` that are relevant to your application. This value requires an `id` type value, allowing more freedom of "groups" than the `resource-origin` field. |
 | resource-origin | A reference to the `Device` that created the Resource. This is set by the Koppeltaal server as it's used by the [authorisation mechanism](../../../domeinbeheer/rollen-beheren/autorisatiemodel.md). This value cannot be set by the client while creating new Resources.                                                                                                                                    |
 
-### Valid ActivityDefinition
+### Example ActivityDefinition
 
 ```javascript
 {

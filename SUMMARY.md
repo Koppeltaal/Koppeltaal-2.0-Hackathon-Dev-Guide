@@ -11,7 +11,7 @@
   * [Koppeltaal IdP](https://iam.koppeltaal.headease.nl)
   * [EHR](https://poc-epd.koppeltaal.headease.nl/)
   * [Portal](https://poc-portal.koppeltaal.headease.nl/)
-  * [Domein Access Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
+  * [Domain Access Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
   * [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/)
 
 ## Domain access
@@ -52,7 +52,7 @@
 ## Hackathon Use Cases
 
 * [Requirements](hackathon-use-cases/requirements/README.md)
-  * [IRMA Installeren & Configureren](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
+  * [Install and configure IRMA](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
 * [Use-Cases](hackathon-use-cases/crud-task/README.md)
   * [Use-Case 1: Create a Task](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/README.md)
     * [Create an ActivityDefinition](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
@@ -60,7 +60,7 @@
   * [Use-case 3: SHOF Launch](hackathon-use-cases/crud-task/use-case-3-smart-hti-on-fhir-launch.md)
   * [Use-case 4: Subscribing to changes](hackathon-use-cases/crud-task/use-case-4-abonneren-op-changes.md)
 
-## Handige Links
+## Useful Links
 
 * [Simplifier Profiles](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
 * [FHIR Docs](https://www.hl7.org/fhir/documentation.html)

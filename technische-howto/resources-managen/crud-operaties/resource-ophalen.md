@@ -8,7 +8,7 @@ description: Request a specific instance of a Resource
 See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#read) for more information.
 {% endhint %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="get" summary="Retrieve specific Resource" %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="get" summary="Retrieve specific Resource" expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -20,7 +20,7 @@ Resource.id to be retrieved
 {% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
 Bearer token obtained from the Auth Server (see 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}
@@ -100,7 +100,7 @@ Bearer token obtained from the Auth Server (see
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/_history/<:versie>" method="get" summary="Retrieve specific version of a Resource (vread) " %}
+{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/_history/<:versie>" method="get" summary="Retrieve specific version of a Resource (vread) " expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -121,7 +121,7 @@ Bearer token verkregen via de Auth Server
 
 (zie 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to  Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}

@@ -12,7 +12,7 @@ See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#read) for mor
 Returned results can be filtered by [Search Narrowing](../../../domeinbeheer/rollen-beheren/search-narrowing.md).
 {% endhint %}
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="get" summary="Retrieve all Resources" %}
+{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="get" summary="Retrieve all Resources" expanded="true" %}
 {% swagger-description %}
 Get ALL for type <Resource>. 
 {% endswagger-description %}
@@ -33,7 +33,7 @@ Bearer token obtained from the Auth Server
 
 (zie 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}

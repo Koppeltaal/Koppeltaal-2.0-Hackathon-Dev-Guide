@@ -37,7 +37,7 @@ The conditional create is still in the "trial use" phase. Thus, the status of th
 
 The FHIR specification describes [conditional creates](https://www.hl7.org/fhir/r4/http.html#ccreate). When a `Resource` is created, an `upsert` can be performed based on the business identifier. When multiple applications in a domain create the same type of `Resources`, it is important that there is clear agreement on which identifier system is used. The conditional create helps prevent duplicate resources being created at Koppeltaal.
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="post" summary="Conditional Create Request" %}
+{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="post" summary="Conditional Create Request" expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -62,7 +62,7 @@ Bearer token obtained from the Auth Server
 
 (see 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to  Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}
@@ -102,7 +102,7 @@ Resource
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="post" summary="Create Request" %}
+{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="post" summary="Create Request" expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -123,7 +123,7 @@ Bearer token obtained from the Auth Server
 
 (see 
 
-[Connectie maken met Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}
