@@ -5,9 +5,9 @@
 ## POC (Walking Skeleton)
 
 * [Proof Of Concept](poc-walking-skeleton/proof-of-concept/README.md)
-  * [Koppeltaal Server](https://hapi-fhir-server.koppeltaal.headease.nl/fhir/metadata)
-  * [Domein Management](https://smart-backend-services.koppeltaal.headease.nl/)
-  * [Auth Server](https://authentication-service.koppeltaal.headease.nl/)
+  * [Koppeltaal Server](https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT)
+  * [Domain Management](https://domain-admin.koppeltaal.headease.nl/)
+  * [Auth Server](https://auth-service.koppeltaal.headease.nl/)
   * [Koppeltaal IdP](https://iam.koppeltaal.headease.nl)
   * [EHR](https://poc-epd.koppeltaal.headease.nl/)
   * [Portal](https://poc-portal.koppeltaal.headease.nl/)
@@ -62,8 +62,8 @@
 
 ## Handige Links
 
-* [Simplifier Profielen](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
+* [Simplifier Profiles](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
 * [FHIR Docs](https://www.hl7.org/fhir/documentation.html)
-* [HTI documentatie](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
+* [HTI documentation](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
-* [Koppeltaal 2.0 Specificaties & Architectuur](https://public.vzvz.nl/display/KTSA/Koppeltaal+Stelselarchitectuur)
+* [Koppeltaal 2.0 Specifications & Architecture](https://public.vzvz.nl/display/KTSA/Koppeltaal+Stelselarchitectuur)
