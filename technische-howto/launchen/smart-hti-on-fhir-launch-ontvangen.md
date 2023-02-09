@@ -164,7 +164,7 @@ Unhashed value used foe generating the
   "definition": "https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/ActivityDefinition/fbbf47a5-2a55-4e3a-8dec-a8eb63875374",
   "sub": "Practitioner/52b6535b-4e69-455b-9d9f-952e708ad393",
   "patient": "Patient/70184602-4d15-4ca9-89a6-00e78123b22e",
-  "intent": "launch"
+  "intent": "plan"
 }
 ```
 {% endswagger-response %}
