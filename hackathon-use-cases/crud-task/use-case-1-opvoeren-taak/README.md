@@ -16,8 +16,6 @@ The `Task` resource can most easily be created using an official FHIR library. F
 
 #### Profile
 
-De Koppeltaal Server dwingt het [Koppeltaal KT2Task profiel](https://simplifier.net/koppeltaalv2.0/kt2task) af. De `Task` objecten die uitgestuurd worden moeten hier aan voldoen. Per Resource moet ook aangegeven worden middels welk profiel deze is samengesteld. Dit gebeurt in het [Resource.meta.profile](https://www.hl7.org/fhir/resource-definitions.html#Meta.profile) veld.
-
 The Koppeltaal server enforces compliance with the [Koppeltaal KT2Task profile](https://simplifier.net/koppeltaalv2.0/kt2task). The `Task` Resource must indicate that it's using the KT2Task profile. This is done in the `Resource.meta.profile` field.
 
 #### Example Task
