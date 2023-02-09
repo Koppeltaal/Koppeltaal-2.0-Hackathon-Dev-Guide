@@ -58,7 +58,7 @@
     * [Create an ActivityDefinition](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
   * [Use-Case 2: HTI Launch](hackathon-use-cases/crud-task/use-case-2-hti-launch.md)
   * [Use-case 3: SHOF Launch](hackathon-use-cases/crud-task/use-case-3-smart-hti-on-fhir-launch.md)
-  * [Use-case 4: Abonneren op changes](hackathon-use-cases/crud-task/use-case-4-abonneren-op-changes.md)
+  * [Use-case 4: Subscribing to changes](hackathon-use-cases/crud-task/use-case-4-abonneren-op-changes.md)
 
 ## Handige Links
 
