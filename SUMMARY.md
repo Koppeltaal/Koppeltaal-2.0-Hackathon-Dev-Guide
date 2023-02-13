@@ -5,7 +5,7 @@
 ## POC (Walking Skeleton)
 
 * [Proof Of Concept](poc-walking-skeleton/proof-of-concept/README.md)
-  * [Koppeltaal Server](https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT)
+  * [Koppeltaal Server](https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/metadata)
   * [Domain Management](https://domain-admin.koppeltaal.headease.nl/)
   * [Auth Server](https://auth-service.koppeltaal.headease.nl/)
   * [Koppeltaal IdP](https://iam.koppeltaal.headease.nl)
