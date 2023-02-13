@@ -39,6 +39,7 @@
     * [Retrieve specific Resource](technische-howto/resources-managen/crud-operaties/resource-ophalen.md)
     * [Create a Resource](technische-howto/resources-managen/crud-operaties/resource-aanmaken.md)
     * [Update a Resource](technische-howto/resources-managen/crud-operaties/resource-updaten.md)
+    * [Delete a Resource](technische-howto/resources-managen/crud-operaties/delete-a-resource.md)
   * [Subscribing to changes](technische-howto/resources-managen/abonneren-op-changes.md)
 * [Launching](technische-howto/launchen/README.md)
   * [HTI Flow](technische-howto/launchen/hti.md)
