@@ -7,7 +7,7 @@
 
 ## Flow
 
-<figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio (1).png" alt="SMART HTI Flow"><figcaption><p>SMART HTI Flow</p></figcaption></figure>
 
 1. When the launch arrives, the [conformance is retrieved from the Koppeltaal Server](../koppeltaal-server-metadata-opvragen.md). Here the authorize & token URL can be requested.
 2. A redirect is sent to the authorize URL. The auth server will redirect the browser to a shared IdP using an OIDC code flow if the `fhirUser` scope is set. If the launching platform does not use this shared IdP the user will have to login here as well. At the POC it is possible to create an account directly from this login screen. New users are given the role patient by default. The authorize call will check if the logged in user matches the user from the launch token.

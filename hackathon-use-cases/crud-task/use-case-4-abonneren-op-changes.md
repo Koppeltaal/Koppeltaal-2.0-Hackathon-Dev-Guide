@@ -1,3 +1,3 @@
-# Use-case 4: Abonneren op changes
+# Use-case 4: Subscribing to changes
 
-Om notificaties te ontvangen op belangrijke resources kunnen applicaties zelf `Subscription` resources aanmaken. Volg [deze](../../technische-howto/resources-managen/abonneren-op-changes.md) pagina en probeer te abonneren op `Task` changes.
+To receive notifications on important resources, applications can create their own `Subscription` resources. Follow [this](../../technische-howto/resources-managen/abonneren-op-changes.md) page and try subscribing to `Task` changes.

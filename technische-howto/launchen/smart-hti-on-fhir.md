@@ -21,4 +21,4 @@ SMART HTI On FHIR (SHOF) uses the HTI token as the `launch` parameter value. Thi
 
 ### Information Flow
 
-<figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio.png" alt="SHOF Sequence Diagram"><figcaption><p>SHOF Sequence Diagram</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio (1).png" alt="SMART HTI Flow"><figcaption><p>SMART HTI Flow</p></figcaption></figure>
