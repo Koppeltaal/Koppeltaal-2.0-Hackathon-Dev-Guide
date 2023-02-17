@@ -15,5 +15,4 @@ description: Health Tools Interoperability
 
 The HTI launch can be done without an authentication server. Therefore, it is important that the `module provider` is in possession of the issuer and the related JWKS endpoint. This way it can be proven that the `portal` actually signed the JWT. A public key may also be exchanged, although there is a strong preference to use JWKS since applications must implement it to make a [Connection with Koppeltaal](../connectie-maken-met-koppeltaal/).
 
-![bron: https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md#implementation-guide](../../.gitbook/assets/image.png)
-
+<figure><img src="../../.gitbook/assets/image19.png" alt="HTI Flow"><figcaption><p>HTI Flow</p></figcaption></figure>
