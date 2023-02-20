@@ -35,11 +35,11 @@ URL of the Koppeltaal server (the same as the
 {% swagger-parameter in="query" name="scope" type="string" required="true" %}
 Always: 
 
-`openid fhirUser launch`
+`launch openid fhirUser`
 
  or 
 
-`openid fhirUser`
+`launch`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="state" type="string" required="true" %}
