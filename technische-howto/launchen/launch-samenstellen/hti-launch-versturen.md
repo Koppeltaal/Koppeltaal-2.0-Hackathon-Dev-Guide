@@ -13,7 +13,7 @@ The launch can be initiated via a `<form>` and the `form-post-redirect` flow. Bo
 <body onload="document.forms[0].submit();">
 <form action="https://module.provider.eu/modules/x" method="post">
 <input type="hidden" name="launch" value="eyJhbGciO..."/>
-<input type="hidden" name="iss" value="https%3A%2F%2Ffhir-server.koppeltaal.headease.nl%2Ffhir%2FDEFAULT"/>
+<input type="hidden" name="iss" value="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT"/>
 </form>
 </body>
 </html>
