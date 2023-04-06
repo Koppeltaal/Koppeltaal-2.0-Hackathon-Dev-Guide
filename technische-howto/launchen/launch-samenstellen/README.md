@@ -22,10 +22,10 @@ An example of the resulting HTI claims:
 
 ```javascript
 {
-    "resource": "Task/a5e582ac",
-    "definition": "https://module.example.com/ActivityDefinition/a5e58200",
-    "sub": "Caregiver/a5e58253",
-    "patient" : "Patient/a5e582e",
+    "resource": "Task/5f684c5f-2837-4505-a534-365431912f37",
+    "definition": "https://module.example.com/ActivityDefinition/d76ba97b-bfce-4a75-8e7a-2133778d1089",
+    "sub": "Practitioner/225d67a7-69b9-4343-b488-064945fe3fd3",
+    "patient" : "Patient/b592f103-f75b-4a63-a5dd-b75799775258",
     "intent": "plan"
 }
 ```
@@ -51,10 +51,10 @@ These two sets of claims should be combined to form a valid HTI v2.0 JWT. For ex
   "iss": "portal-client-id",
   "exp": 1585565745,
   "jti": "679e1e4c-bcb9-4fcc-80c4-f36e7063545c"
-  "sub" : "Practitioner/a5e58253",
-  "resource" : "Task/11sdvar3",
-  "definition" : "https://module.example.com/ActivityDefinition/a5e58200",
-  "patient" : "Patient/a5e582e",
+  "sub" : "Practitioner/225d67a7-69b9-4343-b488-064945fe3fd3",
+  "resource" : "Task/5f684c5f-2837-4505-a534-365431912f37",
+  "definition" : "https://module.example.com/ActivityDefinition/d76ba97b-bfce-4a75-8e7a-2133778d1089",
+  "patient" : "Patient/b592f103-f75b-4a63-a5dd-b75799775258",
   "intent": "plan"
 }
 ```
