@@ -12,7 +12,7 @@ This use case showcases the lightweight launch from one client to another by usi
 This step is identical between HTI and SHOF
 {% endhint %}
 
-The documentation [Compose a launch](use-case-2-hti-launch.md#composing-a-launch) explains in detail how to this should be done.&#x20;
+The documentation [Compose a launch](../../technische-howto/launchen/launch-samenstellen/) explains in detail how to this should be done.&#x20;
 
 ### Receiving a HTI launch
 

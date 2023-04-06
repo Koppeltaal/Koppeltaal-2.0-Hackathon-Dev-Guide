@@ -12,7 +12,7 @@ This use-case ensures that clients can launch in a similar way to Koppeltaal 1.x
 This step is identical between HTI and SHOF
 {% endhint %}
 
-The documentation [Compose a launch](use-case-3-smart-hti-on-fhir-launch.md#composing-a-launch) explains in detail how to this should be done.&#x20;
+The documentation [Compose a launch](../../technische-howto/launchen/launch-samenstellen/) explains in detail how to this should be done.&#x20;
 
 ### Receiving a SHOF launch
 

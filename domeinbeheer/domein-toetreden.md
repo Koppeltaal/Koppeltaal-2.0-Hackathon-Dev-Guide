@@ -3,7 +3,7 @@
 To join a domain, a request can be submitted to [Domain Management](https://domain-admin.koppeltaal.headease.nl/). After logging in to Domain Management, pages for all roles will be displayed (both management and requesting access). Follow these steps to join a domain:
 
 1. Navigate to [Domain management](https://domain-admin.koppeltaal.headease.nl/).
-2. Login via the [IRMA app](https://irma.app/) on your mobile device.
+2. Login via the [yivi app](https://www.yivi.app/) on your mobile device.
 3. Open the tab "AANVRAAG INDIENEN"
 4. Enter the name of you application and its corresponding [JWKS endpoint](../technische-howto/connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md).
 5. Submit the request.
