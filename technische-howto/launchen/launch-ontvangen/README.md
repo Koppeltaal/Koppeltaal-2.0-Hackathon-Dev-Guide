@@ -1,4 +1,4 @@
-# Receiving a HTI Launch
+# Receiving a HTI launch
 
 ### Requirements
 
@@ -10,7 +10,7 @@
 
 ### Verify the JWT
 
-Incoming HTI launches have a `token` parameter. This value represents the signed JWT (see [Compose a launch](../launch-samenstellen/))
+Incoming HTI launches have a `launch` parameter. This value represents the signed JWT (see [Compose a launch](../launch-samenstellen/))
 
 #### Token Introspection
 
