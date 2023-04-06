@@ -16,4 +16,4 @@ The documentation [Compose a launch](../../technische-howto/launchen/launch-same
 
 ### Receiving a HTI launch
 
-The documentation [Receiving a HTI launch](use-case-2-hti-launch.md#receiving-a-hti-launch) explains in detail how to handle being launched to via HTI.
+The documentation [Receiving a HTI launch](../../technische-howto/launchen/launch-ontvangen/) explains in detail how to handle being launched to via HTI.
