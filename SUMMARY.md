@@ -67,5 +67,5 @@
 * [FHIR Docs](https://www.hl7.org/fhir/documentation.html)
 * [HTI documentation](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
-* [Koppeltaal 2.0 Specifications & Architecture](https://public.vzvz.nl/display/KTSA/Koppeltaal+Stelselarchitectuur)
+* [Koppeltaal 2.0 Specifications & Architecture](https://vzvz.atlassian.net/wiki/spaces/KTSA/overview)
 * [Koppeltaal 2.0 OpenAPI Specs](https://fhir-server.koppeltaal.headease.nl/fhir/api-docs)
