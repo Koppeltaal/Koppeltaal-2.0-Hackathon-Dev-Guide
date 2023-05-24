@@ -63,7 +63,7 @@
 
 ## Useful Links
 
-* [Simplifier Profiles](https://simplifier.net/Koppeltaalv2.0/\~resources?fhirVersion=R4)
+* [Simplifier Profiles](https://simplifier.net/Koppeltaalv2.0/)
 * [FHIR Docs](https://www.hl7.org/fhir/documentation.html)
 * [HTI documentation](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
