@@ -18,6 +18,10 @@ Applications can create their own notification using the [`Subscription`](https:
 
 The `Subscription.criteria` field can be filled by applications themselves. With each change, the Koppeltaal server will check if there are `Subscriptions` where the criteria matches the created/changed `Resource`. If so, a `POST` notification will be sent to the `Subscription.channel.endpoint` for the matched subscriptions.&#x20;
 
+#### Koppeltaal-specific criteria
+
+It's possible to subscribe to custom search criteria added by Koppeltaal. This is done by defining `SearchParameter` resources. Koppeltaal provides `SearchParameters` that are likely to be used. Information on these can be found on [Confluence](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125775/TOP-KT-002b+-+Search+interacties).
+
 #### Channel
 
 The `Subscription.channel` is used to specify how and where the notification should go. In the POC, Koppeltaal will only support the `rest-hook` type without a payload.
