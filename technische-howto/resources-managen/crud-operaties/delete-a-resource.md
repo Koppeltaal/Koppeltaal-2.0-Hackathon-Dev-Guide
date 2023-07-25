@@ -29,7 +29,7 @@ When an application does get the permission to execute a `DELETE` request, the r
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="<Resource>" required="true" %}
-The resource type, e.g: 
+The resource type, e.g:
 
 `Patient`
 {% endswagger-parameter %}
@@ -86,3 +86,11 @@ The instance id
 ### Right to be forgotten
 
 In scenarios where users are able to use their right to be forgotten, the deletion of the data should always be done via the domain admin. Some solutions might require a manual delete, and certain solutions might support a `DELETE` request with the `$expunge` operator.
+
+## Topics
+
+[TOP-KT-002a - FHIR Resource Service interacties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125763/TOP-KT-002a+-+FHIR+Resource+Service+interacties)
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+
+[TOP-KT-009 - Overzicht gebruikte FHIR Resources](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27071328/TOP-KT-009+-+Overzicht+gebruikte+FHIR+Resources)

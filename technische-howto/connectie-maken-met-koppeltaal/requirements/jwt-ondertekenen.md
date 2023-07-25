@@ -1,11 +1,11 @@
 # Signing the JWT
 
-Koppeltaal uses JWTs in several places. For the dev guide, two places are good to know about:&#x20;
+Koppeltaal uses JWTs in several places. For the dev guide, two places are good to know about:
 
-1. For [retrieving an access token](../toegang-tot-koppeltaal.md) that provides access to the Koppeltaal server.&#x20;
-2. For performing a [Koppeltaal launch](../../launchen/) using [HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md) or [SMART HTI](../../launchen/smart-hti-on-fhir.md).&#x20;
+1. For [retrieving an access token](../toegang-tot-koppeltaal.md) that provides access to the Koppeltaal server.
+2. For performing a [Koppeltaal launch](../../launchen/) using [HTI](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md) or [SMART HTI](../../launchen/smart-hti-on-fhir.md).
 
-### What is a JWT?&#x20;
+### What is a JWT?
 
 JWT stands for JSON Web Token. A practical explanation of how a JWT works can be found [here](https://jwt.io/introduction). An important piece is:
 
@@ -30,3 +30,7 @@ The [JWT debugger](https://jwt.io/?debug) is a great place to see, at runtime, w
 {% hint style="info" %}
 RSA is more complicated to implement than, say, HMAC algorithms. However, it is a lot more secure. For example, there is no shared secret. Also, using JWKS, it is possible to quickly rotate keys.
 {% endhint %}
+
+## Topics
+
+[TOP-KT-005c - Applicatie toegang: SMART on FHIR backend services](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125356/TOP-KT-005c+-+Applicatie+toegang+SMART+on+FHIR+backend+services)

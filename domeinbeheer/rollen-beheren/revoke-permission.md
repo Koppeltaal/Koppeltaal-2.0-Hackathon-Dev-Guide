@@ -10,3 +10,6 @@ When there is no permission for a `DomainResource` & CRUD action, the applicatio
 Revoke Permission
 {% endembed %}
 
+## Topics
+
+[TOP-KT-019 - Beheer](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27119214/TOP-KT-019+-+Beheer)

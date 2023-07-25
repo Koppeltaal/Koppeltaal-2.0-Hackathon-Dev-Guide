@@ -14,11 +14,11 @@ Returned results can be filtered by [Search Narrowing](../../../domeinbeheer/rol
 
 {% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="get" summary="Retrieve all Resources" expanded="true" %}
 {% swagger-description %}
-Get ALL for type <Resource>. 
+Get ALL for type .
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="Resource" type="string" required="true" %}
-Resource-type (e.g. 
+Resource-type (e.g.
 
 `Patient`
 
@@ -26,12 +26,11 @@ Resource-type (e.g.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
-Bearer token obtained from the Auth Server 
+Bearer token obtained from the Auth Server
 
-\
+\\
 
-
-(zie 
+(zie
 
 [Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
@@ -86,3 +85,12 @@ Bearer token obtained from the Auth Server
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## Topics
+
+[TOP-KT-002a - FHIR Resource Service interacties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125763/TOP-KT-002a+-+FHIR+Resource+Service+interacties)
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+
+[TOP-KT-009 - Overzicht gebruikte FHIR Resources](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27071328/TOP-KT-009+-+Overzicht+gebruikte+FHIR+Resources)
+

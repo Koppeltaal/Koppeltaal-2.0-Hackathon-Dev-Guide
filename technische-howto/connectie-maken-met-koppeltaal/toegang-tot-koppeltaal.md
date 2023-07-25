@@ -44,7 +44,7 @@ The signed JWT
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="client_assertion_type" type="string" required="true" %}
-Always fill with 
+Always fill with
 
 `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 {% endswagger-parameter %}
@@ -56,11 +56,11 @@ Always fill with
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="scope" type="string" required="true" %}
-Content can be empty. The 
+Content can be empty. The
 
 `scope`
 
- is set by the auth server based on the client's role
+is set by the auth server based on the client's role
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="The response contains the access_token, validity period in seconds and the type (always Bearer)" %}
@@ -92,6 +92,10 @@ In the example response, the header should look like this:
 Authorization: Bearer T8DR5tcOo7xfDYD086AUUr0hQIkzbrhuLGHSM5X6QcX84IfZlC0jQ6v_YbdMXlMBDZfUZN1nbsjxtDRwiz0IzZtIOF1XXpS1j0rKy517Vu_cc6LOS1OasUAAEw
 ```
 
-### Refreshing the access\_token&#x20;
+### Refreshing the access\_token
 
 The `access_token` has a relatively short lifetime. When the token expires, the Koppeltaal server will return a `401` error. The [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) does not support a `refresh_token`. The application needs to redo steps 1 & 2.
+
+## Topics
+
+[TOP-KT-005c - Applicatie toegang: SMART on FHIR backend services](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125356/TOP-KT-005c+-+Applicatie+toegang+SMART+on+FHIR+backend+services)

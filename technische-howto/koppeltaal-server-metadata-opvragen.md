@@ -9,3 +9,7 @@ The Koppeltaal Server provides a [`CapabilityStatement`](https://www.hl7.org/fhi
 ### SMART on FHIR Conformance
 
 Koppeltaal also makes use of the [SMART on FHIR conformance](https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#conformance). This specifically contains metadata used whilst executing the [SMART on FHIR specifications](https://smarthealthit.org/). This conformance can be found `<BASE_FHIR_URL>/.well-known/smart-configuration`. This way, there is no need to configure hard-coded URLs. This configuration can be used to, for example, retrieve the Auth Server URL for the specific Koppeltaal server at runtime.
+
+## Topics
+
+[TOP-KT-016 - SMART on FHIR Conformiteit](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27108972/TOP-KT-016+-+SMART+on+FHIR+Conformiteit)

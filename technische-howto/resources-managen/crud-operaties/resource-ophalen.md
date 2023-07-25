@@ -18,7 +18,7 @@ Resource.id to be retrieved
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
-Bearer token obtained from the Auth Server (see 
+Bearer token obtained from the Auth Server (see
 
 [Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
@@ -114,14 +114,13 @@ The version
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer token verkregen via de Auth Server 
+Bearer token verkregen via de Auth Server
 
-\
+\\
 
+(zie
 
-(zie 
-
-[Connecting to  Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}
@@ -197,3 +196,13 @@ Bearer token verkregen via de Auth Server
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## Topics
+
+[TOP-KT-002a - FHIR Resource Service interacties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125763/TOP-KT-002a+-+FHIR+Resource+Service+interacties)
+
+[TOP-KT-003 - Logische ID, bedrijfsidentifier, referenties en referentie integriteit](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27066395/TOP-KT-003+-+Logische+ID+bedrijfsidentifier+referenties+en+referentie+integriteit)
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+
+[TOP-KT-009 - Overzicht gebruikte FHIR Resources](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27071328/TOP-KT-009+-+Overzicht+gebruikte+FHIR+Resources)

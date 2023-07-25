@@ -16,7 +16,7 @@ Applications can create their own notification using the [`Subscription`](https:
 
 #### Criteria
 
-The `Subscription.criteria` field can be filled by applications themselves. With each change, the Koppeltaal server will check if there are `Subscriptions` where the criteria matches the created/changed `Resource`. If so, a `POST` notification will be sent to the `Subscription.channel.endpoint` for the matched subscriptions.&#x20;
+The `Subscription.criteria` field can be filled by applications themselves. With each change, the Koppeltaal server will check if there are `Subscriptions` where the criteria matches the created/changed `Resource`. If so, a `POST` notification will be sent to the `Subscription.channel.endpoint` for the matched subscriptions.
 
 #### Koppeltaal-specific criteria
 
@@ -27,7 +27,7 @@ It's possible to subscribe to custom search criteria added by Koppeltaal. This i
 The `Subscription.channel` is used to specify how and where the notification should go. In the POC, Koppeltaal will only support the `rest-hook` type without a payload.
 
 {% hint style="info" %}
-The Koppeltaal Server applies "Notification Narrowing"; similar to [Search Narrowing](../../domeinbeheer/rollen-beheren/search-narrowing.md) but for notifications. However, when something goes wrong in this process, the notification WILL be sent. In addition, an application may have multiple `Subscriptions` that match the set `criteria`.&#x20;
+The Koppeltaal Server applies "Notification Narrowing"; similar to [Search Narrowing](../../domeinbeheer/rollen-beheren/search-narrowing.md) but for notifications. However, when something goes wrong in this process, the notification WILL be sent. In addition, an application may have multiple `Subscriptions` that match the set `criteria`.
 
 Applications should therefore note that a notification does not always result in a`Resource` to be retrieved.
 
@@ -62,3 +62,10 @@ There are differences between the FHIR `Subscription` and the Koppeltaal 2.0 pro
 }
 ```
 
+## Topics
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+
+[TOP-KT-006 - Abonneren op en signaleren van gebeurtenissen](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27084921/TOP-KT-006+-+Abonneren+op+en+signaleren+van+gebeurtenissen)
+
+[TOP-KT-009 - Overzicht gebruikte FHIR Resources](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27071328/TOP-KT-009+-+Overzicht+gebruikte+FHIR+Resources)

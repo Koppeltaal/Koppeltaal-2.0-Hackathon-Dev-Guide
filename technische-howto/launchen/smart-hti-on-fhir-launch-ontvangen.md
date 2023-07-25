@@ -25,19 +25,19 @@ The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="aud" type="string" required="true" %}
-URL of the Koppeltaal server (the same as the 
+URL of the Koppeltaal server (the same as the
 
 `iss`
 
- value)
+value)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="scope" type="string" required="true" %}
-Always: 
+Always:
 
 `launch openid fhirUser`
 
- or 
+or
 
 `launch`
 {% endswagger-parameter %}
@@ -47,45 +47,43 @@ An opaque value used by the client to maintain the state between the request and
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="launch" type="string" required="true" %}
-The HTI token (from the 
+The HTI token (from the
 
 `launch`
 
- param)
+param)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="redirect_uri" type="string" required="true" %}
-The URL to which the 
+The URL to which the
 
 `code`
 
- should be returned
+should be returned
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="client_id" type="string" required="true" %}
-The 
+The
 
 `client_id`
 
- from Domain management
+from Domain management
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="response_type" type="string" required="true" %}
-Altijd: 
+Altijd:
 
 `code`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="code_challenge" required="true" %}
-A generated code challenge as per 
+A generated code challenge as per
 
 [rfc7636](https://www.rfc-editor.org/rfc/rfc7636#appendix-B)
-
-
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="code_challenge_method" required="true" %}
-Always: 
+Always:
 
 `S256`
 {% endswagger-parameter %}
@@ -103,11 +101,9 @@ The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="client_assertion" required="true" %}
-JWT as composed for the 
+JWT as composed for the
 
 [SMART Backend Service](../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen)
-
-
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
@@ -115,41 +111,39 @@ JWT as composed for the
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="client_assertion_type" required="true" %}
-Always: 
+Always:
 
 `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="redirect_uri" type="string" required="true" %}
-The same 
+The same
 
 `redirect_uri`
 
- as used at the authorize request
+as used at the authorize request
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="code" type="string" required="true" %}
 `code`
 
- provided by the auth server on the redirect from the authorize request
+provided by the auth server on the redirect from the authorize request
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="grant_type" type="string" required="true" %}
-Always: 
+Always:
 
 `authorization_code`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="code_verifier" required="true" %}
-Unhashed value used foe generating the 
+Unhashed value used foe generating the
 
 `code_challenge`
 
- in the authorize step as per 
+in the authorize step as per
 
 [rfc7636](https://www.rfc-editor.org/rfc/rfc7636#appendix-B)
-
-
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="The OIDC response plus additional context fields used in the launch is returned" %}
@@ -177,3 +171,7 @@ Unhashed value used foe generating the
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## Topics
+
+[TOP-KT-007 - Koppeltaal Launch](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123510/TOP-KT-007+-+Koppeltaal+Launch)

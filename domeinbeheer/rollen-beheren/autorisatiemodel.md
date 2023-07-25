@@ -19,15 +19,15 @@ The Koppeltaal server automatically adds a `resource-origin` extension to every 
 
 Every application in a domain is assigned a single role. A role maps to multiple permissions. A permission has the following 3 properties:
 
-### Resource&#x20;
+### Resource
 
-A permission always applies to a single [FHIR Domain Resource](https://www.hl7.org/fhir/r4/domainresource.html#bnr).&#x20;
+A permission always applies to a single [FHIR Domain Resource](https://www.hl7.org/fhir/r4/domainresource.html#bnr).
 
-### Action&#x20;
+### Action
 
-A CRUD-level (create, read, update, delete) action.&#x20;
+A CRUD-level (create, read, update, delete) action.
 
-### Scope&#x20;
+### Scope
 
 The `resource-owner` scope. The following scopes are supported:
 
@@ -36,3 +36,8 @@ The `resource-owner` scope. The following scopes are supported:
 | Own     | The permission only applies to resources (selected resource type of the permission) whose `resource-origin` matches the authenticated application. |
 | All     | The permission applies to all resources (selected resource type of the permission) in the domain.                                                  |
 | Granted | The permission applies to resources (selected resource type of the permission) whose `resource-origin` matches the selected application(s).        |
+
+## Topics
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+

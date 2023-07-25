@@ -21,7 +21,7 @@ The launch can be initiated via a `<form>` and the `form-post-redirect` flow. Bo
 
 {% swagger method="post" path="/" baseUrl="{{ActivityDefinition.endpoint}}" summary="Launch" expanded="true" %}
 {% swagger-description %}
-This request initializes the launch. 
+This request initializes the launch.
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
@@ -41,3 +41,6 @@ The URL of the Koppeltaal server
 {% endswagger-parameter %}
 {% endswagger %}
 
+## Topics
+
+[TOP-KT-007 - Koppeltaal Launch](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123510/TOP-KT-007+-+Koppeltaal+Launch)

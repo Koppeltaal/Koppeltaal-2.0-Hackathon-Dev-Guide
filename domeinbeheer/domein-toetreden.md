@@ -13,9 +13,13 @@ To join a domain, a request can be submitted to [Domain Management](https://doma
 9. Use the `client_id` in your application to execute a [SMART Backend Service](../technische-howto/connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md) request.
 
 {% hint style="info" %}
-Koppeltaal recommends all applications to use JWKS endpoints when requesting an `access_token`.&#x20;
+Koppeltaal recommends all applications to use JWKS endpoints when requesting an `access_token`.
 
-When applications are tested locally, it is difficult to use JWKS. In that case it is also possible to simply register a public key in PEM format. [This](https://github.com/Koppeltaal/Koppeltaal-2.0-Generate-KeyPair/) project can be used to quickly generate a usable key pair for the Koppeltaal POC components.&#x20;
+When applications are tested locally, it is difficult to use JWKS. In that case it is also possible to simply register a public key in PEM format. [This](https://github.com/Koppeltaal/Koppeltaal-2.0-Generate-KeyPair/) project can be used to quickly generate a usable key pair for the Koppeltaal POC components.
 
 To test using JWKS locally, handy tools such as [ngrok](https://ngrok.com/) can be used.
 {% endhint %}
+
+## Topics
+
+[TOP-KT-019 - Beheer](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27119214/TOP-KT-019+-+Beheer)

@@ -10,3 +10,9 @@ When an application is allowed to read resources with an `Own` or `Granted` scop
 Search Narrowing
 {% endembed %}
 
+## Topics
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+
+[TOP-KT-002b - Search interacties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125775/TOP-KT-002b+-+Search+interacties)
+

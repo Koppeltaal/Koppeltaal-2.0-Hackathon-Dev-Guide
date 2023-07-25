@@ -43,9 +43,11 @@ The FHIR specification describes [conditional creates](https://www.hl7.org/fhir/
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
+`application/fhir+json`
 
+ OR 
 
-`application/fhir+json` OR `application/fhir+xml`
+`application/fhir+xml`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="If-None-Exist" type="string" required="true" %}
@@ -55,14 +57,13 @@ The business identifier, e.g:
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token obtained from the Auth Server 
+Bearer token obtained from the Auth Server
 
-\
+\\
 
+(see
 
-(see 
-
-[Connecting to  Koppeltaal](../../connectie-maken-met-koppeltaal/)
+[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
 )
 {% endswagger-parameter %}
@@ -110,18 +111,17 @@ Resource
 {% swagger-parameter in="header" name="Content-type" required="true" %}
 `application/fhir+json`
 
- OR 
+OR
 
 `application/fhir+xml`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token obtained from the Auth Server 
+Bearer token obtained from the Auth Server
 
-\
+\\
 
-
-(see 
+(see
 
 [Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
 
@@ -152,3 +152,11 @@ Resource
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## Topics
+
+[TOP-KT-002a - FHIR Resource Service interacties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27125763/TOP-KT-002a+-+FHIR+Resource+Service+interacties)
+
+[TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
+
+[TOP-KT-009 - Overzicht gebruikte FHIR Resources](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27071328/TOP-KT-009+-+Overzicht+gebruikte+FHIR+Resources)

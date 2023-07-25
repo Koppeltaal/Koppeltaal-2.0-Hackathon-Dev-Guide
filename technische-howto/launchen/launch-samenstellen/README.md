@@ -61,12 +61,16 @@ These two sets of claims should be combined to form a valid HTI v2.0 JWT. For ex
 
 The timestamps follows the ["UNIX time"](https://en.wikipedia.org/wiki/Unix\_time) convention, being the number of seconds since the epoch.
 
-### 3. Sign the JWT&#x20;
+### 3. Sign the JWT
 
 After the JWT is completely filled, it must be signed. For this, [Signing the JWT](../../connectie-maken-met-koppeltaal/requirements/jwt-ondertekenen.md) can be followed.
 
-### 4.  Launch
+### 4. Launch
 
-The signed token can now be launched to the client. To find the endpoint to be launched to, the `ActivityDefinition.endpoint` extension can be used. The correct ActivityDefinition can be found using `Task.instantiatesCanonical` (see [resource-ophalen.md](../../resources-managen/crud-operaties/resource-ophalen.md "mention")).&#x20;
+The signed token can now be launched to the client. To find the endpoint to be launched to, the `ActivityDefinition.endpoint` extension can be used. The correct ActivityDefinition can be found using `Task.instantiatesCanonical` (see [resource-ophalen.md](../../resources-managen/crud-operaties/resource-ophalen.md "mention")).
 
-There are minimal differences between sending via [HTI](hti-launch-versturen.md) and [SHOF](broken-reference).
+There are minimal differences between sending via [HTI](hti-launch-versturen.md) and [SHOF](broken-reference/).
+
+## Topics
+
+[TOP-KT-007 - Koppeltaal Launch](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123510/TOP-KT-007+-+Koppeltaal+Launch)

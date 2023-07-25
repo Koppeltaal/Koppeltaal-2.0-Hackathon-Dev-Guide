@@ -14,3 +14,6 @@ Permissions bound to a role are set as OAuth scopes on the `access_token` used t
 Rol aanmaken binnen domeinbeheer
 {% endembed %}
 
+## Topics
+
+[TOP-KT-019 - Beheer](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27119214/TOP-KT-019+-+Beheer)
