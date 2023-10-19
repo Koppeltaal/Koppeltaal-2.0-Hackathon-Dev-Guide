@@ -37,7 +37,7 @@ The `HTI:core` v2.0 profile also contains claims that are always set on a JWT:
 | Description       | Field | Value                                                                                                                                                                                                                                                                                             |
 | ----------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Issuer            | iss   | The `client_id` van het portaal                                                                                                                                                                                                                                                                   |
-| Audience          | aud   | The launch `URL` of the module provider. This can be found via the `ActivityDefinition.endpoint` extension.                                                                                                                                                                                       |
+| Audience          | aud   | The device id of the module provider. This can be found via the `ActivityDefinition.resource-origin` extension.                                                                                                                                                                                       |
 | Unique message id | jti   | A unique identifier for this message. This value **MUST** be treated as a NONCE, a subsequent message with an identical jti **MUST** be rejected. The jti value must be a random or pseudo number, the jti **MUST** contain enough entropy to block brute-force attacks.                          |
 | Issue time        | iat   | The timestamp of generating the JWT token, the value of this field **MUST** be validated by the module provider to not be in the future.                                                                                                                                                          |
 | Expiration time   | exp   | The "exp" (expiration time) claim identifies the expiration time on or after which the JWT **MUST NOT** be accepted for processing. The value **MUST** be limited to 5 minutes. This value **MUST** be validated by the module provider, any value that exceeds the timeout **MUST** be rejected. |
@@ -47,7 +47,7 @@ These two sets of claims should be combined to form a valid HTI v2.0 JWT. For ex
 ```json
 {
   "iat": 1585564845,
-  "aud": "https://module.example.com/launch/endpoint",
+  "aud": "Device/123",
   "iss": "portal-client-id",
   "exp": 1585565745,
   "jti": "679e1e4c-bcb9-4fcc-80c4-f36e7063545c"
