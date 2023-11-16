@@ -63,11 +63,7 @@ should be returned
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="client_id" type="string" required="true" %}
-The
-
-`client_id`
-
-from Domain management
+The `client_id` (from Domain Admin) of the application receiving the launch
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="response_type" type="string" required="true" %}
@@ -103,7 +99,7 @@ The URL should be determined from the Koppeltaal metadata
 {% swagger-parameter in="body" name="client_assertion" required="true" %}
 JWT as composed for the
 
-[SMART Backend Service](../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen)
+[SMART Backend Service](../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen) for the application receiving the launch
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Content-Type" required="true" %}
