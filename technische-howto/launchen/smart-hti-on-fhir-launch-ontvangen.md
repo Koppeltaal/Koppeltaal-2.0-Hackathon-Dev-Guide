@@ -10,7 +10,7 @@
 <figure><img src="../../.gitbook/assets/SMART on FHIR app launch and HTI.drawio (1).png" alt="SMART HTI Flow"><figcaption><p>SMART HTI Flow</p></figcaption></figure>
 
 1. When the launch arrives, the [conformance is retrieved from the Koppeltaal Server](../koppeltaal-server-metadata-opvragen.md). Here the authorize & token URL can be requested.
-2. A redirect is sent to the authorize URL. The auth server will redirect the browser to a shared IdP using an OIDC code flow if the `fhirUser` scope is set. If the launching platform does not use this shared IdP the user will have to login here as well. At the POC it is possible to create an account directly from this login screen. New users are given the role patient by default. The authorize call will check if the logged in user matches the user from the launch token.
+2. A redirect is sent to the authorize URL. The auth server will redirect the browser to a shared IdP using an OIDC code flow. If the launching platform does not use this shared IdP as a login mechanism, the user will have to login here as well. At the POC it is possible to create an account directly from this login screen. New users are given the role patient by default. The authorize call will check if the logged in user matches the user from the launch token.
 3. A successful authorize call returns the `code` & `state` parameters to the `redirect_uri`. Note that the `state` (provided at the start of the `/authorize` call) is returned to the `redirect_uri`, this way you can find out which launch request is involved and, for example, relate to a specific user session.
 4. From the back-end, execute the [Get Token request](smart-hti-on-fhir-launch-ontvangen.md#get-token). Here, the `code` is exchanged for:
    1. an `id_token` (contains information of the logged in user as `JWT`).
@@ -36,10 +36,6 @@ value)
 Always:
 
 `launch openid fhirUser`
-
-or
-
-`launch`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="state" type="string" required="true" %}

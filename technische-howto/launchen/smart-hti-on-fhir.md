@@ -12,12 +12,12 @@ SMART HTI On FHIR (SHOF) uses the HTI token as the `launch` parameter value. Thi
 
 1. SHOF uses the `launch` parameter to pass the context as a HTI token, where HTI uses the `token` parameter to pass the context as a HTI token
 2. SHOF is based on an international standard: [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/).
-3. SHOF performs an additional check on the logged-in user during the `/authorize` step using a shared IdP when the `fhirUser` scope is provided. This prevents a launch token from being intercepted and executed. The user identifier contained in the launch token is compared to the identifier of the logged in user on the IdP.
+3. SHOF performs an additional check on the logged-in user during the `/authorize` step, using a shared IdP. This prevents a launch token from being intercepted and executed. The user identifier contained in the launch token is compared to the identifier of the logged in user on the IdP.
 
 ### Requirements
 
 1. A [JWKS endpoint must be available](../connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md).
-2. The user performing the launch must have an account on the shared IdP (when the `fhirUser` scope is provided), the username has to be present on the corresponding user Resource (`Patient`, `Practitioner`).
+2. The user performing the launch must have an account on the shared IdP, the username has to be present on the corresponding user Resource (`Patient`, `Practitioner`).
 
 ### Information Flow
 
