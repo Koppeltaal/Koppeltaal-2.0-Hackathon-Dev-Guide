@@ -23,9 +23,9 @@ This document is in draft.
 [Joris Scharp](mailto:joris@headease.nl)\
 [Headease B.V.](https://www.headease.nl/)
 
-## Important differences with Koppeltaal 1.x
+## Important differences with Koppeltaal 1.3.x
 
-| Concept                | **KT 1.x**                                  | KT 2.0                   |
+| Concept                | **KT 1.3.x**                                  | KT 2.0                   |
 | ---------------------- | ------------------------------------------- | ------------------------ |
 | **FHIR Exchange**      | Messaging                                   | RESTful API              |
 | **Content Validation** | Separate service                            | Built-in                 |
