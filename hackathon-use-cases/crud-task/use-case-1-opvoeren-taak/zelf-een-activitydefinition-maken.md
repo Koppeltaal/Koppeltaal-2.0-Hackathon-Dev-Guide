@@ -1,16 +1,12 @@
----
-description: >-
-  If the application wants to create its own ActivityDefinition instead of the
-  EHR
----
-
 # Create an ActivityDefinition
+
+{% hint style="warning" %}
+Applications that can be launched MUST be the publisher of the `ActivityDefinition`.&#x20;
+{% endhint %}
 
 Koppeltaal adds three [extensions](https://simplifier.net/koppeltaalv2.0/kt2activitydefinition) to the `ActivityDefinition` resource:
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-02-09 at 09.25.51.png" alt=""><figcaption></figcaption></figure>
-
-
 
 | Extension       | Description                                                                                                                                                                                                                                                                                                                                                                                                  |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

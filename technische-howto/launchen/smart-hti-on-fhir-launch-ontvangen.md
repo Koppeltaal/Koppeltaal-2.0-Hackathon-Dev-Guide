@@ -25,11 +25,7 @@ The URL should be determined from the Koppeltaal metadata
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="aud" type="string" required="true" %}
-URL of the Koppeltaal server (the same as the
-
-`iss`
-
-value)
+URL of the Koppeltaal server (the same as the `iss` value)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="scope" type="string" required="true" %}
