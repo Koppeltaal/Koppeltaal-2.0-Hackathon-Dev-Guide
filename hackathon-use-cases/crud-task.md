@@ -34,6 +34,9 @@ Dit is een voorbeeld van een valide `Task` payload:
   "instantiatesCanonical": "https://staging-hapi-fhir-server.koppeltaal.headease.nl/fhir/ActivityDefinition/762/_history/1",
   "status": "ready",
   "intent": "order",
+  "for": {
+    "reference": "Patient/774"
+  }
   "executionPeriod": {
     "start": "2021-09-21T10:50:20+02:00"
   },
