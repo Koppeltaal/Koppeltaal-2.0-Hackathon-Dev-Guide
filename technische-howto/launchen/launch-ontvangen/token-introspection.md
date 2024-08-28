@@ -4,36 +4,27 @@ When an application receives an HTI launch, it will [contain a JWT token](../lau
 
 When Token Introspection approves a token, the extracted body of the JWT token will be returned. If a `200` response code is returned, the application must ALWAYS verify that the `active` attribute in the response is `true`.
 
-{% swagger method="post" path="/oauth2/introspect" baseUrl="{AUTH_SERVER_URL}" summary="" %}
-{% swagger-description %}
+<mark style="color:green;">`POST`</mark> `{AUTH_SERVER_URL}/oauth2/introspect`
 
-{% endswagger-description %}
+#### Headers
 
-{% swagger-parameter in="body" name="client_assertion" required="true" %}
-JWT as composed for the
+| Name                                           | Type   | Description                         |
+| ---------------------------------------------- | ------ | ----------------------------------- |
+| Content-Type<mark style="color:red;">\*</mark> | String | `application/x-www-form-urlencoded` |
+| Accept<mark style="color:red;">\*</mark>       | String | `application/json`                  |
 
-[SMART Backend Service](../../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen)
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="header" name="Content-Type" required="true" %}
-`application/x-www-form-urlencoded`
-{% endswagger-parameter %}
+| Name                                                      | Type   | Description                                                                                                                                                 |
+| --------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| client\_assertion<mark style="color:red;">\*</mark>       | String | <p>JWT as composed for the</p><p><a href="../../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen">SMART Backend Service</a></p> |
+| client\_assertion\_type<mark style="color:red;">\*</mark> | String | <p>Always:</p><p><code>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code></p>                                                                    |
+| token<mark style="color:red;">\*</mark>                   | String | The JWT to be validated                                                                                                                                     |
 
-{% swagger-parameter in="header" name="Accept" required="true" %}
-`application/json`
-{% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="client_assertion_type" required="true" %}
-Always:
 
-`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="token" required="true" %}
-The JWT to be validated
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="The token is introspected. The active field displays whether it is valid" %}
+{% tabs %}
+{% tab title="200" %}
 {% tabs %}
 {% tab title="Valid Token" %}
 ```json
@@ -60,16 +51,12 @@ The JWT to be validated
 ```
 {% endtab %}
 {% endtabs %}
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="Not authorised to execute introspection" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+{% tab title="401" %}
+Not authorised to execute introspection.
+{% endtab %}
+{% endtabs %}
 
 ## Topics
 

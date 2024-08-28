@@ -8,24 +8,24 @@ description: Request a specific instance of a Resource
 See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#read) for more information.
 {% endhint %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="get" summary="Retrieve specific Resource" expanded="true" %}
-{% swagger-description %}
+## Retrieve specific Resource
 
-{% endswagger-description %}
+<mark style="color:blue;">`GET`</mark> `https://hapi-fhir-server.koppeltaal.headease.nl/fhir/<Resource>/<:id>`
 
-{% swagger-parameter in="path" name="id" type="string" required="true" %}
-Resource.id to be retrieved
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
-Bearer token obtained from the Auth Server (see
+| Name                                 | Type   | Description                 |
+| ------------------------------------ | ------ | --------------------------- |
+| id<mark style="color:red;">\*</mark> | string | Resource.id to be retrieved |
 
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
+#### Headers
 
-)
-{% endswagger-parameter %}
+| Name                                             | Type   | Description                                                                                                                                       |
+| ------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authentication<mark style="color:red;">\*</mark> | string | <p>Bearer token obtained from the Auth Server (see</p><p><a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a></p><p>)</p> |
 
-{% swagger-response status="200" description="Example response of Patient with id 13befac2-de72-4926-99e8-24d0adb1fd62 " %}
+{% tabs %}
+{% tab title="200 " %}
 ```json
 {
     "resourceType": "Patient",
@@ -81,51 +81,46 @@ Bearer token obtained from the Auth Server (see
     "birthDate": "2023-01-17"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="Resource with id does not exist" %}
-```javascript
-{
-    // Response
-}
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
+
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
+
+{% tab title="404" %}
 ```
-{% endswagger-response %}
-
-{% swagger-response status="410: Gone" description="Resource has been deleted" %}
-```javascript
-{
-    // Response
-}
+Not Found Resource with id does not exist
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>/_history/<:versie>" method="get" summary="Retrieve specific version of a Resource (vread) " expanded="true" %}
-{% swagger-description %}
+{% tab title="410" %}
+```
+Gone Resource has been deleted
+```
+{% endtab %}
+{% endtabs %}
 
-{% endswagger-description %}
+## Retrieve specific version of a Resource (vread)&#x20;
 
-{% swagger-parameter in="path" name="id" required="true" %}
-Resource.id to be retrieved
-{% endswagger-parameter %}
+<mark style="color:blue;">`GET`</mark> `https://hapi-fhir-server.koppeltaal.headease.nl/fhir/<Resource>/<:id>/_history/<:versie>`
 
-{% swagger-parameter in="path" name="versie" type="Integer" required="true" %}
-The version
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="Authorization" required="true" %}
-Bearer token verkregen via de Auth Server
+| Name                                     | Type    | Description                 |
+| ---------------------------------------- | ------- | --------------------------- |
+| id<mark style="color:red;">\*</mark>     | String  | Resource.id to be retrieved |
+| versie<mark style="color:red;">\*</mark> | Integer | The version                 |
 
-\\
+#### Headers
 
-(zie
+<table><thead><tr><th>Name</th><th width="221">Type</th><th>Description</th></tr></thead><tbody><tr><td>Authorization<mark style="color:red;">*</mark></td><td>String</td><td><p>Bearer token verkregen via de Auth Server</p><p></p><p>(zie <a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a> )</p></td></tr></tbody></table>
 
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
-
-)
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="Example response of Patient with id 13befac2-de72-4926-99e8-24d0adb1fd62 and _history 1" %}
+{% tabs %}
+{% tab title="200" %}
 ```json
 {
     "resourceType": "Patient",
@@ -181,21 +176,24 @@ Bearer token verkregen via de Auth Server
     "birthDate": "2023-01-17"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404" description="Resource with id does not exist" %}
-```
-```
-{% endswagger-response %}
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
 
-{% swagger-response status="410: Gone" description="Resource has been deleted " %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
+
+{% tab title="404" %}
+Resource with id does not exist
+{% endtab %}
+
+{% tab title="410 " %}
+Gone Resource has been deleted
+{% endtab %}
+{% endtabs %}
 
 ## Topics
 

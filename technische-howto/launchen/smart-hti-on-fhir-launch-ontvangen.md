@@ -19,123 +19,66 @@
 
 By means of the context object it can be determined who, with which role, is logged on to the system and which task should be opened. When there is a valid response to this request, the user can be authenticated and e.g. a session can be created for the user.
 
-{% swagger baseUrl="https://auth-service.koppeltaal.headease.nl" path="/oauth2/authorize" method="get" summary="Authorize Request" expanded="true" %}
-{% swagger-description %}
+## Authorize Request
+
+<mark style="color:blue;">`GET`</mark> `https://auth-service.koppeltaal.headease.nl/oauth2/authorize`
+
 The URL should be determined from the Koppeltaal metadata
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="aud" type="string" required="true" %}
-URL of the Koppeltaal server (the same as the `iss` value)
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-parameter in="query" name="scope" type="string" required="true" %}
-Always:
+| Name                                                      | Type   | Description                                                                                                                                                                                                                                                                                      |
+| --------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| aud<mark style="color:red;">\*</mark>                     | string | URL of the Koppeltaal server (the same as the `iss` value)                                                                                                                                                                                                                                       |
+| scope<mark style="color:red;">\*</mark>                   | string | <p>Always:</p><p><code>launch openid fhirUser</code></p>                                                                                                                                                                                                                                         |
+| state<mark style="color:red;">\*</mark>                   | string | An opaque value used by the client to maintain the state between the request and the callback. The authorization server takes this value when redirecting the user agent back to the client. The parameter MUST be used to prevent cross-site request forgery (CSRF) attacks or session fixation |
+| launch<mark style="color:red;">\*</mark>                  | string | <p>The HTI token (from the</p><p><code>launch</code></p><p>param)</p>                                                                                                                                                                                                                            |
+| redirect\_uri<mark style="color:red;">\*</mark>           | string | <p>The URL to which the</p><p><code>code</code></p><p>should be returned</p>                                                                                                                                                                                                                     |
+| client\_id<mark style="color:red;">\*</mark>              | string | The `client_id` (from Domain Admin) of the application receiving the launch                                                                                                                                                                                                                      |
+| response\_type<mark style="color:red;">\*</mark>          | string | <p>Altijd:</p><p><code>code</code></p>                                                                                                                                                                                                                                                           |
+| code\_challenge<mark style="color:red;">\*</mark>         | String | <p>A generated code challenge as per</p><p><a href="https://www.rfc-editor.org/rfc/rfc7636#appendix-B">rfc7636</a></p>                                                                                                                                                                           |
+| code\_challenge\_method<mark style="color:red;">\*</mark> | String | <p>Always:</p><p><code>S256</code></p>                                                                                                                                                                                                                                                           |
 
-`launch openid fhirUser`
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="302" %}
+The Location header will redirect with a code and the state
 
-{% swagger-parameter in="query" name="state" type="string" required="true" %}
-An opaque value used by the client to maintain the state between the request and the callback. The authorization server takes this value when redirecting the user agent back to the client. The parameter MUST be used to prevent cross-site request forgery (CSRF) attacks or session fixation
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="launch" type="string" required="true" %}
-The HTI token (from the
-
-`launch`
-
-param)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="redirect_uri" type="string" required="true" %}
-The URL to which the
-
-`code`
-
-should be returned
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="client_id" type="string" required="true" %}
-The `client_id` (from Domain Admin) of the application receiving the launch
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="response_type" type="string" required="true" %}
-Altijd:
-
-`code`
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="code_challenge" required="true" %}
-A generated code challenge as per
-
-[rfc7636](https://www.rfc-editor.org/rfc/rfc7636#appendix-B)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="code_challenge_method" required="true" %}
-Always:
-
-`S256`
-{% endswagger-parameter %}
-
-{% swagger-response status="302" description="The Location header will redirect with a code and the state" %}
 ```
-Loocation: https://launch-testsuite.koppeltaal.headease.nl/module_authentication_shof?code=05b542e2-6206-449b-924b-99d39168029b&state=99a8cf9a-28c2-4867-8123-486c04003482
+Location: https://launch-testsuite.koppeltaal.headease.nl/module_authentication_shof?code=05b542e2-6206-449b-924b-99d39168029b&state=99a8cf9a-28c2-4867-8123-486c04003482
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
-{% swagger baseUrl="https://authentication-service.koppeltaal.headease.nl" path="/oauth2/token" method="post" summary="Get Token" expanded="true" %}
-{% swagger-description %}
+## Get Token
+
+<mark style="color:green;">`POST`</mark> `https://authentication-service.koppeltaal.headease.nl/oauth2/token`
+
 The URL should be determined from the Koppeltaal metadata
-{% endswagger-description %}
 
-{% swagger-parameter in="body" name="client_assertion" required="true" %}
-JWT as composed for the
+#### Headers
 
-[SMART Backend Service](../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen) for the application receiving the launch
-{% endswagger-parameter %}
+| Name                                           | Type   | Description                         |
+| ---------------------------------------------- | ------ | ----------------------------------- |
+| Content-Type<mark style="color:red;">\*</mark> | String | `application/x-www-form-urlencoded` |
 
-{% swagger-parameter in="header" name="Content-Type" required="true" %}
-`application/x-www-form-urlencoded`
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="client_assertion_type" required="true" %}
-Always:
+| Name                                                      | Type   | Description                                                                                                                                                                                       |
+| --------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| client\_assertion<mark style="color:red;">\*</mark>       | String | <p>JWT as composed for the</p><p><a href="../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen">SMART Backend Service</a> for the application receiving the launch</p> |
+| client\_assertion\_type<mark style="color:red;">\*</mark> | String | <p>Always:</p><p><code>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code></p>                                                                                                          |
+| redirect\_uri<mark style="color:red;">\*</mark>           | string | <p>The same</p><p><code>redirect_uri</code></p><p>as used at the authorize request</p>                                                                                                            |
+| code<mark style="color:red;">\*</mark>                    | string | <p><code>code</code></p><p>provided by the auth server on the redirect from the authorize request</p>                                                                                             |
+| grant\_type<mark style="color:red;">\*</mark>             | string | <p>Always:</p><p><code>authorization_code</code></p>                                                                                                                                              |
+| code\_verifier<mark style="color:red;">\*</mark>          | String | <p>Unhashed value used foe generating the</p><p><code>code_challenge</code></p><p>in the authorize step as per</p><p><a href="https://www.rfc-editor.org/rfc/rfc7636#appendix-B">rfc7636</a></p>  |
 
-`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`
-{% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="redirect_uri" type="string" required="true" %}
-The same
 
-`redirect_uri`
+{% tabs %}
+{% tab title="200" %}
+The OIDC response plus additional context fields used in the launch is returned
 
-as used at the authorize request
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="code" type="string" required="true" %}
-`code`
-
-provided by the auth server on the redirect from the authorize request
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="grant_type" type="string" required="true" %}
-Always:
-
-`authorization_code`
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="code_verifier" required="true" %}
-Unhashed value used foe generating the
-
-`code_challenge`
-
-in the authorize step as per
-
-[rfc7636](https://www.rfc-editor.org/rfc/rfc7636#appendix-B)
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="The OIDC response plus additional context fields used in the launch is returned" %}
-```javascript
+```json
 {
   "access_token": "NOOP",
   "id_token": "eyJraWQiOiJvUDQ4NmxJcmwzRFFQdXF0dVVqUmxqc01oWFA0alJmdXoxS19uX0dpQmRrIiwiYWxnIjoiUlM1MTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2F1dGhlbnRpY2F0aW9uLXNlcnZpY2Uua29wcGVsdGFhbC5oZWFkZWFzZS5ubC8iLCJhdWQiOiJiMDJkNmVhNi1iMWEyLTRjZDQtODJmNS1iNjQyM2Q2NmE5ODgiLCJuYmYiOjE2MzI4MTMzNTAsImV4cCI6MTYzMjgxNjk1MCwibm9uY2UiOiJmNGMxODZlNy1jMzI2LTQxODAtYjFmMi1jYTllMWI4YTgyYWQiLCJzdWIiOiJQYXRpZW50LzE5NjMiLCJhenAiOiJiMDJkNmVhNi1iMWEyLTRjZDQtODJmNS1iNjQyM2Q2NmE5ODgifQ.UfBtTACLOhsCMr4Tlen3RUFek06WgWc-aaTPQzJzmHVGYBLY3CnJXTLI1FfCzp1ChM3vx-e2jbFCDHak6ennsuitki-1HnrZitTKpG8qKZK_f24gwVFM5LmzdUXtuTszJSeulpRG8zmNI96pqaIW4ru995LwhKLd-XSOY02BbAMo4XZ46ZW8DBXnhr32CI9TUza8NEQoxlQAF8EboUhro5vauPrjdshP3jQFUNSs5NceB4er3RnF10Zd6SiLFP-_c2ynaj_v87fJEgVGw63byYcKm6O3bTW2KsSz_YNYDYv8DWjYAp25P79e-Hlc3ERcybhLnLy0_-Rkvjk5P_240g"
@@ -149,16 +92,12 @@ in the authorize step as per
   "intent": "plan"
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="401: Unauthorized" description="Client unauthorized or wrong code_verifier" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+{% tab title="401" %}
+Client unauthorized or wrong code\_verifier
+{% endtab %}
+{% endtabs %}
 
 ## Topics
 

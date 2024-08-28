@@ -37,121 +37,96 @@ The conditional create is still in the "trial use" phase. Thus, the status of th
 
 The FHIR specification describes [conditional creates](https://www.hl7.org/fhir/r4/http.html#ccreate). When a `Resource` is created, an `upsert` can be performed based on the business identifier. When multiple applications in a domain create the same type of `Resources`, it is important that there is clear agreement on which identifier system is used. The conditional create helps prevent duplicate resources being created at Koppeltaal.
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="post" summary="Conditional Create Request" expanded="true" %}
-{% swagger-description %}
+## Conditional Create Request
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/<Resource>`
 
-{% swagger-parameter in="header" name="Content-Type" required="true" %}
-`application/fhir+json`
+#### Headers
 
- OR 
+<table><thead><tr><th>Name</th><th width="225">Type</th><th>Description</th></tr></thead><tbody><tr><td>Content-Type<mark style="color:red;">*</mark></td><td>String</td><td><p><code>application/fhir+json</code></p><p>OR</p><p><code>application/fhir+xml</code></p></td></tr><tr><td>If-None-Exist<mark style="color:red;">*</mark></td><td>string</td><td><p>The business identifier, e.g:</p><p><code>identifier=http://my-lab-system|123</code></p></td></tr><tr><td>Authorization<mark style="color:red;">*</mark></td><td>string</td><td><p>Bearer token obtained from the Auth Server</p><p></p><p>(see <a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a>)</p></td></tr></tbody></table>
 
-`application/fhir+xml`
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="header" name="If-None-Exist" type="string" required="true" %}
-The business identifier, e.g:
+| Name                               | Type   | Description |
+| ---------------------------------- | ------ | ----------- |
+| <mark style="color:red;">\*</mark> | object | Resource    |
 
-`identifier=http://my-lab-system|123`
-{% endswagger-parameter %}
+{% tabs %}
+{% tab title="200 " %}
+The resource already existed. The POST was not processed.
+{% endtab %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token obtained from the Auth Server
+{% tab title="201 " %}
+Resource is created. The resource with resource-origin extension and id is returned.
+{% endtab %}
 
-\\
+{% tab title="400" %}
+The resource cannot be parsed or does not conform to the basic FHIR validation rules
+{% endtab %}
 
-(see
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
 
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
 
-)
-{% endswagger-parameter %}
+{% tab title="404" %}
+Resource type is not supported
+{% endtab %}
 
-{% swagger-parameter in="body" name="" type="object" required="true" %}
-Resource
-{% endswagger-parameter %}
+{% tab title="412" %}
+More than one match found. The If-None-Exist is not selective enough.
+{% endtab %}
 
-{% swagger-response status="200" description="The resource already existed. The POST was not processed." %}
-```
-```
-{% endswagger-response %}
+{% tab title="422" %}
+Does not meet FHIR profiles or Koppeltaal business rules
+{% endtab %}
+{% endtabs %}
 
-{% swagger-response status="201" description="Resource is created. The resource with resource-origin extension and id is returned." %}
-```
-```
-{% endswagger-response %}
+## Create Request
 
-{% swagger-response status="400" description="The resource cannot be parsed or does not conform to the basic FHIR validation rules" %}
-```
-```
-{% endswagger-response %}
+<mark style="color:green;">`POST`</mark> `https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/<Resource>`
 
-{% swagger-response status="404" description="Resource type is not supported" %}
-```
-```
-{% endswagger-response %}
+#### Headers
 
-{% swagger-response status="412" description="More than one match found. The If-None-Exist is not selective enough." %}
-```
-```
-{% endswagger-response %}
+| Name                                            | Type   | Description                                                                                                                                                     |
+| ----------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Content-type<mark style="color:red;">\*</mark>  | String | <p><code>application/fhir+json</code></p><p>OR</p><p><code>application/fhir+xml</code></p>                                                                      |
+| Authorization<mark style="color:red;">\*</mark> | string | <p>Bearer token obtained from the Auth Server</p><p>\</p><p>(see</p><p><a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a></p><p>)</p> |
 
-{% swagger-response status="422" description="Does not meet FHIR profiles or Koppeltaal business rules" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+#### Request Body
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="post" summary="Create Request" expanded="true" %}
-{% swagger-description %}
+| Name                               | Type   | Description |
+| ---------------------------------- | ------ | ----------- |
+| <mark style="color:red;">\*</mark> | object | Resource    |
 
-{% endswagger-description %}
+{% tabs %}
+{% tab title="201" %}
+Resource is created. The resource with resource-origin extension and id is returned.
+{% endtab %}
 
-{% swagger-parameter in="header" name="Content-type" required="true" %}
-`application/fhir+json`
+{% tab title="400" %}
+The resource cannot be parsed or does not conform to the basic FHIR validation rules
+{% endtab %}
 
-OR
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
 
-`application/fhir+xml`
-{% endswagger-parameter %}
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token obtained from the Auth Server
+{% tab title="404" %}
+Resource type is not supported
+{% endtab %}
 
-\\
-
-(see
-
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
-
-)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="" type="object" required="true" %}
-Resource
-{% endswagger-parameter %}
-
-{% swagger-response status="201" description="Resource is created. The resource with resource-origin extension and id is returned." %}
-```
-```
-{% endswagger-response %}
-
-{% swagger-response status="400" description="The resource cannot be parsed or does not conform to the basic FHIR validation rules" %}
-```
-```
-{% endswagger-response %}
-
-{% swagger-response status="404" description="Resource type is not supported" %}
-```
-```
-{% endswagger-response %}
-
-{% swagger-response status="422" description="Does not meet FHIR profiles or Koppeltaal business rules" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% tab title="422" %}
+Does not meet FHIR profiles or Koppeltaal business rules
+{% endtab %}
+{% endtabs %}
 
 ## Topics
 

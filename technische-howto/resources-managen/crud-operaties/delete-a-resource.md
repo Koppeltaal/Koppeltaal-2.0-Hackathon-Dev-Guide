@@ -23,22 +23,21 @@ Keep in mind that the request below is normally NOT used. Please read the sectio
 
 When an application does get the permission to execute a `DELETE` request, the resource will be marked as deleted. When a client requests this resource, the server will respond with a `410 Gone`. However, applications will still be allowed to request older versions via the [vread](resource-ophalen.md#retrieve-specific-version-of-a-resource-vread) request.
 
-{% swagger method="delete" path="/<Resource>/<id>" baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" summary="Logical deletion of a specific resource instance" expanded="true" %}
-{% swagger-description %}
+## Logical deletion of a specific resource instance
 
-{% endswagger-description %}
+<mark style="color:red;">`DELETE`</mark> `https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/<Resource>/<id>`
 
-{% swagger-parameter in="path" name="<Resource>" required="true" %}
-The resource type, e.g:
+#### Path Parameters
 
-`Patient`
-{% endswagger-parameter %}
+| Name                                          | Type   | Description                                               |
+| --------------------------------------------- | ------ | --------------------------------------------------------- |
+| \<Resource><mark style="color:red;">\*</mark> | String | <p>The resource type, e.g:</p><p><code>Patient</code></p> |
+| \<id><mark style="color:red;">\*</mark>       | String | The instance id                                           |
 
-{% swagger-parameter in="path" name="<id>" required="true" %}
-The instance id
-{% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="Delete successful, returns an OperationOutcome" %}
+
+{% tabs %}
+{% tab title="200" %}
 ```javascript
 {
   "resourceType": "OperationOutcome",
@@ -64,24 +63,28 @@ The instance id
   ]
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="204: No Content" description="Delete successful, no OperationOutcome" %}
+{% tab title="204" %}
 ```javascript
-{
-    // Response
-}
+No Content Delete successful, no OperationOutcome
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="Resource not found" %}
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
+
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
+
+{% tab title="404" %}
 ```javascript
-{
-    // Response
-}
+Resource not found
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ### Right to be forgotten
 

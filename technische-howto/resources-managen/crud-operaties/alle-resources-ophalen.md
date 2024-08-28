@@ -12,32 +12,26 @@ See the [FHIR documentation](https://www.hl7.org/fhir/r4/http.html#read) for mor
 Returned results can be filtered by [Search Narrowing](../../../domeinbeheer/rollen-beheren/search-narrowing.md).
 {% endhint %}
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>" method="get" summary="Retrieve all Resources" expanded="true" %}
-{% swagger-description %}
+## Retrieve all Resources
+
+<mark style="color:blue;">`GET`</mark> `https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/<Resource>`
+
 Get ALL for type .
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="Resource" type="string" required="true" %}
-Resource-type (e.g.
+#### Path Parameters
 
-`Patient`
+| Name                                       | Type   | Description                    |
+| ------------------------------------------ | ------ | ------------------------------ |
+| Resource<mark style="color:red;">\*</mark> | string | Resource-type (e.g. `Patient`) |
 
-)
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-parameter in="header" name="Authentication" type="string" required="true" %}
-Bearer token obtained from the Auth Server
+<table><thead><tr><th>Name</th><th width="236">Type</th><th>Description</th></tr></thead><tbody><tr><td>Authentication<mark style="color:red;">*</mark></td><td>string</td><td><p>Bearer token obtained from the Auth Server</p><p></p><p>(zie <a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a>)</p></td></tr></tbody></table>
 
-\\
 
-(zie
 
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
-
-)
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="Successful response that contains 2 Patient resources. Patient information has been taken out" %}
+{% tabs %}
+{% tab title="200" %}
 ```json
 {
   "resourceType": "Bundle",
@@ -83,8 +77,16 @@ Bearer token obtained from the Auth Server
 }
 
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
+
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
+{% endtabs %}
 
 ## Topics
 
@@ -93,4 +95,3 @@ Bearer token obtained from the Auth Server
 [TOP-KT-005a - Rollen en rechten voor applicatie-instanties](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27123707/TOP-KT-005a+-+Rollen+en+rechten+voor+applicatie-instanties)
 
 [TOP-KT-009 - Overzicht gebruikte FHIR Resources](https://vzvz.atlassian.net/wiki/spaces/KTSA/pages/27071328/TOP-KT-009+-+Overzicht+gebruikte+FHIR+Resources)
-

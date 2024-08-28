@@ -10,85 +10,69 @@ To avoid overwriting data, an application must always indicate which version of 
 
 The `If-Match` value must match the latest `ETag` value. The `ETag` value is provided via a response header sent by the Koppeltaal server after a [`Create`](resource-aanmaken.md), [`Update`](resource-updaten.md) or [`Get`](resource-ophalen.md#retrieve-specific-resource).
 
-{% swagger baseUrl="https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT" path="/<Resource>/<:id>" method="put" summary="Update a complete resource" expanded="true" %}
-{% swagger-description %}
+## Update a complete resource
+
+<mark style="color:orange;">`PUT`</mark> `https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/<Resource>/<:id>`
+
 Note: the
 
 `id`
 
 property has to be set in the body as well
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="string" required="true" %}
-The "logical id" of the
+#### Path Parameters
 
-`Resource`
-{% endswagger-parameter %}
+| Name                                 | Type   | Description                                                |
+| ------------------------------------ | ------ | ---------------------------------------------------------- |
+| id<mark style="color:red;">\*</mark> | string | <p>The "logical id" of the</p><p><code>Resource</code></p> |
 
-{% swagger-parameter in="header" name="If-Match" type="string" required="true" %}
-A
+#### Headers
 
-["weak" ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match)
+<table><thead><tr><th>Name</th><th width="217">Type</th><th>Description</th></tr></thead><tbody><tr><td>If-Match<mark style="color:red;">*</mark></td><td>string</td><td><p>A</p><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match">"weak" ETag</a></p><p>to the version the update is based on, e.g: W/"3"</p></td></tr><tr><td>Authorization<mark style="color:red;">*</mark></td><td>string</td><td><p>Bearer token obtained from the Auth Server</p><p></p><p>(see <a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a>)</p></td></tr></tbody></table>
 
-to the version the update is based on, e.g: W/"3"
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token obtained from the Auth Server
+| Name                               | Type   | Description                            |
+| ---------------------------------- | ------ | -------------------------------------- |
+| <mark style="color:red;">\*</mark> | string | <p>The</p><p><code>Resource</code></p> |
 
-\\
+{% tabs %}
+{% tab title="200" %}
+Resource is modified. The resource with resource-origin extension and logical id is returned
+{% endtab %}
 
-(see
+{% tab title="400" %}
+The resource cannot be parsed or does not conform to the basic FHIR validation rules
+{% endtab %}
 
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
 
-)
-{% endswagger-parameter %}
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
 
-{% swagger-parameter in="body" name="" type="string" required="true" %}
-The
+{% tab title="404" %}
+Resource type not supported, or not a FHIR end-point
+{% endtab %}
 
-`Resource`
-{% endswagger-parameter %}
+{% tab title="405" %}
+The Resource did not exist prior to the update, and the server does not allow client defined ids
+{% endtab %}
 
-{% swagger-response status="200" description="Resource is modified. The resource with resource-origin extension and logical id is returned" %}
-```
-```
-{% endswagger-response %}
+{% tab title="409" %}
+Version conflict, update is based on an old version
+{% endtab %}
 
-{% swagger-response status="400" description="The resource cannot be parsed or does not conform to the basic FHIR validation rules" %}
-```
-```
-{% endswagger-response %}
+{% tab title="412" %}
+Precondition Failed Version conflict, update is based on an old version
+{% endtab %}
 
-{% swagger-response status="404" description="Resource type not supported, or not a FHIR end-point" %}
-```
-```
-{% endswagger-response %}
-
-{% swagger-response status="405" description="The Resource did not exist prior to the update, and the server does not allow client defined ids" %}
-```
-```
-{% endswagger-response %}
-
-{% swagger-response status="409" description="Version conflict, update is based on an old version" %}
-```
-```
-{% endswagger-response %}
-
-{% swagger-response status="412: Precondition Failed" description="Version conflict, update is based on an old version" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="422" description="Does not meet FHIR profiles or Koppeltaal business rules" %}
-```
-```
-{% endswagger-response %}
-{% endswagger %}
+{% tab title="422" %}
+Does not meet FHIR profiles or Koppeltaal business rules
+{% endtab %}
+{% endtabs %}
 
 ### Delen van een Resource Updaten
 
@@ -114,70 +98,59 @@ This is what the payload looks like from a JSON Patch to update the status of a 
 
 More examples of patches can be downloaded [here](https://www.hl7.org/fhir/r4/test-cases.zip).
 
-{% swagger baseUrl="https://hapi-fhir-server.koppeltaal.headease.nl/fhir" path="/<Resource>/<:id>" method="patch" summary="Patch a Resource" expanded="true" %}
-{% swagger-description %}
+## Patch a Resource
+
+<mark style="color:purple;">`PATCH`</mark> `https://hapi-fhir-server.koppeltaal.headease.nl/fhir/<Resource>/<:id>`
+
 As an alternative to updating an entire resource, clients can perform a patch operation. This can be useful when a client is seeking to minimize its bandwidth utilization.
-{% endswagger-description %}
 
-{% swagger-parameter in="path" required="true" %}
-The "logical id" of the
+#### Path Parameters
 
-`Resource`
-{% endswagger-parameter %}
+| Name                               | Type   | Description                                                |
+| ---------------------------------- | ------ | ---------------------------------------------------------- |
+| <mark style="color:red;">\*</mark> | String | <p>The "logical id" of the</p><p><code>Resource</code></p> |
 
-{% swagger-parameter in="header" name="If-Match" type="string" required="true" %}
-A
+#### Headers
 
-["weak" ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match)
+<table><thead><tr><th>Name</th><th width="211">Type</th><th>Description</th></tr></thead><tbody><tr><td>If-Match<mark style="color:red;">*</mark></td><td>string</td><td><p>A</p><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match">"weak" ETag</a></p><p>to the version the update is based on, e.g: W/"3"</p></td></tr><tr><td>Authorization<mark style="color:red;">*</mark></td><td>string</td><td><p>Bearer token obtained from the Auth Server</p><p></p><p>(see <a href="../../connectie-maken-met-koppeltaal/">Connecting to Koppeltaal</a>)</p></td></tr></tbody></table>
 
-to the version the update is based on, e.g: W/"3"
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
-Bearer token obtained from the Auth Server
+| Name                               | Type   | Description |
+| ---------------------------------- | ------ | ----------- |
+| <mark style="color:red;">\*</mark> | object | The Patch   |
 
-\\
+{% tabs %}
+{% tab title="200" %}
+Patch is applied. The complete Resource will be returned
+{% endtab %}
 
-(see
+{% tab title="401" %}
+Unauthenticated
+{% endtab %}
 
-[Connecting to Koppeltaal](../../connectie-maken-met-koppeltaal/)
+{% tab title="403" %}
+Unauthorized
+{% endtab %}
 
-)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="" type="object" required="true" %}
-The Patch
-{% endswagger-parameter %}
-
-{% swagger-response status="200" description="Patch is applied. The complete Resource will be returned" %}
+{% tab title="404" %}
 ```
+Not Found Resource type not supported, or not a FHIR end-point
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="404: Not Found" description="Resource type not supported, or not a FHIR end-point" %}
-```javascript
-{
-    // Response
-}
+{% tab title="405" %}
 ```
-{% endswagger-response %}
+Method Not Allowed 
+```
+{% endtab %}
 
-{% swagger-response status="405: Method Not Allowed" description="" %}
-```javascript
-{
-    // Response
-}
+{% tab title="412" %}
 ```
-{% endswagger-response %}
-
-{% swagger-response status="412: Precondition Failed" description="Version conflict, update is based on an old version" %}
-```javascript
-{
-    // Response
-}
+Precondition Failed Version conflict, update is based on an old version
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 ## Topics
 
