@@ -17,7 +17,7 @@ SMART HTI On FHIR (SHOF) uses the HTI token as the `launch` parameter value. Thi
 ### Requirements
 
 1. A [JWKS endpoint must be available](../connectie-maken-met-koppeltaal/requirements/jwks-opzetten.md).
-2. The user performing the launch must have an account on the shared IdP, the username has to be present on the corresponding user Resource (`Patient`, `Practitioner`).
+2. The user performing the launch must have an account on the shared IdP, the username has to be present on the corresponding user Resource (`Patient`, `Practitioner`, or `RelatedPerson`).
 
 ### Information Flow
 

@@ -27,17 +27,7 @@ The URL should be determined from the Koppeltaal metadata
 
 #### Query Parameters
 
-| Name                                                      | Type   | Description                                                                                                                                                                                                                                                                                      |
-| --------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| aud<mark style="color:red;">\*</mark>                     | string | URL of the Koppeltaal server (the same as the `iss` value)                                                                                                                                                                                                                                       |
-| scope<mark style="color:red;">\*</mark>                   | string | <p>Always:</p><p><code>launch openid fhirUser</code></p>                                                                                                                                                                                                                                         |
-| state<mark style="color:red;">\*</mark>                   | string | An opaque value used by the client to maintain the state between the request and the callback. The authorization server takes this value when redirecting the user agent back to the client. The parameter MUST be used to prevent cross-site request forgery (CSRF) attacks or session fixation |
-| launch<mark style="color:red;">\*</mark>                  | string | <p>The HTI token (from the</p><p><code>launch</code></p><p>param)</p>                                                                                                                                                                                                                            |
-| redirect\_uri<mark style="color:red;">\*</mark>           | string | <p>The URL to which the</p><p><code>code</code></p><p>should be returned</p>                                                                                                                                                                                                                     |
-| client\_id<mark style="color:red;">\*</mark>              | string | The `client_id` (from Domain Admin) of the application receiving the launch                                                                                                                                                                                                                      |
-| response\_type<mark style="color:red;">\*</mark>          | string | <p>Altijd:</p><p><code>code</code></p>                                                                                                                                                                                                                                                           |
-| code\_challenge<mark style="color:red;">\*</mark>         | String | <p>A generated code challenge as per</p><p><a href="https://www.rfc-editor.org/rfc/rfc7636#appendix-B">rfc7636</a></p>                                                                                                                                                                           |
-| code\_challenge\_method<mark style="color:red;">\*</mark> | String | <p>Always:</p><p><code>S256</code></p>                                                                                                                                                                                                                                                           |
+<table><thead><tr><th width="160">Name</th><th width="82">Type</th><th>Description</th></tr></thead><tbody><tr><td>aud<mark style="color:red;">*</mark></td><td>string</td><td>URL of the Koppeltaal server (the same as the <code>iss</code> value)</td></tr><tr><td>scope<mark style="color:red;">*</mark></td><td>string</td><td><p>Always:</p><p><code>launch openid fhirUser</code></p></td></tr><tr><td>state<mark style="color:red;">*</mark></td><td>string</td><td>An opaque value used by the client to maintain the state between the request and the callback. The authorization server takes this value when redirecting the user agent back to the client. The parameter MUST be used to prevent cross-site request forgery (CSRF) attacks or session fixation</td></tr><tr><td>launch<mark style="color:red;">*</mark></td><td>string</td><td>The HTI token (from the <code>launch</code>param)</td></tr><tr><td>redirect_uri<mark style="color:red;">*</mark></td><td>string</td><td><p>The URL to which the</p><p><code>code</code></p><p>should be returned</p></td></tr><tr><td>client_id<mark style="color:red;">*</mark></td><td>string</td><td>The <code>client_id</code> (from Domain Admin) of the application receiving the launch</td></tr><tr><td>response_type<mark style="color:red;">*</mark></td><td>string</td><td><p>Always:</p><p><code>code</code></p></td></tr><tr><td>code_challenge<mark style="color:red;">*</mark></td><td>String</td><td>A generated code challenge as per <a href="https://www.rfc-editor.org/rfc/rfc7636#appendix-B">rfc7636</a></td></tr><tr><td>code_challenge_method<mark style="color:red;">*</mark></td><td>String</td><td><p>Always:</p><p><code>S256</code></p></td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="302" %}
@@ -57,22 +47,11 @@ The URL should be determined from the Koppeltaal metadata
 
 #### Headers
 
-| Name                                           | Type   | Description                         |
-| ---------------------------------------------- | ------ | ----------------------------------- |
-| Content-Type<mark style="color:red;">\*</mark> | String | `application/x-www-form-urlencoded` |
+<table><thead><tr><th width="171">Name</th><th width="102">Type</th><th>Description</th></tr></thead><tbody><tr><td>Content-Type<mark style="color:red;">*</mark></td><td>String</td><td><code>application/x-www-form-urlencoded</code></td></tr></tbody></table>
 
 #### Request Body
 
-| Name                                                      | Type   | Description                                                                                                                                                                                       |
-| --------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| client\_assertion<mark style="color:red;">\*</mark>       | String | <p>JWT as composed for the</p><p><a href="../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen">SMART Backend Service</a> for the application receiving the launch</p> |
-| client\_assertion\_type<mark style="color:red;">\*</mark> | String | <p>Always:</p><p><code>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code></p>                                                                                                          |
-| redirect\_uri<mark style="color:red;">\*</mark>           | string | <p>The same</p><p><code>redirect_uri</code></p><p>as used at the authorize request</p>                                                                                                            |
-| code<mark style="color:red;">\*</mark>                    | string | <p><code>code</code></p><p>provided by the auth server on the redirect from the authorize request</p>                                                                                             |
-| grant\_type<mark style="color:red;">\*</mark>             | string | <p>Always:</p><p><code>authorization_code</code></p>                                                                                                                                              |
-| code\_verifier<mark style="color:red;">\*</mark>          | String | <p>Unhashed value used foe generating the</p><p><code>code_challenge</code></p><p>in the authorize step as per</p><p><a href="https://www.rfc-editor.org/rfc/rfc7636#appendix-B">rfc7636</a></p>  |
-
-
+<table><thead><tr><th width="217">Name</th><th width="102">Type</th><th>Description</th></tr></thead><tbody><tr><td>client_assertion<mark style="color:red;">*</mark></td><td>String</td><td><p>JWT as composed for the</p><p><a href="../connectie-maken-met-koppeltaal/toegang-tot-koppeltaal.md#1.-jwt-samenstellen">SMART Backend Service</a> for the application receiving the launch</p></td></tr><tr><td>client_assertion_type<mark style="color:red;">*</mark></td><td>String</td><td><p>Always:</p><p><code>urn:ietf:params:oauth:client-assertion-type:jwt-bearer</code></p></td></tr><tr><td>redirect_uri<mark style="color:red;">*</mark></td><td>string</td><td>The same <code>redirect_uri</code> as used at the authorize request</td></tr><tr><td>code<mark style="color:red;">*</mark></td><td>string</td><td><code>code</code> provided by the auth server on the redirect from the authorize request</td></tr><tr><td>grant_type<mark style="color:red;">*</mark></td><td>string</td><td><p>Always:</p><p><code>authorization_code</code></p></td></tr><tr><td>code_verifier<mark style="color:red;">*</mark></td><td>String</td><td><p>Unhashed value used foe generating the <code>code_challenge</code> in the authorize step as per</p><p><a href="https://www.rfc-editor.org/rfc/rfc7636#appendix-B">rfc7636</a></p></td></tr></tbody></table>
 
 {% tabs %}
 {% tab title="200" %}
@@ -92,10 +71,6 @@ The OIDC response plus additional context fields used in the launch is returned
   "intent": "plan"
 }
 ```
-{% endtab %}
-
-{% tab title="401" %}
-Client unauthorized or wrong code\_verifier
 {% endtab %}
 {% endtabs %}
 
