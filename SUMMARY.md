@@ -49,6 +49,7 @@
   * [Receiving a HTI launch](technische-howto/launchen/launch-ontvangen/README.md)
     * [Token introspection](technische-howto/launchen/launch-ontvangen/token-introspection.md)
   * [Receiving a SHOF launch](technische-howto/launchen/smart-hti-on-fhir-launch-ontvangen.md)
+* [Detailed technical guidance](technische-howto/detailed-technical-guidance.md)
 
 ## Hackathon Use Cases
 
@@ -68,4 +69,5 @@
 * [HTI documentation](https://github.com/GIDSOpenStandaarden/GIDS-HTI-Protocol/blob/master/HTI.md)
 * [GitHub](https://github.com/Koppeltaal/)
 * [Koppeltaal 2.0 Specifications & Architecture](https://vzvz.atlassian.net/wiki/spaces/KTSA/overview)
+* [Koppeltaal 2.0 Implementation Guide](https://simplifier.net/guide/koppeltaal?version=current)
 * [Koppeltaal 2.0 OpenAPI Specs](https://fhir-server.koppeltaal.headease.nl/fhir/api-docs)
