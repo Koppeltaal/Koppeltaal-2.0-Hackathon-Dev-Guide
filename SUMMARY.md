@@ -9,10 +9,8 @@
   * [Domain Management](https://domain-admin.koppeltaal.headease.nl/)
   * [Auth Server](https://auth-service.koppeltaal.headease.nl/)
   * [Koppeltaal IdP](https://iam.koppeltaal.headease.nl)
-  * [EHR](https://poc-epd.koppeltaal.headease.nl/)
-  * [Portal](https://poc-portal.koppeltaal.headease.nl/)
   * [Domain Access Test Suite](https://smart-testsuite.koppeltaal.headease.nl/)
-  * [Launch Test Suite](https://launch-testsuite.koppeltaal.headease.nl/)
+  * [Koppeltaal Test Tooling](https://testsuite.koppeltaal.headease.nl/)
 
 ## Domain access
 
@@ -25,6 +23,7 @@
 
 ## Technical HOW-TO <a href="#technische-howto" id="technische-howto"></a>
 
+* [Koppeltaal Test Tooling](technische-howto/koppeltaal-test-tooling.md)
 * [Request Koppeltaal server metadata](technische-howto/koppeltaal-server-metadata-opvragen.md)
 * [Connecting to Koppeltaal](technische-howto/connectie-maken-met-koppeltaal/README.md)
   * [Requirements](technische-howto/connectie-maken-met-koppeltaal/requirements/README.md)
