@@ -8,11 +8,13 @@ The [Koppeltaal Test Tooling](https://testsuite.koppeltaal.headease.nl/) can be 
 
 It can be used to test the common Koppeltaal interactions like: [Connecting to Koppeltaal](connectie-maken-met-koppeltaal/), [Launching](launchen/), [CRUD operations](resources-managen/crud-operaties/) and [Subscribing to changes](resources-managen/abonneren-op-changes.md).&#x20;
 
+## What Koppeltaal server does it use?
+
 {% hint style="warning" %}
 It is not allowed to use the Koppeltaal Test Tooling on Itzos acc22 and production. Requests here should not be allowed.
 {% endhint %}
 
-The Test Tooling is a multitenant solution that allows you to work against multiple Koppeltaal servers (like the POC and Itzos acc21).&#x20;
+The Test Tooling is a multitenant solution that allows you to work against multiple Koppeltaal servers (like the POC and Itzos acc21). You can configure your own clients.
 
 ## How to get started?
 
