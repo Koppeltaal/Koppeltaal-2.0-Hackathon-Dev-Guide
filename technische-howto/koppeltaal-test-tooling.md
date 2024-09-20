@@ -21,7 +21,7 @@ The Test Tooling is a multitenant solution that allows you to work against multi
 Navigate to the [Koppeltaal Test Tooling](https://testsuite.koppeltaal.headease.nl) and try it out. Everyone can register. It also allows you to work together with your colleagues by sharing SMART clients. Follow this video on how to set up your first Koppeltaal client:
 
 {% hint style="info" %}
-The video below is based on an old version of the test suite. It also supports:&#x20;
+The video below is based on an old version of the test tooling. It also supports:&#x20;
 
 1. Share SMART Clients with colleagues
 2. Launch **to** the test suite
