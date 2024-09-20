@@ -3,7 +3,7 @@
 ## Request Flow
 
 {% hint style="info" %}
-For an interactive demo, go to our [Koppeltaal Test Tooling](https://testsuite.koppeltaal.headease.nl/).&#x20;
+For an interactive demo, go to our [Koppeltaal Test Suite](https://testsuite.koppeltaal.headease.nl/) and execute these steps
 {% endhint %}
 
 Koppeltaal requires that applications use the [SMART Backend Services: Authorization](https://hl7.org/fhir/uv/bulkdata/authorization/index.html#obtaining-an-access-token) flow to request an `access_token`. The following diagram is used for this purpose

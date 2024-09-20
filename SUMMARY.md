@@ -53,7 +53,7 @@
 ## Hackathon Use Cases
 
 * [Requirements](hackathon-use-cases/requirements/README.md)
-  * [Install and configure Yivi](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
+  * [Install and configure IRMA](hackathon-use-cases/requirements/irma-installeren-and-configureren.md)
 * [Use-Cases](hackathon-use-cases/crud-task/README.md)
   * [Use-Case 1: Create a Task](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/README.md)
     * [Create an ActivityDefinition](hackathon-use-cases/crud-task/use-case-1-opvoeren-taak/zelf-een-activitydefinition-maken.md)
