@@ -7,7 +7,7 @@ description: Also known as the Walking Skeleton
 Koppeltaal 2.0 has been developed by using an Agile methodology. The devised architecture is tested using POC applications. The applications used within the POC are **not** the applications that will ultimately be used when Koppeltaal 2.0 goes live.
 
 {% hint style="info" %}
-Applications within the POC now often use IRMA to identify the user and relate across systems. This is not part of the standard. It's likely that Koppeltaal 2.0 will not use IRMA in the production environment.
+Applications within the POC now often use Yivi (formerly known as IRMA) to identify the user and relate across systems. This is not part of the standard. It's likely that Koppeltaal 2.0 will not use Yivi in the production environment.
 {% endhint %}
 
 The POC consists of the following type of applications:

@@ -24,7 +24,7 @@ Navigate to the [Koppeltaal Test Tooling](https://testsuite.koppeltaal.headease.
 The video below is based on an old version of the test suite. It also supports:&#x20;
 
 1. Share SMART Clients with colleagues
-2. Launch **to** te test suite
+2. Launch **to** the test suite
 3. Launch as a `RelatedPerson`.
 {% endhint %}
 
