@@ -65,7 +65,7 @@ The OIDC response plus additional context fields used in the launch is returned
   "token_type": "Bearer",
   "expires_in": "3600",
   "resource": "Task/37fa63e3-b118-4180-8470-74b1df508bf6",
-  "definition": "https://fhir-server.koppeltaal.headease.nl/fhir/DEFAULT/ActivityDefinition/fbbf47a5-2a55-4e3a-8dec-a8eb63875374",
+  "definition": "ActivityDefinition/64b95e9a-e0fa-49ea-9cc5-00ff61300d3d",
   "sub": "Practitioner/52b6535b-4e69-455b-9d9f-952e708ad393",
   "patient": "Patient/70184602-4d15-4ca9-89a6-00e78123b22e",
   "intent": "plan"
