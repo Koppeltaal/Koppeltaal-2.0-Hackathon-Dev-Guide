@@ -20,7 +20,8 @@ An example of the resulting HTI claims:
     "definition": "ActivityDefinition/d76ba97b-bfce-4a75-8e7a-2133778d1089",
     "sub": "Practitioner/225d67a7-69b9-4343-b488-064945fe3fd3",
     "patient" : "Patient/b592f103-f75b-4a63-a5dd-b75799775258",
-    "intent": "plan"
+    "intent": "plan",
+    "idp_hint": "digid-login-related-persons"
 }
 ```
 
