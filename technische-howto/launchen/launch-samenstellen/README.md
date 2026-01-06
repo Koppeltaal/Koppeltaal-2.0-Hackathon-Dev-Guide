@@ -21,7 +21,7 @@ An example of the resulting HTI claims:
     "sub": "Practitioner/225d67a7-69b9-4343-b488-064945fe3fd3",
     "patient" : "Patient/b592f103-f75b-4a63-a5dd-b75799775258",
     "intent": "plan",
-    "idp_hint": "digid-login-related-persons"
+    "idp_hint": "primary-practitioner-idp"
 }
 ```
 
